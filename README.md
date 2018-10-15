@@ -2,10 +2,12 @@
 CSCC01 team 27
 
 ## Deliverable1
+Deliverable 1
 Team report is located in Deliverable1 folder
 
-## Deliverable2
-Personas and User Stories located within Deliverable2 folder
+## Product Backlog
+Deliverable 2
+Personas and User Stories located within Product Backlog folder
 
 ### Group Members
 * Vilen Milner

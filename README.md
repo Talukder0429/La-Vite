@@ -1,6 +1,5 @@
 # Team27 - La Vite
-
-
+  
 ##Deliverable1
 Team report is located in Deliverable1 folder
 

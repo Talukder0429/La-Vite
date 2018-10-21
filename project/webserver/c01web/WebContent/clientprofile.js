@@ -5,7 +5,6 @@ var date_of_birth;
 var phone_number;
 var has_email_address;
 var email_address;
-var street_address;
 var street_number;
 var street_name;
 var street_type;
@@ -50,7 +49,6 @@ function SubmitData()
 		data += AddParam("has_email_address", "0");
 	}
 	data += AddParam("email_address", email_address.value);
-	data += AddParam("street_address", street_address.value);
 	data += AddParam("street_number", street_number.value);
 	data += AddParam("street_name", street_name.value);
 	data += AddParam("street_type", street_type.value);
@@ -95,7 +93,6 @@ function FindFields()
 	phone_number = document.getElementById("phone_number");
 	has_email_address = document.getElementsByName("has_email_address");
 	email_address = document.getElementById("email_address");
-	street_address = document.getElementById("street_address");
 	street_number = document.getElementById("street_number");
 	street_name = document.getElementById("street_name");
 	street_type = document.getElementById("street_type");

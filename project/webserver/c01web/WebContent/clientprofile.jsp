@@ -10,8 +10,8 @@
 		<span>Phone Number: </span><textarea id="phone_number" rows="1" cols="35"></textarea><br />
 		<span>Has Email Address: </span> <br />
 		<div id="has_email_address">
-			<input type="radio" name="has_email_address" value="True"> Yes<br>
 			<input type="radio" name="has_email_address" value="False"> No<br>
+			<input type="radio" name="has_email_address" value="True"> Yes<br>
 		</div>
 		<span>Email Address: </span><textarea id="email_address" rows="1" cols="35"></textarea><br />
 		<span>Street Number: </span><textarea id="street_number" rows="1" cols="35"></textarea><br />
@@ -25,8 +25,8 @@
 		<span>Language: </span><textarea id="language" rows="1" cols="35"></textarea><br />
 		<span>Consent for Future Research/Consultation: </span> <br />
 		<div id="has_consent">
-			<input type="radio" name="has_consent" value="True"> Yes<br>
 			<input type="radio" name="has_consent" value="False"> No<br>
+			<input type="radio" name="has_consent" value="True"> Yes<br>
 		</div>
 		
 		

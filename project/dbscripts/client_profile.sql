@@ -14,6 +14,6 @@ CREATE TABLE `client_profile` (
   `province` varchar(255) NOT NULL,
   `postal_code` varchar(255) NOT NULL,
   `language` varchar(255) NOT NULL,
-  `consent` tinyint(1) NOT NULL,
+  `has_consent` tinyint(1) NOT NULL,
   PRIMARY KEY (`unique_identifier`,`unique_identifier_value`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

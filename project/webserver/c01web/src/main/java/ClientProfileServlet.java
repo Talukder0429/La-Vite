@@ -82,6 +82,7 @@ public class ClientProfileServlet extends HttpServlet {
 						dbpass);
 				)
 		{
+			//TODO cleaning of fields should be in servlet, not in client
 			//Gets params from request
 			String unique_identifier = GetParam(request, "unique_identifier");
 			String unique_identifier_value = GetParam(request, "unique_identifier_value");
@@ -89,13 +90,28 @@ public class ClientProfileServlet extends HttpServlet {
 			String phone_number = GetParam(request, "phone_number");
 			String has_email_address = GetParam(request, "has_email_address");
 			String email_address = GetParam(request, "email_address");
-			String street_address = GetParam(request, "street_address");
+			String street_number = GetParam(request, "street_number");
+			String street_name = GetParam(request, "street_name");
+			String street_type = GetParam(request, "street_type");
+			String street_direction = GetParam(request, "street_direction");
+			String unit = GetParam(request, "unit");
+			String city = GetParam(request, "city");
+			String province = GetParam(request, "province");
+			String postal_code = GetParam(request, "postal_code");
+			String language = GetParam(request, "language");
+			String has_consent = GetParam(request, "has_consent");
 			
 			//Query string
 			String query = "INSERT INTO ";
 			query += "client_profile"; //TODO table name
-			query += "(unique_identifier, unique_identifier_value, date_of_birth, phone_number, has_email_address, email_address, street_address) ";
-			query += "VALUES(?,?,?,?,?,?,?)"; //Add extra question mark for each attribute
+			query += "(unique_identifier, unique_identifier_value, date_of_birth, phone_number, has_email_address, "
+					+ "email_address, street_number, street_name, street_type, street_direction, "
+					+ "unit, city, province, postal_code, language, "
+					+ "has_consent) ";
+			query += "VALUES(?,?,?,?,?,"
+					+ "?,?,?,?,?,"
+					+ "?,?,?,?,?,"
+					+ "?)"; //Add extra question mark for each attribute
 
 			//Sets values into query
 			PreparedStatement querySql = conn.prepareStatement(query);
@@ -105,7 +121,16 @@ public class ClientProfileServlet extends HttpServlet {
 			querySql.setString(4, phone_number);
 			querySql.setString(5, has_email_address);
 			querySql.setString(6, email_address);
-			querySql.setString(7, street_address);
+			querySql.setString(7, street_number);
+			querySql.setString(8, street_name);
+			querySql.setString(9, street_type);
+			querySql.setString(10, street_direction);
+			querySql.setString(11, unit);
+			querySql.setString(12, city);
+			querySql.setString(13, province);
+			querySql.setString(14, postal_code);
+			querySql.setString(15, language);
+			querySql.setString(16, has_consent);
 			querySql.executeUpdate();
 
 			response.setStatus(HttpServletResponse.SC_OK);

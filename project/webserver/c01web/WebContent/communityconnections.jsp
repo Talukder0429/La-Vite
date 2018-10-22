@@ -149,6 +149,58 @@
 			<input type="radio" name="care_for_newcomer_children" value="False"> No<br>
 			<input type="radio" name="care_for_newcomer_children" value="True"> Yes<br>
 		</div>
+		
+		<span>Child 1: Age: </span><textarea id="child_1_age" rows="1" cols="35"></textarea><br />
+		<span>Child 1: Type of Care: </span><textarea id="child_1_care" rows="1" cols="35"></textarea><br />
+		<span>Child 2: Age: </span><textarea id="child_2_age" rows="1" cols="35"></textarea><br />
+		<span>Child 2: Type of Care: </span><textarea id="child_2_care" rows="1" cols="35"></textarea><br />
+		<span>Child 3: Age: </span><textarea id="child_3_age" rows="1" cols="35"></textarea><br />
+		<span>Child 3: Type of Care: </span><textarea id="child_3_care" rows="1" cols="35"></textarea><br />
+		<span>Child 4: Age: </span><textarea id="child_4_age" rows="1" cols="35"></textarea><br />
+		<span>Child 4: Type of Care: </span><textarea id="child_4_care" rows="1" cols="35"></textarea><br />
+		<span>Child 5: Age: </span><textarea id="child_5_age" rows="1" cols="35"></textarea><br />
+		<span>Child 5: Type of Care: </span><textarea id="child_5_care" rows="1" cols="35"></textarea><br />
+		
+		<span>Transportation: </span> <br />
+		<div id="transportation">
+			<input type="radio" name="transportation" value="False"> No<br>
+			<input type="radio" name="transportation" value="True"> Yes<br>
+		</div>
+		
+		<span>Provisions for Disabilities: </span> <br />
+		<div id="provisions_for_disabilities">
+			<input type="radio" name="provisions_for_disabilities" value="False"> No<br>
+			<input type="radio" name="provisions_for_disabilities" value="True"> Yes<br>
+		</div>
+		
+		<span>Translation: </span> <br />
+		<div id="translation">
+			<input type="radio" name="translation" value="False"> No<br>
+			<input type="radio" name="translation" value="True"> Yes<br>
+		</div>
+		
+		<span>Between: </span><textarea id="between_1" rows="1" cols="35"></textarea><br />
+		<span>And: </span><textarea id="and_1" rows="1" cols="35"></textarea><br />
+		
+		<span>Interpretation: </span> <br />
+		<div id="interpretation">
+			<input type="radio" name="interpretation" value="False"> No<br>
+			<input type="radio" name="interpretation" value="True"> Yes<br>
+		</div>
+		
+		<span>Between: </span><textarea id="between_2" rows="1" cols="35"></textarea><br />
+		<span>And: </span><textarea id="and_2" rows="1" cols="35"></textarea><br />
+		
+		<span>Crisis Counselling: </span> <br />
+		<div id="crisis_counselling">
+			<input type="radio" name="crisis_counselling" value="False"> No<br>
+			<input type="radio" name="crisis_counselling" value="True"> Yes<br>
+		</div>
+		
+		<span>Total Length of Service (Hours): </span><textarea id="length_of_service_hours" rows="1" cols="35"></textarea><br />
+		<span>Total Length of Service (Minutes): </span><textarea id="length_of_service_minutes" rows="1" cols="35"></textarea><br />
+		<span>Reason for Update: </span><textarea id="reason_for_update" rows="1" cols="35"></textarea><br />
+		
 		<input type="submit" onclick="SubmitData()">
 	</body>
 </html>

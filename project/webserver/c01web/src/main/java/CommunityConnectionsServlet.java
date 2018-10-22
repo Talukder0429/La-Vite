@@ -126,6 +126,28 @@ public class CommunityConnectionsServlet extends HttpServlet {
 			String numeracy = GetParam(request, "numeracy");
 			String support_services_received = GetParam(request, "support_services_received");
 			String care_for_newcomer_children = GetParam(request, "care_for_newcomer_children");
+			String child_1_age = GetParam(request, "child_1_age");
+			String child_1_care = GetParam(request, "child_1_care");
+			String child_2_age = GetParam(request, "child_2_age");
+			String child_2_care = GetParam(request, "child_2_care");
+			String child_3_age = GetParam(request, "child_3_age");
+			String child_3_care = GetParam(request, "child_3_care");
+			String child_4_age = GetParam(request, "child_4_age");
+			String child_4_care = GetParam(request, "child_4_care");
+			String child_5_age = GetParam(request, "child_5_age");
+			String child_5_care = GetParam(request, "child_5_care");
+			String transportation = GetParam(request, "transportation");
+			String provisions_for_disabilities = GetParam(request, "provisions_for_disabilities");
+			String translation = GetParam(request, "translation");
+			String between_1 = GetParam(request, "between_1");
+			String and_1 = GetParam(request, "and_1");
+			String interpretation = GetParam(request, "interpretation");
+			String between_2 = GetParam(request, "between_2");
+			String and_2 = GetParam(request, "and_2");
+			String crisis_counselling = GetParam(request, "crisis_counselling");
+			String length_of_service_hours = GetParam(request, "length_of_service_hours");
+			String length_of_service_minutes = GetParam(request, "length_of_service_minutes");
+			String reason_for_update = GetParam(request, "reason_for_update");
 			//Query string
 			String query = "INSERT INTO ";
 			query += "community_connections"; //TODO table name
@@ -173,9 +195,34 @@ public class CommunityConnectionsServlet extends HttpServlet {
 					+ " life_skills,"
 					+ " numeracy,"
 					+ " support_services_received,"
-					+ " care_for_newcomer_children)";
+					+ " care_for_newcomer_children,"
+					+ " child_1_age,"
+					+ " child_1_care,"
+					+ " child_2_age,"
+					+ " child_2_care,"
+					+ " child_3_age,"
+					+ " child_3_care,"
+					+ " child_4_age,"
+					+ " child_4_care,"
+					+ " child_5_age,"
+					+ " child_5_care,"
+					+ " transportation,"
+					+ " provisions_for_disabilities,"
+					+ " translation,"
+					+ " between_1,"
+					+ " and_1,"
+					+ " interpretation,"
+					+ " between_2,"
+					+ " and_2,"
+					+ " crisis_counselling,"
+					+ " length_of_service_hours,"
+					+ " length_of_service_minutes,"
+					+ " reason_for_update)";
 			query += "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,"
-					+ "?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"; //Add extra question mark for each attribute
+					+ "?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,"
+					+ "?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,"
+					+ "?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,"
+					+ "?,?,?,?,?,?)"; //Add extra question mark for each attribute
 
 			//Sets values into query
 			PreparedStatement querySql = conn.prepareStatement(query);
@@ -224,6 +271,28 @@ public class CommunityConnectionsServlet extends HttpServlet {
 			querySql.setString(43, numeracy);
 			querySql.setString(44, support_services_received);
 			querySql.setString(45, care_for_newcomer_children);
+			querySql.setString(46, child_1_age);
+			querySql.setString(47, child_1_care);
+			querySql.setString(48, child_2_age);
+			querySql.setString(49, child_2_care);
+			querySql.setString(50, child_3_age);
+			querySql.setString(51, child_3_care);
+			querySql.setString(52, child_4_age);
+			querySql.setString(53, child_4_care);
+			querySql.setString(54, child_5_age);
+			querySql.setString(55, child_5_care);
+			querySql.setString(56, transportation);
+			querySql.setString(57, provisions_for_disabilities);
+			querySql.setString(58, translation);
+			querySql.setString(59, between_1);
+			querySql.setString(60, and_1);
+			querySql.setString(61, interpretation);
+			querySql.setString(62, between_2);
+			querySql.setString(63, and_2);
+			querySql.setString(64, crisis_counselling);
+			querySql.setString(65, length_of_service_hours);
+			querySql.setString(66, length_of_service_minutes);
+			querySql.setString(67, reason_for_update);
 			querySql.executeUpdate();
 
 			response.setStatus(HttpServletResponse.SC_OK);

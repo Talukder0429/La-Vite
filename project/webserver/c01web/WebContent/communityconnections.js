@@ -43,6 +43,28 @@ var life_skills;
 var numeracy;
 var support_services_received;
 var care_for_newcomer_children;
+var child_1_age;
+var child_1_care;
+var child_2_age;
+var child_2_care;
+var child_3_age;
+var child_3_care;
+var child_4_age;
+var child_4_care;
+var child_5_age;
+var child_5_care;
+var transportation;
+var provisions_for_disabilities;
+var translation;
+var between_1;
+var and_1;
+var interpretation;
+var between_2;
+var and_2;
+var crisis_counselling;
+var length_of_service_hours;
+var length_of_service_minutes;
+var reason_for_update;
 
 //connection info
 var server = "c01web/"
@@ -311,6 +333,72 @@ function SubmitData()
 		data += AddParam("care_for_newcomer_children", "0");
 	}
 	
+	data += AddParam("child_1_age", child_1_age.value);
+	data += AddParam("child_1_care", child_1_care.value);
+	data += AddParam("child_2_age", child_2_age.value);
+	data += AddParam("child_2_care", child_2_care.value);
+	data += AddParam("child_3_age", child_3_age.value);
+	data += AddParam("child_3_care", child_3_care.value);
+	data += AddParam("child_4_age", child_4_age.value);
+	data += AddParam("child_4_care", child_4_care.value);
+	data += AddParam("child_5_age", child_5_age.value);
+	data += AddParam("child_5_care", child_5_care.value);
+	
+	if (transportation[1].checked)
+	{
+		data += AddParam("transportation", "1");
+	}
+	else
+	{
+		data += AddParam("transportation", "0");
+	}
+	
+	if (provisions_for_disabilities[1].checked)
+	{
+		data += AddParam("provisions_for_disabilities", "1");
+	}
+	else
+	{
+		data += AddParam("provisions_for_disabilities", "0");
+	}
+	
+	if (translation[1].checked)
+	{
+		data += AddParam("translation", "1");
+	}
+	else
+	{
+		data += AddParam("translation", "0");
+	}
+	
+	data += AddParam("between_1", between_1.value);
+	data += AddParam("and_1", and_1.value);
+	
+	if (interpretation[1].checked)
+	{
+		data += AddParam("interpretation", "1");
+	}
+	else
+	{
+		data += AddParam("interpretation", "0");
+	}
+	
+	data += AddParam("between_2", between_2.value);
+	data += AddParam("and_2", and_2.value);
+	
+	if (crisis_counselling[1].checked)
+	{
+		data += AddParam("crisis_counselling", "1");
+	}
+	else
+	{
+		data += AddParam("crisis_counselling", "0");
+	}
+	
+	data += AddParam("length_of_service_hours", length_of_service_hours.value);
+	data += AddParam("length_of_service_minutes", length_of_service_minutes.value);
+	data += AddParam("reason_for_update", reason_for_update.value);
+	
 	data = data.substring(0, data.length - 1);
 
 	request.send(data);
@@ -349,6 +437,11 @@ function Init()
 	numeracy[0].checked = true;
 	support_services_received[0].checked = true;
 	care_for_newcomer_children[0].checked = true;
+	transportation[0].checked = true;
+	provisions_for_disabilities[0].checked = true;
+	translation[0].checked = true;
+	interpretation[0].checked = true;
+	crisis_counselling[0].checked = true;
 }
 
 function FindFields()
@@ -399,7 +492,28 @@ function FindFields()
 	numeracy = document.getElementsByName("numeracy");
 	support_services_received = document.getElementsByName("support_services_received");
 	care_for_newcomer_children = document.getElementsByName("care_for_newcomer_children");
-	
+	child_1_age = document.getElementById("child_1_age");
+	child_1_care = document.getElementById("child_1_care");
+	child_2_age = document.getElementById("child_2_age");
+	child_2_care = document.getElementById("child_2_care");
+	child_3_age = document.getElementById("child_3_age");
+	child_3_care = document.getElementById("child_3_care");
+	child_4_age = document.getElementById("child_4_age");
+	child_4_care = document.getElementById("child_4_care");
+	child_5_age = document.getElementById("child_5_age");
+	child_5_care = document.getElementById("child_5_care");
+	transportation = document.getElementsByName("transportation");
+	provisions_for_disabilities = document.getElementsByName("provisions_for_disabilities");
+	translation = document.getElementsByName("translation");
+	between_1 = document.getElementById("between_1");
+	and_1 = document.getElementById("and_1");
+	interpretation = document.getElementsByName("interpretation");
+	between_2 = document.getElementById("between_2");
+	and_2 = document.getElementById("and_2");
+	crisis_counselling = document.getElementsByName("crisis_counselling");
+	length_of_service_hours = document.getElementById("length_of_service_hours");
+	length_of_service_minutes = document.getElementById("length_of_service_minutes");
+	reason_for_update = document.getElementById("reason_for_update");
 	Init();
 	
 }

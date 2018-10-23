@@ -94,6 +94,11 @@
 		<div id="provisionDisabilities">
 			<input type="radio" name="provisionDisabilities" value="False"> No<br>
 			<input type="radio" name="provisionDisabilities" value="True"> Yes<br>
+		</div>
+		<span>Translation: </span><br />
+		<div id="translation">
+			<input type="radio" name="translation" value="False"> No<br>
+			<input type="radio" name="translation" value="True"> Yes<br>
 		</div>		
 		<span>Translation From Language: </span><textarea id="translationFrom" rows="1" cols="35"></textarea><br />
 		<span>Translation To Language: </span><textarea id="translationTo" rows="1" cols="35"></textarea><br />

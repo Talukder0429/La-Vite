@@ -20,7 +20,7 @@ import java.net.URLDecoder;
 @WebServlet("/InformationOrientation")
 public class InformationOrientationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
 	private String dbname;
 	private String dbuser;
 	private String dbpass;
@@ -30,18 +30,18 @@ public class InformationOrientationServlet extends HttpServlet {
 	 */
 	public InformationOrientationServlet() {
 		super();
-		try
-		{
+		try {
 			String s = getClass().getName();
 			int i = s.lastIndexOf(".");
-			if(i > -1) s = s.substring(i + 1);
+			if (i > -1)
+				s = s.substring(i + 1);
 			s = s + ".class";
-			System.out.println("name " +s);
+			System.out.println("name " + s);
 			String testPath = this.getClass().getResource(s).toString();
 			System.out.println(testPath);
 			String realpath = URLDecoder.decode(testPath.substring(6), "UTF-8");
 			System.out.println(realpath);
-			
+
 			Path p = Paths.get(realpath);
 			Path folder = p.getParent();
 			System.out.println(folder.toString());
@@ -52,9 +52,7 @@ public class InformationOrientationServlet extends HttpServlet {
 			dbuser = sc.nextLine();
 			dbpass = sc.nextLine();
 			sc.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -75,13 +73,10 @@ public class InformationOrientationServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		try (
-				Connection conn = DriverManager.getConnection(
-						"jdbc:mysql://localhost:3306/" + dbname + "?useSSL=false&allowPublicKeyRetrieval=true", dbuser,
-						dbpass);
-				)
-		{
-			//Gets params from request
+		try (Connection conn = DriverManager.getConnection(
+				"jdbc:mysql://localhost:3306/" + dbname + "?useSSL=false&allowPublicKeyRetrieval=true", dbuser,
+				dbpass);) {
+			// Gets params from request
 			String update_record_id = GetParam(request, "update_record_id");
 			String unique_identifier = GetParam(request, "unique_identifier");
 			String unique_identifier_value = GetParam(request, "unique_identifier_value");
@@ -167,23 +162,23 @@ public class InformationOrientationServlet extends HttpServlet {
 			String child5_care = GetParam(request, "child5_care");
 			String transportation_child = GetParam(request, "transportation_child");
 			String disability_provision = GetParam(request, "disability_provision");
-			String transtation = GetParam(request, "transtation");
-			String transtation_1 = GetParam(request, "transtation_1");
-			String transtation_2 = GetParam(request, "transtation_2");
+			String translation = GetParam(request, "translation");
+			String translation_1 = GetParam(request, "translation_1");
+			String translation_2 = GetParam(request, "translation_2");
 			String interpretation = GetParam(request, "interpretation");
 			String interpretation_1 = GetParam(request, "interpretation_1");
 			String interpretation_2 = GetParam(request, "interpretation_2");
 			String crisis_counselling = GetParam(request, "crisis_counselling");
 			String date_of_termination = GetParam(request, "date_of_termination");
 			String update_reason = GetParam(request, "update_reason");
-			
-			//Query string
+
+			// Query string
 			String query = "INSERT INTO ";
-			query += "information_orientation"; //TODO table name
-			query += "(update_record_id, unique_identifier, unique_identifier_value, date_of_birth, postal_code_service, date_of_service, service_language, language_preference, provider_type, referred_by, services_recived, length_of_orientation, length_of_orientation_hour, length_of_orientation_mim, num_clients_in_group, directed_at_target, target_children, target_youth, target_senior, target_gender, target_refugee, target_ECL, target_poor_hearing, target_poor_sight, target_lgbtq, target_families_parents, target_other_impairments, target_profession, target_trade, target_language_minorities, overview_canada, overview_canada_referral, info_src, referral_src, right_freedom, right_freedom_referral, law, law_ref, docs, docs_ref, eng_fr, eng_fr_ref, employment, employment_ref, education, education_ref, housing, housing_ref, health, health_ref, money, money_ref, transportation, transportation_ref, comm_media, comm_media_ref, community_engagment, community_engagment_ref, becoming_cad, becoming_cad_ref, interpersonal_conflict, interpersonal_conflict_ref, training_recived, computer_skill, document_use, interpersonal_skill, leadership_training, numeracy, LS_RoC_info_recived, life_skills, rights_responsibillities_citizenship, support_services_recived, care_children, child1_age, child1_care, child2_age, child2_care, child3_age, child3_care, child4_age, child4_care, child5_age, child5_care, transportation_child, disability_provision, transtation, transtation_1, transtation_2, interpretation, interpretation_1, interpretation_2, crisis_counselling, date_of_termination, update_reason) ";
+			query += "information_orientation"; // TODO table name
+			query += "(update_record_id, unique_identifier, unique_identifier_value, date_of_birth, postal_code_service, date_of_service, service_language, language_preference, provider_type, referred_by, services_recived, length_of_orientation, length_of_orientation_hour, length_of_orientation_mim, num_clients_in_group, directed_at_target, target_children, target_youth, target_senior, target_gender, target_refugee, target_ECL, target_poor_hearing, target_poor_sight, target_lgbtq, target_families_parents, target_other_impairments, target_profession, target_trade, target_language_minorities, overview_canada, overview_canada_referral, info_src, referral_src, right_freedom, right_freedom_referral, law, law_ref, docs, docs_ref, eng_fr, eng_fr_ref, employment, employment_ref, education, education_ref, housing, housing_ref, health, health_ref, money, money_ref, transportation, transportation_ref, comm_media, comm_media_ref, community_engagment, community_engagment_ref, becoming_cad, becoming_cad_ref, interpersonal_conflict, interpersonal_conflict_ref, training_recived, computer_skill, document_use, interpersonal_skill, leadership_training, numeracy, LS_RoC_info_recived, life_skills, rights_responsibillities_citizenship, support_services_recived, care_children, child1_age, child1_care, child2_age, child2_care, child3_age, child3_care, child4_age, child4_care, child5_age, child5_care, transportation_child, disability_provision, translation, translation_1, translation_2, interpretation, interpretation_1, interpretation_2, crisis_counselling, date_of_termination, update_reason) ";
 			query += "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-			//Sets values into query
+			// Sets values into query
 			PreparedStatement querySql = conn.prepareStatement(query);
 			querySql.setString(1, update_record_id);
 			querySql.setString(2, unique_identifier);
@@ -270,9 +265,9 @@ public class InformationOrientationServlet extends HttpServlet {
 			querySql.setString(83, child5_care);
 			querySql.setString(84, transportation_child);
 			querySql.setString(85, disability_provision);
-			querySql.setString(86, transtation);
-			querySql.setString(87, transtation_1);
-			querySql.setString(88, transtation_2);
+			querySql.setString(86, translation);
+			querySql.setString(87, translation_1);
+			querySql.setString(88, translation_2);
 			querySql.setString(89, interpretation);
 			querySql.setString(90, interpretation_1);
 			querySql.setString(91, interpretation_2);
@@ -288,9 +283,8 @@ public class InformationOrientationServlet extends HttpServlet {
 			response.getOutputStream().println(e.getMessage());
 		}
 	}
-	
-	private String GetParam(HttpServletRequest request, String param)
-	{
+
+	private String GetParam(HttpServletRequest request, String param) {
 		return request.getParameter(param);
 	}
 

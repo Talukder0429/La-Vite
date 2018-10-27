@@ -84,9 +84,9 @@ var child5_age;
 var child5_care;
 var transportation_child;
 var disability_provision;
-var transtation;
-var transtation_1;
-var transtation_2;
+var translation;
+var translation_1;
+var translation_2;
 var interpretation;
 var interpretation_1;
 var interpretation_2;
@@ -439,13 +439,13 @@ function SubmitData() {
 	} else {
 		data += AddParam("disability_provision", "0");
 	}
-	if (transtation[1].checked) {
-		data += AddParam("transtation", "1");
+	if (translation[1].checked) {
+		data += AddParam("translation", "1");
 	} else {
-		data += AddParam("transtation", "0");
+		data += AddParam("translation", "0");
 	}
-	data += AddParam("transtation_1", transtation_1.value);
-	data += AddParam("transtation_2", transtation_2.value);
+	data += AddParam("translation_1", translation_1.value);
+	data += AddParam("translation_2", translation_2.value);
 	if (interpretation[1].checked) {
 		data += AddParam("interpretation", "1");
 	} else {
@@ -532,7 +532,7 @@ function Init() {
 	care_children[0].checked = true;
 	transportation_child[0].checked = true;
 	disability_provision[0].checked = true;
-	transtation[0].checked = true;
+	translation[0].checked = true;
 	interpretation[0].checked = true;
 	crisis_counselling[0].checked = true;
 }
@@ -557,72 +557,74 @@ function FindFields() {
 	length_of_orientation_mim = document
 			.getElementById("length_of_orientation_mim");
 	num_clients_in_group = document.getElementById("num_clients_in_group");
-	directed_at_target = document.getElementById("directed_at_target");
-	target_children = document.getElementById("target_children");
-	target_youth = document.getElementById("target_youth");
-	target_senior = document.getElementById("target_senior");
-	target_gender = document.getElementById("target_gender");
-	target_refugee = document.getElementById("target_refugee");
-	target_ECL = document.getElementById("target_ECL");
-	target_poor_hearing = document.getElementById("target_poor_hearing");
-	target_poor_sight = document.getElementById("target_poor_sight");
-	target_lgbtq = document.getElementById("target_lgbtq");
+	directed_at_target = document.getElementsByName("directed_at_target");
+	target_children = document.getElementsByName("target_children");
+	target_youth = document.getElementsByName("target_youth");
+	target_senior = document.getElementsByName("target_senior");
+	target_gender = document.getElementsByName("target_gender");
+	target_refugee = document.getElementsByName("target_refugee");
+	target_ECL = document.getElementsByName("target_ECL");
+	target_poor_hearing = document.getElementsByName("target_poor_hearing");
+	target_poor_sight = document.getElementsByName("target_poor_sight");
+	target_lgbtq = document.getElementsByName("target_lgbtq");
 	target_families_parents = document
-			.getElementById("target_families_parents");
+			.getElementsByName("target_families_parents");
 	target_other_impairments = document
-			.getElementById("target_other_impairments");
-	target_profession = document.getElementById("target_profession");
-	target_trade = document.getElementById("target_trade");
+			.getElementsByName("target_other_impairments");
+	target_profession = document.getElementsByName("target_profession");
+	target_trade = document.getElementsByName("target_trade");
 	target_language_minorities = document
-			.getElementById("target_language_minorities");
-	overview_canada = document.getElementById("overview_canada");
+			.getElementsByName("target_language_minorities");
+	overview_canada = document.getElementsByName("overview_canada");
 	overview_canada_referral = document
-			.getElementById("overview_canada_referral");
-	info_src = document.getElementById("info_src");
-	referral_src = document.getElementById("referral_src");
-	right_freedom = document.getElementById("right_freedom");
-	right_freedom_referral = document.getElementById("right_freedom_referral");
-	law = document.getElementById("law");
-	law_ref = document.getElementById("law_ref");
-	docs = document.getElementById("docs");
-	docs_ref = document.getElementById("docs_ref");
-	eng_fr = document.getElementById("eng_fr");
-	eng_fr_ref = document.getElementById("eng_fr_ref");
-	employment = document.getElementById("employment");
-	employment_ref = document.getElementById("employment_ref");
-	education = document.getElementById("education");
-	education_ref = document.getElementById("education_ref");
-	housing = document.getElementById("housing");
-	housing_ref = document.getElementById("housing_ref");
-	health = document.getElementById("health");
-	health_ref = document.getElementById("health_ref");
-	money = document.getElementById("money");
-	money_ref = document.getElementById("money_ref");
-	transportation = document.getElementById("transportation");
-	transportation_ref = document.getElementById("transportation_ref");
-	comm_media = document.getElementById("comm_media");
-	comm_media_ref = document.getElementById("comm_media_ref");
-	community_engagment = document.getElementById("community_engagment");
+			.getElementsByName("overview_canada_referral");
+	info_src = document.getElementsByName("info_src");
+	referral_src = document.getElementsByName("referral_src");
+	right_freedom = document.getElementsByName("right_freedom");
+	right_freedom_referral = document
+			.getElementsByName("right_freedom_referral");
+	law = document.getElementsByName("law");
+	law_ref = document.getElementsByName("law_ref");
+	docs = document.getElementsByName("docs");
+	docs_ref = document.getElementsByName("docs_ref");
+	eng_fr = document.getElementsByName("eng_fr");
+	eng_fr_ref = document.getElementsByName("eng_fr_ref");
+	employment = document.getElementsByName("employment");
+	employment_ref = document.getElementsByName("employment_ref");
+	education = document.getElementsByName("education");
+	education_ref = document.getElementsByName("education_ref");
+	housing = document.getElementsByName("housing");
+	housing_ref = document.getElementsByName("housing_ref");
+	health = document.getElementsByName("health");
+	health_ref = document.getElementsByName("health_ref");
+	money = document.getElementsByName("money");
+	money_ref = document.getElementsByName("money_ref");
+	transportation = document.getElementsByName("transportation");
+	transportation_ref = document.getElementsByName("transportation_ref");
+	comm_media = document.getElementsByName("comm_media");
+	comm_media_ref = document.getElementsByName("comm_media_ref");
+	community_engagment = document.getElementsByName("community_engagment");
 	community_engagment_ref = document
-			.getElementById("community_engagment_ref");
-	becoming_cad = document.getElementById("becoming_cad");
-	becoming_cad_ref = document.getElementById("becoming_cad_ref");
-	interpersonal_conflict = document.getElementById("interpersonal_conflict");
+			.getElementsByName("community_engagment_ref");
+	becoming_cad = document.getElementsByName("becoming_cad");
+	becoming_cad_ref = document.getElementsByName("becoming_cad_ref");
+	interpersonal_conflict = document
+			.getElementsByName("interpersonal_conflict");
 	interpersonal_conflict_ref = document
-			.getElementById("interpersonal_conflict_ref");
-	training_recived = document.getElementById("training_recived");
-	computer_skill = document.getElementById("computer_skill");
-	document_use = document.getElementById("document_use");
-	interpersonal_skill = document.getElementById("interpersonal_skill");
-	leadership_training = document.getElementById("leadership_training");
-	numeracy = document.getElementById("numeracy");
-	LS_RoC_info_recived = document.getElementById("LS_RoC_info_recived");
-	life_skills = document.getElementById("life_skills");
+			.getElementsByName("interpersonal_conflict_ref");
+	training_recived = document.getElementsByName("training_recived");
+	computer_skill = document.getElementsByName("computer_skill");
+	document_use = document.getElementsByName("document_use");
+	interpersonal_skill = document.getElementsByName("interpersonal_skill");
+	leadership_training = document.getElementsByName("leadership_training");
+	numeracy = document.getElementsByName("numeracy");
+	LS_RoC_info_recived = document.getElementsByName("LS_RoC_info_recived");
+	life_skills = document.getElementsByName("life_skills");
 	rights_responsibillities_citizenship = document
-			.getElementById("rights_responsibillities_citizenship");
+			.getElementsByName("rights_responsibillities_citizenship");
 	support_services_recived = document
-			.getElementById("support_services_recived");
-	care_children = document.getElementById("care_children");
+			.getElementsByName("support_services_recived");
+	care_children = document.getElementsByName("care_children");
 	child1_age = document.getElementById("child1_age");
 	child1_care = document.getElementById("child1_care");
 	child2_age = document.getElementById("child2_age");
@@ -633,15 +635,15 @@ function FindFields() {
 	child4_care = document.getElementById("child4_care");
 	child5_age = document.getElementById("child5_age");
 	child5_care = document.getElementById("child5_care");
-	transportation_child = document.getElementById("transportation_child");
-	disability_provision = document.getElementById("disability_provision");
-	transtation = document.getElementById("transtation");
-	transtation_1 = document.getElementById("transtation_1");
-	transtation_2 = document.getElementById("transtation_2");
-	interpretation = document.getElementById("interpretation");
+	transportation_child = document.getElementsByName("transportation_child");
+	disability_provision = document.getElementsByName("disability_provision");
+	translation = document.getElementsByName("translation");
+	translation_1 = document.getElementById("translation_1");
+	translation_2 = document.getElementById("translation_2");
+	interpretation = document.getElementsByName("interpretation");
 	interpretation_1 = document.getElementById("interpretation_1");
 	interpretation_2 = document.getElementById("interpretation_2");
-	crisis_counselling = document.getElementById("crisis_counselling");
+	crisis_counselling = document.getElementsByName("crisis_counselling");
 	date_of_termination = document.getElementById("date_of_termination");
 	update_reason = document.getElementById("update_reason");
 

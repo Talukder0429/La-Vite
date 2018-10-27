@@ -309,7 +309,6 @@
 			<input type="radio" name="care_children" value="False"> No<br>
 			<input type="radio" name="care_children" value="True"> Yes<br>
 		</div>
-		<span>directed_at_target: </span> <br />
 		<span>child1_age: </span><textarea id="child1_age" rows="1" cols="35"></textarea><br />
 		<span>child1_care: </span><textarea id="child1_care" rows="1" cols="35"></textarea><br />
 		<span>child2_age: </span><textarea id="child2_age" rows="1" cols="35"></textarea><br />

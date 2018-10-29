@@ -18,7 +18,7 @@ var has_consent;
 
 //connection info
 var server = "c01web/"
-var page = "InformationOrientation";
+var page = "ClientProfile";
 
 function SubmitData()
 {

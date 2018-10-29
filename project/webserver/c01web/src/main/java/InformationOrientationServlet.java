@@ -139,7 +139,7 @@ public class InformationOrientationServlet extends HttpServlet {
 			String becoming_cad_ref = GetParam(request, "becoming_cad_ref");
 			String interpersonal_conflict = GetParam(request, "interpersonal_conflict");
 			String interpersonal_conflict_ref = GetParam(request, "interpersonal_conflict_ref");
-			String training_recived = GetParam(request, "training");
+			String training_recived = GetParam(request, "training_recived");
 			String computer_skill = GetParam(request, "computer_skill");
 			String document_use = GetParam(request, "document_use");
 			String interpersonal_skill = GetParam(request, "interpersonal_skill");

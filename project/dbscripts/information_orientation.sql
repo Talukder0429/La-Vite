@@ -1,4 +1,3 @@
-SELECT * FROM c01web.information_orientation;
 CREATE TABLE `information_orientation` (
   `update_record_id` varchar(255) NOT NULL,
   `unique_identifier` varchar(255) NOT NULL,

@@ -1,4 +1,4 @@
-SELECT * FROM c01web.needsandassessment;CREATE TABLE `needsandassessment` (
+CREATE TABLE `needsandassessment` (
   `unique_identifier` varchar(255) NOT NULL,
   `unique_identifier_value` varchar(255) NOT NULL,
   `date_of_birth` varchar(255) NOT NULL,

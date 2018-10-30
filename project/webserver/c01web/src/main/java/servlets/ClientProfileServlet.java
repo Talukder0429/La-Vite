@@ -87,29 +87,31 @@ public class ClientProfileServlet extends HttpServlet {
 						dbpass);
 				)
 		{
+			HttpServletRequestHelper helper = new HttpServletRequestHelper(request);
 			QueryBuilder qb = new QueryBuilder(Field.TABLE_CLIENT_PROFILE);
-			HttpServletRequestHelper helper = new HttpServletRequestHelper(request, qb);
+			qb.setRequestHelper(helper);
 			
 			//for each new field, must insert it into the query builder
-			helper.addToQuery(Field.UNIQUE_IDENTIFIER);
-			helper.addToQuery(Field.UNIQUE_IDENTIFIER_VALUE);
-			helper.addToQuery(Field.DATE_OF_BIRTH);
-			helper.addToQuery(Field.PHONE_NUMBER);
-			helper.addToQuery(Field.HAS_EMAIL_ADDRESS);
-			helper.addToQuery(Field.EMAIL_ADDRESS);
-			helper.addToQuery(Field.STREET_NUMBER);
-			helper.addToQuery(Field.STREET_NAME);
-			helper.addToQuery(Field.STREET_TYPE);
-			helper.addToQuery(Field.STREET_DIRECTION);
-			helper.addToQuery(Field.UNIT);
-			helper.addToQuery(Field.CITY);
-			helper.addToQuery(Field.PROVINCE);
-			helper.addToQuery(Field.POSTAL_CODE);
-			helper.addToQuery(Field.LANGUAGE);
-			helper.addToQuery(Field.HAS_CONSENT);
+			qb.addParamFromRequest(Field.UNIQUE_IDENTIFIER);
+			qb.addParamFromRequest(Field.UNIQUE_IDENTIFIER_VALUE);
+			qb.addParamFromRequest(Field.DATE_OF_BIRTH);
+			qb.addParamFromRequest(Field.PHONE_NUMBER);
+			qb.addParamFromRequest(Field.HAS_EMAIL_ADDRESS);
+			qb.addParamFromRequest(Field.EMAIL_ADDRESS);
+			qb.addParamFromRequest(Field.STREET_NUMBER);
+			qb.addParamFromRequest(Field.STREET_NAME);
+			qb.addParamFromRequest(Field.STREET_TYPE);
+			qb.addParamFromRequest(Field.STREET_DIRECTION);
+			qb.addParamFromRequest(Field.UNIT);
+			qb.addParamFromRequest(Field.CITY);
+			qb.addParamFromRequest(Field.PROVINCE);
+			qb.addParamFromRequest(Field.POSTAL_CODE);
+			qb.addParamFromRequest(Field.LANGUAGE);
+			qb.addParamFromRequest(Field.HAS_CONSENT);
 
 			//Sets values into query
-			PreparedStatement ps = conn.prepareStatement(qb.generateQueryString());
+			String queryString = qb.generateQueryString();
+			PreparedStatement ps = conn.prepareStatement(queryString);
 			qb.fillPreparedStatement(ps);
 			ps.executeUpdate();
 

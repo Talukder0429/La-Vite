@@ -5,11 +5,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import helpers.HttpServletRequestHelper;
+
 public class QueryBuilder
 {
 	private List<QueryParameter> paramsList;
 	
 	private String tableName;
+	
+	private HttpServletRequestHelper request;
 	
 	
 	
@@ -21,6 +25,17 @@ public class QueryBuilder
 	}
 	
 	
+	
+	public void setRequestHelper(HttpServletRequestHelper request)
+	{
+		this.request = request;
+	}
+	
+	public void addParamFromRequest(String name)
+	{
+		String value = this.request.getParam(name);
+		this.addParam(name, value);
+	}
 	
 	public void addParam(String name, String value)
 	{

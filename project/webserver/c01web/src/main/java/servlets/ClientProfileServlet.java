@@ -63,7 +63,10 @@ public class ClientProfileServlet extends HttpServlet {
 			QueryBuilder qb = new QueryBuilder(Field.TABLE_CLIENT_PROFILE);
 			qb.setRequestHelper(helper);
 			
-			//TODO for each new field, must insert it into the query builder
+			// TODO
+			//////////////////////////////////////////////////////////////////////////////////////////////////////////
+			//////////////////////////////        NEW FIELDS GO HERE                                         /////////
+			//////////////////////////////////////////////////////////////////////////////////////////////////////////
 			qb.addParamFromRequest(Field.UNIQUE_IDENTIFIER);
 			qb.addParamFromRequest(Field.UNIQUE_IDENTIFIER_VALUE);
 			qb.addParamFromRequest(Field.DATE_OF_BIRTH);

@@ -1,6 +1,8 @@
-package queryhelper;
+package helpers;
 
 import javax.servlet.http.HttpServletRequest;
+
+import queryhelper.QueryBuilder;
 
 public class HttpServletRequestHelper
 {

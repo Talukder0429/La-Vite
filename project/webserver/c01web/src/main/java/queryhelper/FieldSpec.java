@@ -29,15 +29,8 @@ public final class FieldSpec
 	
 	
 	
-	//These methods are actually done this way since wherever type checks are used it will require its own piece for each type
-	//so gain nothing by generalizing all type checks into one method other than making parameters more complex 
-	public static final boolean IsString(String field)
+	public static final boolean isType(String field, String type)
 	{
-		return (FIELD_TYPES.get(field) == FIELDTYPE_STRING);
-	}
-	
-	public static final boolean IsBoolean(String field)
-	{
-		return (FIELD_TYPES.get(field) == FIELDTYPE_BOOLEAN);
+		return (FIELD_TYPES.get(field) == type);
 	}
 }

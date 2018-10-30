@@ -13,6 +13,18 @@ public class QueryParameter
 	
 	
 	
+	public String getName()
+	{
+		return this.name;
+	}
+	
+	public String getValue()
+	{
+		return this.value;
+	}
+	
+	
+	
 	//each new type has to have some method implemented here for it
 	public boolean isString()
 	{

@@ -28,11 +28,11 @@ public class QueryParameter
 	//each new type has to have some method implemented here for it
 	public boolean isString()
 	{
-		return (FieldSpec.isType(this.name, FieldSpec.FIELDTYPE_STRING));
+		return (Field.isType(this.name, Field.FIELDTYPE_STRING));
 	}
 	
 	public boolean isBoolean()
 	{
-		return (FieldSpec.isType(this.name, FieldSpec.FIELDTYPE_BOOLEAN));
+		return (Field.isType(this.name, Field.FIELDTYPE_BOOLEAN));
 	}
 }

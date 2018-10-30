@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-public final class FieldSpec
+public final class Field
 {
 	@SuppressWarnings("serial")
 	private static final Map<String, String> FIELD_TYPES = Collections.unmodifiableMap(

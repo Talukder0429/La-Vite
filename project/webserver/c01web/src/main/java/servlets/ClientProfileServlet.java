@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import queryhelper.FieldSpec;
+import queryhelper.Field;
 import queryhelper.HttpServletRequestHelper;
 import queryhelper.QueryBuilder;
 
@@ -87,26 +87,26 @@ public class ClientProfileServlet extends HttpServlet {
 						dbpass);
 				)
 		{
-			QueryBuilder qb = new QueryBuilder(FieldSpec.TABLE_CLIENT_PROFILE);
+			QueryBuilder qb = new QueryBuilder(Field.TABLE_CLIENT_PROFILE);
 			HttpServletRequestHelper helper = new HttpServletRequestHelper(request, qb);
 			
 			//for each new field, must insert it into the query builder
-			helper.addToQuery(FieldSpec.UNIQUE_IDENTIFIER);
-			helper.addToQuery(FieldSpec.UNIQUE_IDENTIFIER_VALUE);
-			helper.addToQuery(FieldSpec.DATE_OF_BIRTH);
-			helper.addToQuery(FieldSpec.PHONE_NUMBER);
-			helper.addToQuery(FieldSpec.HAS_EMAIL_ADDRESS);
-			helper.addToQuery(FieldSpec.EMAIL_ADDRESS);
-			helper.addToQuery(FieldSpec.STREET_NUMBER);
-			helper.addToQuery(FieldSpec.STREET_NAME);
-			helper.addToQuery(FieldSpec.STREET_TYPE);
-			helper.addToQuery(FieldSpec.STREET_DIRECTION);
-			helper.addToQuery(FieldSpec.UNIT);
-			helper.addToQuery(FieldSpec.CITY);
-			helper.addToQuery(FieldSpec.PROVINCE);
-			helper.addToQuery(FieldSpec.POSTAL_CODE);
-			helper.addToQuery(FieldSpec.LANGUAGE);
-			helper.addToQuery(FieldSpec.HAS_CONSENT);
+			helper.addToQuery(Field.UNIQUE_IDENTIFIER);
+			helper.addToQuery(Field.UNIQUE_IDENTIFIER_VALUE);
+			helper.addToQuery(Field.DATE_OF_BIRTH);
+			helper.addToQuery(Field.PHONE_NUMBER);
+			helper.addToQuery(Field.HAS_EMAIL_ADDRESS);
+			helper.addToQuery(Field.EMAIL_ADDRESS);
+			helper.addToQuery(Field.STREET_NUMBER);
+			helper.addToQuery(Field.STREET_NAME);
+			helper.addToQuery(Field.STREET_TYPE);
+			helper.addToQuery(Field.STREET_DIRECTION);
+			helper.addToQuery(Field.UNIT);
+			helper.addToQuery(Field.CITY);
+			helper.addToQuery(Field.PROVINCE);
+			helper.addToQuery(Field.POSTAL_CODE);
+			helper.addToQuery(Field.LANGUAGE);
+			helper.addToQuery(Field.HAS_CONSENT);
 
 			//Sets values into query
 			PreparedStatement ps = conn.prepareStatement(qb.generateQueryString());

@@ -28,7 +28,13 @@ public class QueryBuilder
 	
 	public String generateQueryString()
 	{
-		return "";
+		String result = "INSERT INTO ";
+		result += this.tableName;
+		result += this.generateParamsList();
+		result += " ";
+		result += this.generateQuestionMarks();
+		
+		return result;
 	}
 	
 	private String generateParamsList()

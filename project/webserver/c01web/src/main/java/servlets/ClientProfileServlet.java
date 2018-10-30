@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import helpers.DbConnectionHelper;
 import helpers.HttpServletRequestHelper;
 import queryhelper.Field;
 import queryhelper.QueryBuilder;
@@ -27,9 +28,7 @@ import java.net.URLDecoder;
 public class ClientProfileServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private String dbname;
-	private String dbuser;
-	private String dbpass;
+	private DbConnectionHelper dbHelper;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -38,26 +37,8 @@ public class ClientProfileServlet extends HttpServlet {
 		super();
 		try
 		{
-			String s = getClass().getName();
-			int i = s.lastIndexOf(".");
-			if(i > -1) s = s.substring(i + 1);
-			s = s + ".class";
-			System.out.println("name " +s);
-			String testPath = this.getClass().getResource(s).toString();
-			System.out.println(testPath);
-			String realpath = URLDecoder.decode(testPath.substring(6), "UTF-8");
-			System.out.println(realpath);
-			
-			Path p = Paths.get(realpath);
-			Path folder = p.getParent();
-			System.out.println(folder.toString());
-			File config = new File(folder.toString() + "\\" + "dbconfig.txt");
-
-			Scanner sc = new Scanner(config);
-			dbname = sc.nextLine();
-			dbuser = sc.nextLine();
-			dbpass = sc.nextLine();
-			sc.close();
+			dbHelper = new DbConnectionHelper();
+			dbHelper.findDatabaseInfo();
 		}
 		catch (Exception e)
 		{
@@ -71,7 +52,6 @@ public class ClientProfileServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -82,16 +62,14 @@ public class ClientProfileServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try (
-				Connection conn = DriverManager.getConnection(
-						"jdbc:mysql://localhost:3306/" + dbname + "?useSSL=false&allowPublicKeyRetrieval=true", dbuser,
-						dbpass);
+				Connection conn = this.dbHelper.connect();
 				)
 		{
 			HttpServletRequestHelper helper = new HttpServletRequestHelper(request);
 			QueryBuilder qb = new QueryBuilder(Field.TABLE_CLIENT_PROFILE);
 			qb.setRequestHelper(helper);
 			
-			//for each new field, must insert it into the query builder
+			//TODO for each new field, must insert it into the query builder
 			qb.addParamFromRequest(Field.UNIQUE_IDENTIFIER);
 			qb.addParamFromRequest(Field.UNIQUE_IDENTIFIER_VALUE);
 			qb.addParamFromRequest(Field.DATE_OF_BIRTH);

@@ -23,6 +23,11 @@ public final class FieldSpec
 	
 	
 	
+	//Each new table has it's referenced name go here
+	public static final String TABLE_CLIENT_PROFILE = "client_profile";
+	
+	
+	
 	//Each new field has it's referenced name go here
 	public static final String UNIQUE_IDENTIFIER = "unique_identifier";
 	public static final String UNIQUE_IDENTIFIER_VALUE = "unique_identifier_value";

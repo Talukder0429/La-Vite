@@ -33,7 +33,7 @@ public class QueryBuilder
 		String result = "INSERT INTO ";
 		result += this.tableName;
 		result += this.generateParamsList();
-		result += " ";
+		result += " VALUES";
 		result += this.generateQuestionMarks();
 		
 		return result;

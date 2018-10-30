@@ -109,8 +109,10 @@ public class ClientProfileServlet extends HttpServlet {
 			helper.addToQuery(FieldSpec.HAS_CONSENT);
 
 			//Sets values into query
-			PreparedStatement querySql = conn.prepareStatement(qb.generateQueryString());
-			querySql.executeUpdate();
+			PreparedStatement ps = conn.prepareStatement(qb.generateQueryString());
+			System.out.println(qb.generateQueryString());
+			qb.fillPreparedStatement(ps);
+			ps.executeUpdate();
 
 			response.setStatus(HttpServletResponse.SC_OK);
 		} catch (SQLException e) {

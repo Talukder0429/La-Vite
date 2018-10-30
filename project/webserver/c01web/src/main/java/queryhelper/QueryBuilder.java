@@ -1,5 +1,7 @@
 package queryhelper;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,6 +37,15 @@ public class QueryBuilder
 		result += this.generateQuestionMarks();
 		
 		return result;
+	}
+	
+	public void fillPreparedStatement(PreparedStatement ps) throws SQLException
+	{
+		for (int a = 0; a < this.paramsList.size(); a++)
+		{
+			QueryParameter qp = this.paramsList.get(a);
+			ps.setString(a + 1, qp.getValue());
+		}
 	}
 	
 	private String generateParamsList()

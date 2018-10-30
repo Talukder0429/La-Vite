@@ -42,6 +42,7 @@ public class DbConnectionHelper
 		this.dbName = sc.nextLine();
 		this.dbUsername = sc.nextLine();
 		this.dbPassword = sc.nextLine();
+		sc.close();
 	}
 	
 	public Connection connect() throws SQLException

@@ -1,9 +1,6 @@
 package servlets;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,9 +14,6 @@ import queryhelper.Field;
 import queryhelper.QueryBuilder;
 
 import java.sql.*;
-import java.util.Scanner;
-
-import java.net.URLDecoder;
 
 /**
  * Servlet implementation class ClientProfileServlet
@@ -84,8 +78,8 @@ public class ClientProfileServlet extends HttpServlet {
 			qb.addParamFromRequest(Field.CITY);
 			qb.addParamFromRequest(Field.PROVINCE);
 			qb.addParamFromRequest(Field.POSTAL_CODE);
-			qb.addParamFromRequest(Field.LANGUAGE);
-			qb.addParamFromRequest(Field.HAS_CONSENT);
+			qb.addParamFromRequest(Field.OFFICIAL_LANGUAGE_OF_PREFERENCE);
+			qb.addParamFromRequest(Field.HAS_CONSENT_FOR_FUTURE_RESEARCH_OR_CONSULTATION);
 
 			//Sets values into query
 			String queryString = qb.generateQueryString();

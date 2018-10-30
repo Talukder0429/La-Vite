@@ -20,9 +20,36 @@ public class QueryBuilder
 	
 	
 	
-	public void AddParam(String name, String value)
+	public void addParam(String name, String value)
 	{
 		QueryParameter qp = new QueryParameter(name, value);
 		this.paramsList.add(qp);
+	}
+	
+	public String generateQueryString()
+	{
+		return "";
+	}
+	
+	private String generateParamsList()
+	{
+		String result = "(";
+		
+		for (int a = 0; a < this.paramsList.size(); a++)
+		{
+			QueryParameter qp = this.paramsList.get(a);
+			String add = qp.getName();
+			
+			if (a != this.paramsList.size() - 1) //not last field
+			{
+				add += ", ";
+			}
+			
+			result += add;
+		}
+		
+		result += ")";
+		
+		return result;
 	}
 }

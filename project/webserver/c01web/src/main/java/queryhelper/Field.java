@@ -30,11 +30,11 @@ public final class Field
 		        put(HAS_CONSENT_FOR_FUTURE_RESEARCH_OR_CONSULTATION, FIELDTYPE_BOOLEAN);
 		        
 		        //Fields that have a specific list of choices go here (ones that have drop-down lists)
-		        put(UNIQUE_IDENTIFIER, FIELDTYPE_STRING);
-		        put(STREET_TYPE, FIELDTYPE_STRING);
-		        put(STREET_DIRECTION, FIELDTYPE_STRING);
-		        put(PROVINCE, FIELDTYPE_STRING);
-		        put(OFFICIAL_LANGUAGE_OF_PREFERENCE, FIELDTYPE_STRING);
+		        put(UNIQUE_IDENTIFIER, FIELDTYPE_SELECT);
+		        put(STREET_TYPE, FIELDTYPE_SELECT);
+		        put(STREET_DIRECTION, FIELDTYPE_SELECT);
+		        put(PROVINCE, FIELDTYPE_SELECT);
+		        put(OFFICIAL_LANGUAGE_OF_PREFERENCE, FIELDTYPE_SELECT);
 		    }});
 	
 	
@@ -42,6 +42,7 @@ public final class Field
 	//Each new type goes here
 	public static final String FIELDTYPE_STRING = "string";
 	public static final String FIELDTYPE_BOOLEAN = "boolean";
+	public static final String FIELDTYPE_SELECT = "select";
 	
 	
 	

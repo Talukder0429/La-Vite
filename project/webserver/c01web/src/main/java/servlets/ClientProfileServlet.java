@@ -110,7 +110,6 @@ public class ClientProfileServlet extends HttpServlet {
 
 			//Sets values into query
 			PreparedStatement ps = conn.prepareStatement(qb.generateQueryString());
-			System.out.println(qb.generateQueryString());
 			qb.fillPreparedStatement(ps);
 			ps.executeUpdate();
 

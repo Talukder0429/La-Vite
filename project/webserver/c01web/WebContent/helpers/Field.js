@@ -59,7 +59,7 @@ function mapTypes()
 	setType(OFFICIAL_LANGUAGE_OF_PREFERENCE, FIELDTYPE_SELECT);
 }
 
-function mapNames()
+/*function mapNames()
 {
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////		  NEW FIELDS GO HERE                                         /////////
@@ -85,11 +85,14 @@ function mapNames()
 	autoGenerateName(STREET_DIRECTION);
 	autoGenerateName(PROVINCE);
 	autoGenerateName(OFFICIAL_LANGUAGE_OF_PREFERENCE);
-}
+}*/
 
 function setType(field, type)
 {
 	types[field] = type;
+	
+	//this should be removed in the future, but for now it saves a lot of lines
+	autoGenerateName(field);
 }
 
 function getType(field)

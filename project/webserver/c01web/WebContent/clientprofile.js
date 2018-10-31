@@ -1,9 +1,10 @@
 var elements = new Array();
+var servletUrl = "ClientProfile"
 
 function Init()
 {
 	mapTypes();
-	mapNames();
+	//mapNames();
 	overrideNames();
 	
 	findForm();
@@ -43,7 +44,7 @@ function generatePageElements()
 
 function submit()
 {
-	sendRequest("ClientProfile");
+	sendRequest(servletUrl);
 }
 
 //important leave this

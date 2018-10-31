@@ -112,7 +112,17 @@ function Init()
 {
 	mapTypes();
 	mapNames();
+	overrideNames();
+	
+	findForm();
+	
 	generatePageElements();
+}
+
+function overrideNames()
+{
+	//Any fields for which you want to change the display name go here
+	//ex. setName(UNIQUE_IDENTIFIER, "blah");
 }
 
 function generatePageElements()

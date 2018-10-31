@@ -61,7 +61,14 @@ function mapTypes()
 
 function mapLists()
 {
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////		  NEW LISTS GO HERE                                          /////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////
+	mapListToField(UNIQUE_IDENTIFIER, LIST_UNIQUE_IDENTIFIER);
+	mapListToField(STREET_TYPE, LIST_STREET_TYPE);
+	mapListToField(STREET_DIRECTION, LIST_STREET_DIRECTION);
 	mapListToField(PROVINCE, LIST_PROVINCE);
+	mapListToField(OFFICIAL_LANGUAGE_OF_PREFERENCE, LIST_OFFICIAL_LANGUAGE_OF_PREFERENCE);
 }
 
 /*function mapNames()

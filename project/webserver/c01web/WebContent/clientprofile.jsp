@@ -37,6 +37,6 @@
 		
 		
 		<br />
-		<input type="submit" onclick="SubmitData()">
+		<input type="submit" onclick="submit()">
 	</body>
 </html>

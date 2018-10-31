@@ -63,6 +63,8 @@ function generateFieldBoolean(field)
 	input1.name = field;
 	input1.value = "False";
 	
+	input1.checked = true;
+	
 	var input2title = document.createElement("span");
 	input2title.innerHTML = " Yes";
 	

@@ -63,7 +63,7 @@ function generateFieldBoolean(field)
 	input1.name = field;
 	input1.value = "False";
 	
-	input1.checked = true;
+	input1.checked = true; //default value
 	
 	var input2title = document.createElement("span");
 	input2title.innerHTML = " Yes";
@@ -89,5 +89,27 @@ function generateFieldBoolean(field)
 //for now just creates textbox, and returns it
 function generateFieldSelect(field)
 {
-	return generateFieldString(field);
+	var title = document.createElement("span");
+	title.innerHTML = getName(field);
+	
+	var select = document.createElement("select");
+	select.id = field;
+	
+	var options = getFieldList(field);
+	var optionElements = [];
+	for (a = 0; a < options.length; a++)
+	{
+		var option = options[a];
+		var element = document.createElement("option");
+		element.value = option;
+		element.innerHTML = option;
+		select.appendChild(element);
+		optionElements.push(element);
+	} //by default the 0th element is selected
+	
+	form.appendChild(title);
+	form.appendChild(select);
+	form.appendChild(document.createElement("br"));
+	
+	return optionElements;
 }

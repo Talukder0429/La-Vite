@@ -62,3 +62,24 @@ function setType(field, type)
 {
 	mapping[field] = type;
 }
+
+function getType(field)
+{
+	return mapping[field];
+}
+
+//Each new type has to have a function to check if field is of that type
+function isString(field)
+{
+	return (getType(field) === FIELDTYPE_STRING);
+}
+
+function isBoolean(field)
+{
+	return (getType(field) === FIELDTYPE_BOOLEAN);
+}
+
+function isSelect(field)
+{
+	return (getType(field) === FIELDTYPE_SELECT);
+}

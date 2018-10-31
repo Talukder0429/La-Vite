@@ -2,6 +2,7 @@
 	<head>
 		<script type="text/javascript" src="clientprofile.js"></script>
 		<script type="text/javascript" src="Field.js"></script>
+		<script type="text/javascript" src="FieldBuilder.js"></script>
 	</head>
 	<!--<body onload="FindFields()">
 		<span>Unique Identifier: </span><textarea id="unique_identifier" rows="1" cols="35"></textarea><br />

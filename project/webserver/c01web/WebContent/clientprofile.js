@@ -106,10 +106,17 @@ function FindFields()
 	
 	Init();
 }*/
+var elements = new Array();
 
 function Init()
 {
 	createMapping();
+	generatePageElements();
+}
+
+function generatePageElements()
+{
+	generateField(UNIQUE_IDENTIFIER);
 }
 
 //important leave this

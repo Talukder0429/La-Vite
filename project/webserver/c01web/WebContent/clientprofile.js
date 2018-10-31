@@ -1,4 +1,4 @@
-// elements
+/*// elements
 var unique_identifier;
 var unique_identifier_value;
 var date_of_birth;
@@ -105,4 +105,8 @@ function FindFields()
 	has_consent = document.getElementsByName("has_consent");
 	
 	Init();
+}*/
+
+function Init()
+{
 }

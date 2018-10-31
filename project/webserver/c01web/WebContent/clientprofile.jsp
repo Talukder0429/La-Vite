@@ -3,7 +3,7 @@
 		<script type="text/javascript" src="clientprofile.js"></script>
 		<!--other script and also external css included over here-->
 	</head>
-	<body onload="FindFields()">
+	<!--<body onload="FindFields()">
 		<span>Unique Identifier: </span><textarea id="unique_identifier" rows="1" cols="35"></textarea><br />
 		<span>Unique Identifier Value: </span><textarea id="unique_identifier_value" rows="1" cols="35"></textarea><br />
 		<span>Date of Birth: </span><textarea id="date_of_birth" rows="1" cols="35"></textarea><br />
@@ -27,6 +27,9 @@
 		<div id="has_consent">
 			<input type="radio" name="has_consent" value="False"> No<br>
 			<input type="radio" name="has_consent" value="True"> Yes<br>
+		</div>-->
+	<body>
+		<div id="form" onload="Init()">
 		</div>
 		
 		

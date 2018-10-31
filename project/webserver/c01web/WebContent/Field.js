@@ -28,9 +28,10 @@ const STREET_DIRECTION = "street_direction";
 const PROVINCE = "province";
 const OFFICIAL_LANGUAGE_OF_PREFERENCE = "official_language_of_preference";
 
-var mapping = new Object();
+var types = new Object();
+var names = new Object();
 
-function createMapping()
+function mapTypes()
 {
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////		  NEW FIELDS GO HERE                                         /////////
@@ -58,14 +59,63 @@ function createMapping()
 	setType(OFFICIAL_LANGUAGE_OF_PREFERENCE, FIELDTYPE_SELECT);
 }
 
+function mapNames()
+{
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////		  NEW FIELDS GO HERE                                         /////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////
+	//Regular string fields you fill on your own go here
+	autoGenerateName(UNIQUE_IDENTIFIER_VALUE);
+	autoGenerateName(DATE_OF_BIRTH);
+	autoGenerateName(PHONE_NUMBER);
+	autoGenerateName(EMAIL_ADDRESS);
+	autoGenerateName(STREET_NUMBER);
+	autoGenerateName(STREET_NAME);
+	autoGenerateName(UNIT);
+	autoGenerateName(CITY);
+	autoGenerateName(POSTAL_CODE);
+	
+	//Boolean fields go here
+	autoGenerateName(HAS_EMAIL_ADDRESS);
+	autoGenerateName(HAS_CONSENT_FOR_FUTURE_RESEARCH_OR_CONSULTATION);
+	
+	//Fields that have a specific list of choices go here (ones that have drop-down lists)
+	autoGenerateName(UNIQUE_IDENTIFIER);
+	autoGenerateName(STREET_TYPE);
+	autoGenerateName(STREET_DIRECTION);
+	autoGenerateName(PROVINCE);
+	autoGenerateName(OFFICIAL_LANGUAGE_OF_PREFERENCE);
+}
+
 function setType(field, type)
 {
-	mapping[field] = type;
+	types[field] = type;
 }
 
 function getType(field)
 {
-	return mapping[field];
+	return types[field];
+}
+
+function setName(field, name)
+{
+	names[field] = name;
+}
+
+function getName(field)
+{
+	return names[field];
+}
+
+function autoGenerateName(field)
+{
+	//nifty solution I found to capitalize first letter of each word
+	var result = field.toLowerCase()
+		.split('_')
+		.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+		.join(' ');
+	result += ": ";
+	setName(field, result);
 }
 
 //Each new type has to have a function to check if field is of that type

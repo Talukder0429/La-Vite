@@ -110,7 +110,8 @@ var elements = new Array();
 
 function Init()
 {
-	createMapping();
+	mapTypes();
+	mapNames();
 	generatePageElements();
 }
 

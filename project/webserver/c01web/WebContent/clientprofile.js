@@ -128,6 +128,7 @@ function overrideNames()
 function generatePageElements()
 {
 	generateField(UNIQUE_IDENTIFIER);
+	generateField(HAS_EMAIL_ADDRESS);
 }
 
 //important leave this

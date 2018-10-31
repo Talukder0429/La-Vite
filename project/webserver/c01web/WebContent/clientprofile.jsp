@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<script type="text/javascript" src="clientprofile.js"></script>
-		<!--other script and also external css included over here-->
+		<script type="text/javascript" src="Field.js"></script>
 	</head>
 	<!--<body onload="FindFields()">
 		<span>Unique Identifier: </span><textarea id="unique_identifier" rows="1" cols="35"></textarea><br />
@@ -29,7 +29,7 @@
 			<input type="radio" name="has_consent" value="True"> Yes<br>
 		</div>-->
 	<body>
-		<div id="form" onload="Init()">
+		<div id="form">
 		</div>
 		
 		

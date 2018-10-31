@@ -109,4 +109,8 @@ function FindFields()
 
 function Init()
 {
+	createMapping();
 }
+
+//important leave this
+window.onload = Init;

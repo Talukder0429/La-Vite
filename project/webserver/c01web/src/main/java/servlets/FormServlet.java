@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import helpers.DbConnectionHelper;
 import helpers.HttpServletRequestHelper;
-import queryhelper.Field;
 import queryhelper.QueryBuilder;
 
 public abstract class FormServlet extends HttpServlet
@@ -20,10 +21,16 @@ public abstract class FormServlet extends HttpServlet
 	private static final long serialVersionUID = 1L;
 
 	private DbConnectionHelper dbHelper;
+	
+	private List<String> fields;
+	private String tableName;
 
 	public FormServlet()
 	{
 		super();
+		
+		this.fields = new ArrayList<String>();
+		
 		try
 		{
 			dbHelper = new DbConnectionHelper();
@@ -35,36 +42,21 @@ public abstract class FormServlet extends HttpServlet
 		}
 	}
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response, String tableName) throws ServletException, IOException
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		try (
 				Connection conn = this.dbHelper.connect();
 			)
 		{
 			HttpServletRequestHelper helper = new HttpServletRequestHelper(request);
-			QueryBuilder qb = new QueryBuilder(tableName);
+			QueryBuilder qb = new QueryBuilder(this.tableName);
 			qb.setRequestHelper(helper);
 			
-			// TODO
-			//////////////////////////////////////////////////////////////////////////////////////////////////////////
-			//////////////////////////////        NEW FIELDS GO HERE                                         /////////
-			//////////////////////////////////////////////////////////////////////////////////////////////////////////
-			qb.addParamFromRequest(Field.UNIQUE_IDENTIFIER);
-			qb.addParamFromRequest(Field.UNIQUE_IDENTIFIER_VALUE);
-			qb.addParamFromRequest(Field.DATE_OF_BIRTH);
-			qb.addParamFromRequest(Field.PHONE_NUMBER);
-			qb.addParamFromRequest(Field.HAS_EMAIL_ADDRESS);
-			qb.addParamFromRequest(Field.EMAIL_ADDRESS);
-			qb.addParamFromRequest(Field.STREET_NUMBER);
-			qb.addParamFromRequest(Field.STREET_NAME);
-			qb.addParamFromRequest(Field.STREET_TYPE);
-			qb.addParamFromRequest(Field.STREET_DIRECTION);
-			qb.addParamFromRequest(Field.UNIT);
-			qb.addParamFromRequest(Field.CITY);
-			qb.addParamFromRequest(Field.PROVINCE);
-			qb.addParamFromRequest(Field.POSTAL_CODE);
-			qb.addParamFromRequest(Field.OFFICIAL_LANGUAGE_OF_PREFERENCE);
-			qb.addParamFromRequest(Field.HAS_CONSENT_FOR_FUTURE_RESEARCH_OR_CONSULTATION);
+			//this adds all of the fields and their values to the query
+			for (String field : this.fields)
+			{
+				qb.addParamFromRequest(field);
+			}
 
 			//Sets values into query
 			String queryString = qb.generateQueryString();
@@ -78,5 +70,15 @@ public abstract class FormServlet extends HttpServlet
 			response.setStatus(HttpServletResponse.SC_CONFLICT);
 			response.getOutputStream().println(e.getMessage());
 		}
+	}
+	
+	protected void addField(String field)
+	{
+		this.fields.add(field);
+	}
+	
+	protected void setTableName(String tableName)
+	{
+		this.tableName = tableName;
 	}
 }

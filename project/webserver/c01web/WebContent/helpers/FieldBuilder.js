@@ -73,8 +73,10 @@ function generateFieldBoolean(field)
 	
 	div.appendChild(input1);
 	div.appendChild(input1title);
+	div.appendChild(document.createElement("br"));
 	div.appendChild(input2);
 	div.appendChild(input2title);
+	div.appendChild(document.createElement("br"));
 	
 	form.appendChild(title);
 	form.appendChild(div);

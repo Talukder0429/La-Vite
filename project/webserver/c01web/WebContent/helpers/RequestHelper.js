@@ -1,6 +1,7 @@
 var elements = new Object();
 
-function addFieldElement(fieldName, fieldElement)
+function addFieldElement(fieldName)
 {
-	elements[fieldName, fieldElement];
+	var element = generateField(fieldName);
+	elements[fieldName, element];
 }

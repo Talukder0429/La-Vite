@@ -27,7 +27,7 @@ function generateField(field)
 }
 
 //Each type has to be able to generate an element for itself
-//returns textbox element
+//creates and returns textbox element
 function generateFieldString(field)
 {
 	//creates title for element
@@ -46,7 +46,7 @@ function generateFieldString(field)
 	return textbox;
 }
 
-//returns arary of size 2, 0 element is false, 1 is true
+//creates Yes/No radio button pair, returns both buttons, 0 element is No, 1 is Yes
 function generateFieldBoolean(field)
 {
 	var title = document.createElement("span");
@@ -86,7 +86,7 @@ function generateFieldBoolean(field)
 	return [input1, input2];
 }
 
-//for now just creates textbox, and returns it
+//creates and returns drop down list
 function generateFieldSelect(field)
 {
 	var title = document.createElement("span");

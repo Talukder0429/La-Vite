@@ -1,17 +1,5 @@
-var elements = new Array();
+//change this to your own servlet mapped url
 var servletUrl = "ClientProfile"
-
-function Init()
-{
-	mapTypes();
-	//mapNames();
-	mapLists();
-	overrideNames();
-	
-	findForm();
-	
-	generatePageElements();
-}
 
 function overrideNames()
 {
@@ -42,11 +30,3 @@ function generatePageElements()
 	addFieldElement(OFFICIAL_LANGUAGE_OF_PREFERENCE);
 	addFieldElement(HAS_CONSENT_FOR_FUTURE_RESEARCH_OR_CONSULTATION);
 }
-
-function submit()
-{
-	sendRequest(servletUrl);
-}
-
-//important leave this
-window.onload = Init;

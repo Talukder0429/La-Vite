@@ -1,3 +1,6 @@
+var types = new Object();
+var names = new Object();
+
 //Each new type goes here
 const FIELDTYPE_STRING = "string";
 const FIELDTYPE_BOOLEAN = "boolean";
@@ -27,9 +30,6 @@ const STREET_TYPE = "street_type";
 const STREET_DIRECTION = "street_direction";
 const PROVINCE = "province";
 const OFFICIAL_LANGUAGE_OF_PREFERENCE = "official_language_of_preference";
-
-var types = new Object();
-var names = new Object();
 
 function mapTypes()
 {

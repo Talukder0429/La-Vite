@@ -29,7 +29,7 @@ public abstract class FormServlet extends HttpServlet
 	{
 		super();
 		
-		this.fields = new ArrayList<String>();
+		this.clearFields();
 		
 		try
 		{
@@ -61,6 +61,7 @@ public abstract class FormServlet extends HttpServlet
 			//Sets values into query
 			String queryString = qb.generateQueryString();
 			PreparedStatement ps = conn.prepareStatement(queryString);
+			System.out.println(queryString);
 			qb.fillPreparedStatement(ps);
 			ps.executeUpdate();
 
@@ -70,6 +71,11 @@ public abstract class FormServlet extends HttpServlet
 			response.setStatus(HttpServletResponse.SC_CONFLICT);
 			response.getOutputStream().println(e.getMessage());
 		}
+	}
+	
+	protected void clearFields()
+	{
+		this.fields = new ArrayList<String>();
 	}
 	
 	protected void addField(String field)

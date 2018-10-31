@@ -39,8 +39,10 @@ public class ClientProfileServlet extends FormServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		super.clearFields();
+		
 		//set table to be used here
-		this.setTableName(Field.TABLE_CLIENT_PROFILE);
+		super.setTableName(Field.TABLE_CLIENT_PROFILE);
 		
 		// TODO
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////

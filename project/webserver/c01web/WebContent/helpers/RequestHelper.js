@@ -77,13 +77,13 @@ function getFieldValue(field)
 //each new type needs a way to extract the value
 function getStringFieldValue(field)
 {
-	var textbox = elements[fields.indexOf(field)];
+	var textbox = getElement(field);
 	return textbox.value;
 }
 
 function getBooleanFieldValue(field)
 {
-	var buttons = elements[fields.indexOf(field)];
+	var buttons = getElement(field);
 	var button0 = buttons[0];
 	var button1 = buttons[1];
 	
@@ -99,5 +99,12 @@ function getBooleanFieldValue(field)
 
 function getSelectFieldValue(field)
 {
-	return getStringFieldValue(field);
+	var select = getElement(field);
+	var option = select.options[select.selectedIndex];
+	return option.innerHTML;
+}
+
+function getElement(field)
+{
+	return elements[fields.indexOf(field)];
 }

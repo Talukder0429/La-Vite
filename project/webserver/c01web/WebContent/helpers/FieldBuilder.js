@@ -96,7 +96,6 @@ function generateFieldSelect(field)
 	select.id = field;
 	
 	var options = getFieldList(field);
-	var optionElements = [];
 	for (a = 0; a < options.length; a++)
 	{
 		var option = options[a];
@@ -104,12 +103,11 @@ function generateFieldSelect(field)
 		element.value = option;
 		element.innerHTML = option;
 		select.appendChild(element);
-		optionElements.push(element);
 	} //by default the 0th element is selected
 	
 	form.appendChild(title);
 	form.appendChild(select);
 	form.appendChild(document.createElement("br"));
 	
-	return optionElements;
+	return select;
 }

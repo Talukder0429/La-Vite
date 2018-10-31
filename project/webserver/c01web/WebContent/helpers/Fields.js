@@ -59,6 +59,11 @@ function mapTypes()
 	setType(OFFICIAL_LANGUAGE_OF_PREFERENCE, FIELDTYPE_SELECT);
 }
 
+function mapLists()
+{
+	mapListToField(PROVINCE, LIST_PROVINCE);
+}
+
 /*function mapNames()
 {
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////

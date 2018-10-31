@@ -5,6 +5,7 @@ function Init()
 {
 	mapTypes();
 	//mapNames();
+	mapLists();
 	overrideNames();
 	
 	findForm();
@@ -24,7 +25,7 @@ function generatePageElements()
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////		  NEW FIELDS GO HERE                                         /////////
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
-	addFieldElement(UNIQUE_IDENTIFIER);
+	//addFieldElement(UNIQUE_IDENTIFIER);
 	addFieldElement(UNIQUE_IDENTIFIER_VALUE);
 	addFieldElement(DATE_OF_BIRTH);
 	addFieldElement(PHONE_NUMBER);
@@ -32,13 +33,13 @@ function generatePageElements()
 	addFieldElement(EMAIL_ADDRESS);
 	addFieldElement(STREET_NUMBER);
 	addFieldElement(STREET_NAME);
-	addFieldElement(STREET_TYPE);
-	addFieldElement(STREET_DIRECTION);
+	//addFieldElement(STREET_TYPE);
+	//addFieldElement(STREET_DIRECTION);
 	addFieldElement(UNIT);
 	addFieldElement(CITY);
 	addFieldElement(PROVINCE);
 	addFieldElement(POSTAL_CODE);
-	addFieldElement(OFFICIAL_LANGUAGE_OF_PREFERENCE);
+	//addFieldElement(OFFICIAL_LANGUAGE_OF_PREFERENCE);
 	addFieldElement(HAS_CONSENT_FOR_FUTURE_RESEARCH_OR_CONSULTATION);
 }
 

@@ -49,7 +49,14 @@ public final class Field
 		        put(END_DATE_YYYY_MM_DD, FIELDTYPE_STRING);
 		        put(PROJECTED_END_DATE_YYYY_MM_DD, FIELDTYPE_STRING);
 		        put(START_DATE_OF_SERVICE_YYYY_MM_DD, FIELDTYPE_STRING);
-		        	//
+		        
+		        	//207-309
+		        put(NUMBER_OF_IRCC_FUNDED_SPOTS_IN_COURSE, FIELDTYPE_STRING);
+				put(COURSE_START_DATE_YYYY_MM_DD, FIELDTYPE_STRING);
+				put(COURSE_END_DATE_YYYY_MM_DD, FIELDTYPE_STRING);
+				put(CONTACT_NAME, FIELDTYPE_STRING);
+				put(TELEPHONE_EXTENSION, FIELDTYPE_STRING);
+				put(DATE_CLIENT_EXITED_COURSE_YYYY_MM_DD, FIELDTYPE_STRING);
 		        
 		        //Boolean fields go here
 		        put(HAS_EMAIL_ADDRESS, FIELDTYPE_BOOLEAN);
@@ -169,8 +176,34 @@ public final class Field
 		        put(COMMUNITY_ENGAGEMENT_REFERRALS, FIELDTYPE_BOOLEAN);
 		        put(BECOMING_A_CANADIAN_CITIZEN, FIELDTYPE_BOOLEAN);
 		        put(BECOMING_A_CANADIAN_CITIZEN_REFERRALS, FIELDTYPE_BOOLEAN);
-		        	//
 		        
+		        	// 207 - 309
+		        put(SUPPORT_SERVICES_AVAILABLE_FOR_CLIENT_IN_THIS_COURSE, FIELDTYPE_BOOLEAN);
+				put(SCHEDULE_MORNING, FIELDTYPE_BOOLEAN);
+				put(SCHEDULE_AFTERNOON, FIELDTYPE_BOOLEAN);
+				put(SCHEDULE_EVENING, FIELDTYPE_BOOLEAN);
+				put(SCHEDULE_WEEKEND, FIELDTYPE_BOOLEAN);
+				put(SCHEDULE_ANYTIME, FIELDTYPE_BOOLEAN);
+				put(SCHEDULE_ONLINE, FIELDTYPE_BOOLEAN);
+				put(COURSE_DIRECTED_AT_A_SPECIFIC_TARGET_GROUP, FIELDTYPE_BOOLEAN);
+				put(CHILDREN_0_14_YRS, FIELDTYPE_BOOLEAN);
+				put(YOUTH_15_24_YRS, FIELDTYPE_BOOLEAN);
+				put(SENIOR, FIELDTYPE_BOOLEAN);
+				put(GENDER_SPECIFIC, FIELDTYPE_BOOLEAN);
+				put(REFUGEES, FIELDTYPE_BOOLEAN);
+				put(OFFICIAL_LANGUAGE_MINORITIES, FIELDTYPE_BOOLEAN);
+				put(ETHNIC_CULTURAL_LINGUISTIC_GROUP, FIELDTYPE_BOOLEAN);
+				put(DEAF_OR_HARD_OF_HEARING, FIELDTYPE_BOOLEAN);
+				put(BLIND_OR_PARTIALLY_SIGHTED, FIELDTYPE_BOOLEAN);
+				put(CLIENTS_WITH_OTHER_IMPAIRMENTS_PHYSICAL_MENTAL, FIELDTYPE_BOOLEAN);
+				put(LESBIAN_GAY_BISEXUAL_TRANSGENDER_QUEER_LGBTQ, FIELDTYPE_BOOLEAN);
+				put(FAMILIES_PARENTS, FIELDTYPE_BOOLEAN);
+				put(CLIENTS_WITH_INTERNATIONAL_TRAINING_IN_A_REGULATED_PROFESSION, FIELDTYPE_BOOLEAN);
+				put(CLIENTS_WITH_INTERNATIONAL_TRAINING_IN_A_REGULATED_TRADE, FIELDTYPE_BOOLEAN);
+				put(MATERIALS_USED_IN_COURSE, FIELDTYPE_BOOLEAN);
+				put(CITIZENSHIP_PREPARATION, FIELDTYPE_BOOLEAN);
+				put(PBLA_LANGUAGE_COMPANION, FIELDTYPE_BOOLEAN);
+				
 		        //Fields that have a specific list of choices go here (ones that have drop-down lists)
 		        put(UNIQUE_IDENTIFIER, FIELDTYPE_SELECT);
 		        put(STREET_TYPE, FIELDTYPE_SELECT);
@@ -238,7 +271,79 @@ public final class Field
 		        put(TOTAL_LENGTH_OF_ORIENTATION_HOURS, FIELDTYPE_SELECT);
 		        put(TOTAL_LENGTH_OF_ORIENTATION_MINUTES, FIELDTYPE_SELECT);
 		        put(NUMBER_OF_CLIENTS_IN_GROUP, FIELDTYPE_SELECT);
-		        	//
+		        	//207 - 309
+		        put(NEW_STUDENTS_CAN_ENROL_IN_THE_COURSE, FIELDTYPE_SELECT);
+				put(LISTENING_SKILL_LEVEL_1, FIELDTYPE_SELECT);
+				put(LISTENING_SKILL_LEVEL_2, FIELDTYPE_SELECT);
+				put(LISTENING_SKILL_LEVEL_3, FIELDTYPE_SELECT);
+				put(LISTENING_SKILL_LEVEL_4, FIELDTYPE_SELECT);
+				put(LISTENING_SKILL_LEVEL_5, FIELDTYPE_SELECT);
+				put(LISTENING_SKILL_LEVEL_6, FIELDTYPE_SELECT);
+				put(LISTENING_SKILL_LEVEL_7, FIELDTYPE_SELECT);
+				put(LISTENING_SKILL_LEVEL_8, FIELDTYPE_SELECT);
+				put(LISTENING_SKILL_LEVEL_9, FIELDTYPE_SELECT);
+				put(LISTENING_SKILL_LEVEL_10, FIELDTYPE_SELECT);
+				put(LISTENING_SKILL_LEVEL_11, FIELDTYPE_SELECT);
+				put(LISTENING_SKILL_LEVEL_12, FIELDTYPE_SELECT);
+				put(SPEAKING_SKILL_LEVEL_1, FIELDTYPE_SELECT);
+				put(SPEAKING_SKILL_LEVEL_2, FIELDTYPE_SELECT);
+				put(SPEAKING_SKILL_LEVEL_3, FIELDTYPE_SELECT);
+				put(SPEAKING_SKILL_LEVEL_4, FIELDTYPE_SELECT);
+				put(SPEAKING_SKILL_LEVEL_5, FIELDTYPE_SELECT);
+				put(SPEAKING_SKILL_LEVEL_6, FIELDTYPE_SELECT);
+				put(SPEAKING_SKILL_LEVEL_7, FIELDTYPE_SELECT);
+				put(SPEAKING_SKILL_LEVEL_8, FIELDTYPE_SELECT);
+				put(SPEAKING_SKILL_LEVEL_9, FIELDTYPE_SELECT);
+				put(SPEAKING_SKILL_LEVEL_10, FIELDTYPE_SELECT);
+				put(SPEAKING_SKILL_LEVEL_11, FIELDTYPE_SELECT);
+				put(SPEAKING_SKILL_LEVEL_12, FIELDTYPE_SELECT);
+				put(READING_SKILL_LEVEL_1, FIELDTYPE_SELECT);
+				put(READING_SKILL_LEVEL_2, FIELDTYPE_SELECT);
+				put(READING_SKILL_LEVEL_3, FIELDTYPE_SELECT);
+				put(READING_SKILL_LEVEL_4, FIELDTYPE_SELECT);
+				put(READING_SKILL_LEVEL_5, FIELDTYPE_SELECT);
+				put(READING_SKILL_LEVEL_6, FIELDTYPE_SELECT);
+				put(READING_SKILL_LEVEL_7, FIELDTYPE_SELECT);
+				put(READING_SKILL_LEVEL_8, FIELDTYPE_SELECT);
+				put(READING_SKILL_LEVEL_9, FIELDTYPE_SELECT);
+				put(READING_SKILL_LEVEL_10, FIELDTYPE_SELECT);
+				put(READING_SKILL_LEVEL_11, FIELDTYPE_SELECT);
+				put(READING_SKILL_LEVEL_12, FIELDTYPE_SELECT);
+				put(READING_SKILL_LEVEL_13, FIELDTYPE_SELECT);
+				put(READING_SKILL_LEVEL_14, FIELDTYPE_SELECT);
+				put(READING_SKILL_LEVEL_15, FIELDTYPE_SELECT);
+				put(READING_SKILL_LEVEL_16, FIELDTYPE_SELECT);
+				put(READING_SKILL_LEVEL_17, FIELDTYPE_SELECT);
+				put(WRITING_SKILL_LEVEL_1, FIELDTYPE_SELECT);
+				put(WRITING_SKILL_LEVEL_2, FIELDTYPE_SELECT);
+				put(WRITING_SKILL_LEVEL_3, FIELDTYPE_SELECT);
+				put(WRITING_SKILL_LEVEL_4, FIELDTYPE_SELECT);
+				put(WRITING_SKILL_LEVEL_5, FIELDTYPE_SELECT);
+				put(WRITING_SKILL_LEVEL_6, FIELDTYPE_SELECT);
+				put(WRITING_SKILL_LEVEL_7, FIELDTYPE_SELECT);
+				put(WRITING_SKILL_LEVEL_8, FIELDTYPE_SELECT);
+				put(WRITING_SKILL_LEVEL_9, FIELDTYPE_SELECT);
+				put(WRITING_SKILL_LEVEL_10, FIELDTYPE_SELECT);
+				put(WRITING_SKILL_LEVEL_11, FIELDTYPE_SELECT);
+				put(WRITING_SKILL_LEVEL_12, FIELDTYPE_SELECT);
+				put(WRITING_SKILL_LEVEL_13, FIELDTYPE_SELECT);
+				put(WRITING_SKILL_LEVEL_14, FIELDTYPE_SELECT);
+				put(WRITING_SKILL_LEVEL_15, FIELDTYPE_SELECT);
+				put(WRITING_SKILL_LEVEL_16, FIELDTYPE_SELECT);
+				put(WRITING_SKILL_LEVEL_17, FIELDTYPE_SELECT);
+				put(INSTRUCTIONAL_HOURS_PER_CLASS, FIELDTYPE_SELECT);
+				put(CLASSES_PER_WEEK, FIELDTYPE_SELECT);
+				put(WEEKS_OF_INSTRUCTION, FIELDTYPE_SELECT);
+				put(WEEKS_OF_INSTRUCTION_PER_YEAR, FIELDTYPE_SELECT);
+				put(DOMINANT_FOCUS_OF_THE_COURSE, FIELDTYPE_SELECT);
+				put(CLIENTS_TRAINING_STATUS, FIELDTYPE_SELECT);
+				put(REASON_FOR_EXITING_COURSE, FIELDTYPE_SELECT);
+				put(LISTENING_CLB_LEVEL, FIELDTYPE_SELECT);
+				put(SPEAKING_CLB_LEVEL, FIELDTYPE_SELECT);
+				put(READING_CLB_LEVEL, FIELDTYPE_SELECT);
+				put(WRITING_CLB_LEVEL, FIELDTYPE_SELECT);
+				put(LISTENING_LEVEL_INDICATED_ON_CERTIFICATE, FIELDTYPE_SELECT);
+				put(SPEAKING_LEVEL_INDICATED_ON_CERTIFICATE, FIELDTYPE_SELECT);
 		    }});
 	
 	
@@ -485,6 +590,114 @@ public final class Field
 	public static final String TOTAL_LENGTH_OF_ORIENTATION_HOURS = "total_length_of_orientation_hours";
 	public static final String TOTAL_LENGTH_OF_ORIENTATION_MINUTES = "total_length_of_orientation_minutes";
 	public static final String NUMBER_OF_CLIENTS_IN_GROUP = "number_of_clients_in_group";
+	
+	
+
+	public static final String NUMBER_OF_IRCC_FUNDED_SPOTS_IN_COURSE = "number_of_ircc_funded_spots_in_course";
+	public static final String NEW_STUDENTS_CAN_ENROL_IN_THE_COURSE = "new_students_can_enrol_in_the_course";
+	public static final String SUPPORT_SERVICES_AVAILABLE_FOR_CLIENT_IN_THIS_COURSE = "support_services_available_for_client_in_this_course";
+	public static final String COURSE_START_DATE_YYYY_MM_DD = "course_start_date_yyyy_mm_dd";
+	public static final String COURSE_END_DATE_YYYY_MM_DD = "course_end_date_yyyy_mm_dd";
+	public static final String SCHEDULE_MORNING = "schedule_morning";
+	public static final String SCHEDULE_AFTERNOON = "schedule_afternoon";
+	public static final String SCHEDULE_EVENING = "schedule_evening";
+	public static final String SCHEDULE_WEEKEND = "schedule_weekend";
+	public static final String SCHEDULE_ANYTIME = "schedule_anytime";
+	public static final String SCHEDULE_ONLINE = "schedule_online";
+	public static final String INSTRUCTIONAL_HOURS_PER_CLASS = "instructional_hours_per_class";
+	public static final String CLASSES_PER_WEEK = "classes_per_week";
+	public static final String WEEKS_OF_INSTRUCTION = "weeks_of_instruction";
+	public static final String WEEKS_OF_INSTRUCTION_PER_YEAR = "weeks_of_instruction_per_year";
+	public static final String DOMINANT_FOCUS_OF_THE_COURSE = "dominant_focus_of_the_course";
+	public static final String COURSE_DIRECTED_AT_A_SPECIFIC_TARGET_GROUP = "course_directed_at_a_specific_target_group";
+	public static final String CHILDREN_0_14_YRS = "children_0_14_yrs";
+	public static final String YOUTH_15_24_YRS = "youth_15_24_yrs";
+	public static final String SENIOR = "senior";
+	public static final String GENDER_SPECIFIC = "gender_specific";
+	public static final String REFUGEES = "refugees";
+	public static final String OFFICIAL_LANGUAGE_MINORITIES = "official_language_minorities";
+	public static final String ETHNIC_CULTURAL_LINGUISTIC_GROUP = "ethnic_cultural_linguistic_group";
+	public static final String DEAF_OR_HARD_OF_HEARING = "deaf_or_hard_of_hearing";
+	public static final String BLIND_OR_PARTIALLY_SIGHTED = "blind_or_partially_sighted";
+	public static final String CLIENTS_WITH_OTHER_IMPAIRMENTS_PHYSICAL_MENTAL = "clients_with_other_impairments_physical_mental";
+	public static final String LESBIAN_GAY_BISEXUAL_TRANSGENDER_QUEER_LGBTQ = "lesbian_gay_bisexual_transgender_queer_lgbtq";
+	public static final String FAMILIES_PARENTS = "families_parents";
+	public static final String CLIENTS_WITH_INTERNATIONAL_TRAINING_IN_A_REGULATED_PROFESSION = "clients_with_international_training_in_a_regulated_profession";
+	public static final String CLIENTS_WITH_INTERNATIONAL_TRAINING_IN_A_REGULATED_TRADE = "clients_with_international_training_in_a_regulated_trade";
+	public static final String MATERIALS_USED_IN_COURSE = "materials_used_in_course";
+	public static final String CITIZENSHIP_PREPARATION = "citizenship_preparation";
+	public static final String PBLA_LANGUAGE_COMPANION = "pbla_language_companion";
+	public static final String CONTACT_NAME = "contact_name";
+	public static final String TELEPHONE_EXTENSION = "telephone_extension";
+	public static final String LISTENING_SKILL_LEVEL_1 = "listening_skill_level_1";
+	public static final String LISTENING_SKILL_LEVEL_2 = "listening_skill_level_2";
+	public static final String LISTENING_SKILL_LEVEL_3 = "listening_skill_level_3";
+	public static final String LISTENING_SKILL_LEVEL_4 = "listening_skill_level_4";
+	public static final String LISTENING_SKILL_LEVEL_5 = "listening_skill_level_5";
+	public static final String LISTENING_SKILL_LEVEL_6 = "listening_skill_level_6";
+	public static final String LISTENING_SKILL_LEVEL_7 = "listening_skill_level_7";
+	public static final String LISTENING_SKILL_LEVEL_8 = "listening_skill_level_8";
+	public static final String LISTENING_SKILL_LEVEL_9 = "listening_skill_level_9";
+	public static final String LISTENING_SKILL_LEVEL_10 = "listening_skill_level_10";
+	public static final String LISTENING_SKILL_LEVEL_11 = "listening_skill_level_11";
+	public static final String LISTENING_SKILL_LEVEL_12 = "listening_skill_level_12";
+	public static final String SPEAKING_SKILL_LEVEL_1 = "speaking_skill_level_1";
+	public static final String SPEAKING_SKILL_LEVEL_2 = "speaking_skill_level_2";
+	public static final String SPEAKING_SKILL_LEVEL_3 = "speaking_skill_level_3";
+	public static final String SPEAKING_SKILL_LEVEL_4 = "speaking_skill_level_4";
+	public static final String SPEAKING_SKILL_LEVEL_5 = "speaking_skill_level_5";
+	public static final String SPEAKING_SKILL_LEVEL_6 = "speaking_skill_level_6";
+	public static final String SPEAKING_SKILL_LEVEL_7 = "speaking_skill_level_7";
+	public static final String SPEAKING_SKILL_LEVEL_8 = "speaking_skill_level_8";
+	public static final String SPEAKING_SKILL_LEVEL_9 = "speaking_skill_level_9";
+	public static final String SPEAKING_SKILL_LEVEL_10 = "speaking_skill_level_10";
+	public static final String SPEAKING_SKILL_LEVEL_11 = "speaking_skill_level_11";
+	public static final String SPEAKING_SKILL_LEVEL_12 = "speaking_skill_level_12";
+	public static final String READING_SKILL_LEVEL_1 = "reading_skill_level_1";
+	public static final String READING_SKILL_LEVEL_2 = "reading_skill_level_2";
+	public static final String READING_SKILL_LEVEL_3 = "reading_skill_level_3";
+	public static final String READING_SKILL_LEVEL_4 = "reading_skill_level_4";
+	public static final String READING_SKILL_LEVEL_5 = "reading_skill_level_5";
+	public static final String READING_SKILL_LEVEL_6 = "reading_skill_level_6";
+	public static final String READING_SKILL_LEVEL_7 = "reading_skill_level_7";
+	public static final String READING_SKILL_LEVEL_8 = "reading_skill_level_8";
+	public static final String READING_SKILL_LEVEL_9 = "reading_skill_level_9";
+	public static final String READING_SKILL_LEVEL_10 = "reading_skill_level_10";
+	public static final String READING_SKILL_LEVEL_11 = "reading_skill_level_11";
+	public static final String READING_SKILL_LEVEL_12 = "reading_skill_level_12";
+	public static final String READING_SKILL_LEVEL_13 = "reading_skill_level_13";
+	public static final String READING_SKILL_LEVEL_14 = "reading_skill_level_14";
+	public static final String READING_SKILL_LEVEL_15 = "reading_skill_level_15";
+	public static final String READING_SKILL_LEVEL_16 = "reading_skill_level_16";
+	public static final String READING_SKILL_LEVEL_17 = "reading_skill_level_17";
+	public static final String WRITING_SKILL_LEVEL_1 = "writing_skill_level_1";
+	public static final String WRITING_SKILL_LEVEL_2 = "writing_skill_level_2";
+	public static final String WRITING_SKILL_LEVEL_3 = "writing_skill_level_3";
+	public static final String WRITING_SKILL_LEVEL_4 = "writing_skill_level_4";
+	public static final String WRITING_SKILL_LEVEL_5 = "writing_skill_level_5";
+	public static final String WRITING_SKILL_LEVEL_6 = "writing_skill_level_6";
+	public static final String WRITING_SKILL_LEVEL_7 = "writing_skill_level_7";
+	public static final String WRITING_SKILL_LEVEL_8 = "writing_skill_level_8";
+	public static final String WRITING_SKILL_LEVEL_9 = "writing_skill_level_9";
+	public static final String WRITING_SKILL_LEVEL_10 = "writing_skill_level_10";
+	public static final String WRITING_SKILL_LEVEL_11 = "writing_skill_level_11";
+	public static final String WRITING_SKILL_LEVEL_12 = "writing_skill_level_12";
+	public static final String WRITING_SKILL_LEVEL_13 = "writing_skill_level_13";
+	public static final String WRITING_SKILL_LEVEL_14 = "writing_skill_level_14";
+	public static final String WRITING_SKILL_LEVEL_15 = "writing_skill_level_15";
+	public static final String WRITING_SKILL_LEVEL_16 = "writing_skill_level_16";
+	public static final String WRITING_SKILL_LEVEL_17 = "writing_skill_level_17";
+	public static final String CLIENTS_TRAINING_STATUS = "clients_training_status";
+	public static final String DATE_CLIENT_EXITED_COURSE_YYYY_MM_DD = "date_client_exited_course_yyyy_mm_dd";
+	public static final String REASON_FOR_EXITING_COURSE = "reason_for_exiting_course";
+	public static final String LISTENING_CLB_LEVEL = "listening_clb_level";
+	public static final String SPEAKING_CLB_LEVEL = "speaking_clb_level";
+	public static final String READING_CLB_LEVEL = "reading_clb_level";
+	public static final String WRITING_CLB_LEVEL = "writing_clb_level";
+	public static final String LISTENING_LEVEL_INDICATED_ON_CERTIFICATE = "listening_level_indicated_on_certificate";
+	public static final String SPEAKING_LEVEL_INDICATED_ON_CERTIFICATE = "speaking_level_indicated_on_certificate";
+	
+	
 		//
 	public static final boolean isType(String field, String type)
 	{

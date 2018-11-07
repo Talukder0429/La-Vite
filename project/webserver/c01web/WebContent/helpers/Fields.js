@@ -23,8 +23,6 @@ const POSTAL_CODE = "postal_code";
 	//103
 const PROCESSING_DETAILS = "processing_details";
 const UPDATE_RECORD_ID = "update_record_id";
-const UNIQUE_IDENTIFIER = "unique_identifier";
-const UNIQUE_IDENTIFIER_VALUE = "unique_identifier_value";
 const DATE_OF_BIRTH_YYYY_MM_DD = "date_of_birth_yyyy_mm_dd";
 const POSTAL_CODE_WHERE_THE_SERVICE_WAS_RECEIVED = "postal_code_where_the_service_was_received";
 const START_DATE_YYYY_MM_DD = "start_date_yyyy_mm_dd";
@@ -174,7 +172,6 @@ const STREET_DIRECTION = "street_direction";
 const PROVINCE = "province";
 const OFFICIAL_LANGUAGE_OF_PREFERENCE = "official_language_of_preference";
 
-const OFFICIAL_LANGUAGE_OF_PREFERENCE = "official_language_of_preference";
 const IMPROVE_LANGUAGE_SKILLS_TO = "improve_language_skills_to";
 const IMPROVE_OTHER_SKILLS_TO = "improve_other_skills_to";
 const FIND_EMPLOYMENT_REFERRALS = "find_employment_referrals";
@@ -203,9 +200,8 @@ const TIME_SPENT_WITH_CLIENT_ADDRESSING_CLIENTS_EMPLOYMENT_NEEDS_MINUTES = "time
 const FORMAT_OF_TRAINING_PROVIDED = "format_of_training_provided";
 const CLASSES_HELD_AT = "classes_held_at";
 
-//103
+	//103
 const LANGUAGE_OF_SERVICE = "language_of_service";
-const OFFICIAL_LANGUAGE_OF_PREFERENCE = "official_language_of_preference";
 const REFERRED_BY = "referred_by";
 const ACTIVITY_UNDER_WHICH_CLIENT_RECEIVED_SERVICES = "activity_under_which_client_received_services";
 const TYPE_OF_INSTITUTION_ORGANIZATION_WHERE_CLIENT_RECEIVED_SERVICES = "type_of_institution_organization_where_client_received_services";
@@ -237,7 +233,7 @@ const TOTAL_LENGTH_OF_ORIENTATION = "total_length_of_orientation";
 const TOTAL_LENGTH_OF_ORIENTATION_HOURS = "total_length_of_orientation_hours";
 const TOTAL_LENGTH_OF_ORIENTATION_MINUTES = "total_length_of_orientation_minutes";
 const NUMBER_OF_CLIENTS_IN_GROUP = "number_of_clients_in_group";
-//
+	//
 
 function mapTypes()
 {
@@ -273,8 +269,6 @@ function mapTypes()
 		//103
 	setType(PROCESSING_DETAILS, FIELDTYPE_STRING);
 	setType(UPDATE_RECORD_ID, FIELDTYPE_STRING);
-	setType(UNIQUE_IDENTIFIER, FIELDTYPE_STRING);
-	setType(UNIQUE_IDENTIFIER_VALUE, FIELDTYPE_STRING);
 	setType(DATE_OF_BIRTH_YYYY_MM_DD, FIELDTYPE_STRING);
 	setType(POSTAL_CODE_WHERE_THE_SERVICE_WAS_RECEIVED, FIELDTYPE_STRING);
 	setType(START_DATE_YYYY_MM_DD, FIELDTYPE_STRING);
@@ -439,7 +433,6 @@ function mapTypes()
 	
 		//103
 	setType(LANGUAGE_OF_SERVICE, FIELDTYPE_SELECT);
-	setType(OFFICIAL_LANGUAGE_OF_PREFERENCE, FIELDTYPE_SELECT);
 	setType(REFERRED_BY, FIELDTYPE_SELECT);
 	setType(ACTIVITY_UNDER_WHICH_CLIENT_RECEIVED_SERVICES, FIELDTYPE_SELECT);
 	setType(TYPE_OF_INSTITUTION_ORGANIZATION_WHERE_CLIENT_RECEIVED_SERVICES, FIELDTYPE_SELECT);
@@ -514,7 +507,6 @@ function mapLists()
 	
 		//103
 	mapListToField(LANGUAGE_OF_SERVICE, LIST_LANGUAGE_OF_SERVICE);
-	mapListToField(OFFICIAL_LANGUAGE_OF_PREFERENCE, LIST_OFFICIAL_LANGUAGE_OF_PREFERENCE);
 	mapListToField(REFERRED_BY, LIST_REFERRED_BY);
 	mapListToField(ACTIVITY_UNDER_WHICH_CLIENT_RECEIVED_SERVICES, LIST_ACTIVITY_UNDER_WHICH_CLIENT_RECEIVED_SERVICES);
 	mapListToField(TYPE_OF_INSTITUTION_ORGANIZATION_WHERE_CLIENT_RECEIVED_SERVICES, LIST_TYPE_OF_INSTITUTION_ORGANIZATION_WHERE_CLIENT_RECEIVED_SERVICES);

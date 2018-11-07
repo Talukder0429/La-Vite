@@ -40,6 +40,17 @@ public final class Field
 		        put(ONLINE_DISTANCE_INSTRUCTION_PERCENT, FIELDTYPE_STRING);
 		        put(TOTAL_NUMBER_OF_SPOTS_IN_COURSE, FIELDTYPE_STRING);
 		        
+		        	//103
+		        put(PROCESSING_DETAILS, FIELDTYPE_STRING);
+		        put(UPDATE_RECORD_ID, FIELDTYPE_STRING);
+		        put(DATE_OF_BIRTH_YYYY_MM_DD, FIELDTYPE_STRING);
+		        put(POSTAL_CODE_WHERE_THE_SERVICE_WAS_RECEIVED, FIELDTYPE_STRING);
+		        put(START_DATE_YYYY_MM_DD, FIELDTYPE_STRING);
+		        put(END_DATE_YYYY_MM_DD, FIELDTYPE_STRING);
+		        put(PROJECTED_END_DATE_YYYY_MM_DD, FIELDTYPE_STRING);
+		        put(START_DATE_OF_SERVICE_YYYY_MM_DD, FIELDTYPE_STRING);
+		        	//
+		        
 		        //Boolean fields go here
 		        put(HAS_EMAIL_ADDRESS, FIELDTYPE_BOOLEAN);
 		        put(HAS_CONSENT_FOR_FUTURE_RESEARCH_OR_CONSULTATION, FIELDTYPE_BOOLEAN);
@@ -97,6 +108,69 @@ public final class Field
 		        put(REGISTRATION_IN_AN_EMPLOYMENT_INTERVENTION, FIELDTYPE_BOOLEAN);
 		        put(COURSE_HELD_ON_AN_ONGOING_BASIS, FIELDTYPE_BOOLEAN);
 		        
+		        	//103
+		        put(DID_VOLUNTEERS_FROM_THE_HOST_COMMUNITY_PARTICIPATE_IN_THE_ACTIVITY, FIELDTYPE_BOOLEAN);
+		        put(DIRECTED_AT_A_SPECIFIC_TARGET_GROUP, FIELDTYPE_BOOLEAN);
+		        put(TARGET_GROUP_CHILDREN_0_14_YRS, FIELDTYPE_BOOLEAN);
+		        put(TARGET_GROUP_YOUTH_15_24_YRS, FIELDTYPE_BOOLEAN);
+		        put(TARGET_GROUP_SENIOR, FIELDTYPE_BOOLEAN);
+		        put(TARGET_GROUP_GENDER_SPECIFIC, FIELDTYPE_BOOLEAN);
+		        put(TARGET_GROUP_REFUGEES, FIELDTYPE_BOOLEAN);
+		        put(TARGET_GROUP_ETHNIC_CULTURAL_LINGUISTIC_GROUP, FIELDTYPE_BOOLEAN);
+		        put(TARGET_GROUP_DEAF_OR_HARD_OF_HEARING, FIELDTYPE_BOOLEAN);
+		        put(TARGET_GROUP_BLIND_OR_PARTIALLY_SIGHTED, FIELDTYPE_BOOLEAN);
+		        put(TARGET_GROUP_LESBIAN_GAY_BISEXUAL_TRANSGENDER_QUEER_LGBTQ, FIELDTYPE_BOOLEAN);
+		        put(TARGET_GROUP_FAMILIES_PARENTS, FIELDTYPE_BOOLEAN);
+		        put(TARGET_GROUP_OTHER_IMPAIRMENTS_PHYSICAL_MENTAL, FIELDTYPE_BOOLEAN);
+		        put(TARGET_GROUP_CLIENTS_WITH_INTERNATIONAL_TRAINING_IN_A_REGULATED_PROFESSION, FIELDTYPE_BOOLEAN);
+		        put(TARGET_GROUP_CLIENTS_WITH_INTERNATIONAL_TRAINING_IN_A_REGULATED_TRADE, FIELDTYPE_BOOLEAN);
+		        put(TARGET_GROUP_OFFICIAL_LANGUAGE_MINORITIES, FIELDTYPE_BOOLEAN);
+		        put(WAS_ESSENTIAL_SKILLS_AND_APTITUDES_TRAINING_RECEIVED_AS_PART_OF_THE_SERVICE, FIELDTYPE_BOOLEAN);
+		        put(COMPUTER_SKILLS, FIELDTYPE_BOOLEAN);
+		        put(DOCUMENT_USE, FIELDTYPE_BOOLEAN);
+		        put(INTERPERSONAL_SKILLS_AND_WORKPLACE_CULTURE, FIELDTYPE_BOOLEAN);
+		        put(LEADERSHIP_TRAINING, FIELDTYPE_BOOLEAN);
+		        put(LIFE_SKILLS, FIELDTYPE_BOOLEAN);
+		        put(NUMERACY, FIELDTYPE_BOOLEAN);
+		        put(SUPPORT_SERVICES_RECEIVED, FIELDTYPE_BOOLEAN);
+		        put(CARE_FOR_NEWCOMER_CHILDREN, FIELDTYPE_BOOLEAN);
+		        put(TRANSPORTATION_CHILD, FIELDTYPE_BOOLEAN);
+		        put(PROVISIONS_FOR_DISABILITIES, FIELDTYPE_BOOLEAN);
+		        put(TRANSLATION, FIELDTYPE_BOOLEAN);
+		        put(INTERPRETATION, FIELDTYPE_BOOLEAN);
+		        put(CRISIS_COUNSELLING, FIELDTYPE_BOOLEAN);
+		        put(OVERVIEW_OF_CANADA, FIELDTYPE_BOOLEAN);
+		        put(OVERVIEW_OF_CANADA_REFERRALS, FIELDTYPE_BOOLEAN);
+		        put(SOURCES_OF_INFORMATION, FIELDTYPE_BOOLEAN);
+		        put(SOURCES_OF_INFORMATION_REFERRALS, FIELDTYPE_BOOLEAN);
+		        put(RIGHTS_AND_FREEDOMS, FIELDTYPE_BOOLEAN);
+		        put(RIGHTS_AND_FREEDOMS_REFERRALS, FIELDTYPE_BOOLEAN);
+		        put(CANADIAN_LAW_AND_JUSTICE, FIELDTYPE_BOOLEAN);
+		        put(CANADIAN_LAW_AND_JUSTICE_REFERRALS, FIELDTYPE_BOOLEAN);
+		        put(IMPORTANT_DOCUMENTS, FIELDTYPE_BOOLEAN);
+		        put(IMPORTANT_DOCUMENTS_REFERRALS, FIELDTYPE_BOOLEAN);
+		        put(IMPROVING_ENGLISH_OR_FRENCH, FIELDTYPE_BOOLEAN);
+		        put(IMPROVING_ENGLISH_OR_FRENCH_REFERRALS, FIELDTYPE_BOOLEAN);
+		        put(EMPLOYMENT_AND_INCOME, FIELDTYPE_BOOLEAN);
+		        put(EMPLOYMENT_AND_INCOME_REFERRALS, FIELDTYPE_BOOLEAN);
+		        put(EDUCATION, FIELDTYPE_BOOLEAN);
+		        put(EDUCATION_REFERRALS, FIELDTYPE_BOOLEAN);
+		        put(HOUSING, FIELDTYPE_BOOLEAN);
+		        put(HOUSING_REFERRALS, FIELDTYPE_BOOLEAN);
+		        put(HEALTH, FIELDTYPE_BOOLEAN);
+		        put(HEALTH_REFERRALS, FIELDTYPE_BOOLEAN);
+		        put(MONEY_AND_FINANCES, FIELDTYPE_BOOLEAN);
+		        put(MONEY_AND_FINANCES_REFERRALS, FIELDTYPE_BOOLEAN);
+		        put(TRANSPORTATION_ADULT, FIELDTYPE_BOOLEAN);
+		        put(TRANSPORTATION_REFERRALS, FIELDTYPE_BOOLEAN);
+		        put(COMMUNICATIONS_AND_MEDIA, FIELDTYPE_BOOLEAN);
+		        put(COMMUNICATIONS_AND_MEDIA_REFERRALS, FIELDTYPE_BOOLEAN);
+		        put(COMMUNITY_ENGAGEMENT, FIELDTYPE_BOOLEAN);
+		        put(COMMUNITY_ENGAGEMENT_REFERRALS, FIELDTYPE_BOOLEAN);
+		        put(BECOMING_A_CANADIAN_CITIZEN, FIELDTYPE_BOOLEAN);
+		        put(BECOMING_A_CANADIAN_CITIZEN_REFERRALS, FIELDTYPE_BOOLEAN);
+		        	//
+		        
 		        //Fields that have a specific list of choices go here (ones that have drop-down lists)
 		        put(UNIQUE_IDENTIFIER, FIELDTYPE_SELECT);
 		        put(STREET_TYPE, FIELDTYPE_SELECT);
@@ -130,6 +204,41 @@ public final class Field
 		        put(TIME_SPENT_WITH_CLIENT_ADDRESSING_CLIENTS_EMPLOYMENT_NEEDS_MINUTES, FIELDTYPE_SELECT);
 		        put(FORMAT_OF_TRAINING_PROVIDED, FIELDTYPE_SELECT);
 		        put(CLASSES_HELD_AT, FIELDTYPE_SELECT);
+		        
+		        	//103
+		        put(LANGUAGE_OF_SERVICE, FIELDTYPE_SELECT);
+		        put(REFERRED_BY, FIELDTYPE_SELECT);
+		        put(ACTIVITY_UNDER_WHICH_CLIENT_RECEIVED_SERVICES, FIELDTYPE_SELECT);
+		        put(TYPE_OF_INSTITUTION_ORGANIZATION_WHERE_CLIENT_RECEIVED_SERVICES, FIELDTYPE_SELECT);
+		        put(TYPE_OF_EVENT_ATTENDED, FIELDTYPE_SELECT);
+		        put(TYPE_OF_SERVICE, FIELDTYPE_SELECT);
+		        put(MAIN_TOPIC_FOCUS_OF_THE_SERVICE_RECEIVED, FIELDTYPE_SELECT);
+		        put(SERVICE_RECEIVED, FIELDTYPE_SELECT);
+		        put(NUMBER_OF_UNIQUE_PARTICIPANTS, FIELDTYPE_SELECT);
+		        put(STATUS_OF_SERVICE, FIELDTYPE_SELECT);
+		        put(REASON_FOR_LEAVING_SERVICE, FIELDTYPE_SELECT);
+		        put(CHILD_1_AGE, FIELDTYPE_SELECT);
+		        put(CHILD_1_TYPE_OF_CARE, FIELDTYPE_SELECT);
+		        put(CHILD_2_AGE, FIELDTYPE_SELECT);
+		        put(CHILD_2_TYPE_OF_CARE, FIELDTYPE_SELECT);
+		        put(CHILD_3_AGE, FIELDTYPE_SELECT);
+		        put(CHILD_3_TYPE_OF_CARE, FIELDTYPE_SELECT);
+		        put(CHILD_4_AGE, FIELDTYPE_SELECT);
+		        put(CHILD_4_TYPE_OF_CARE, FIELDTYPE_SELECT);
+		        put(CHILD_5_AGE, FIELDTYPE_SELECT);
+		        put(CHILD_5_TYPE_OF_CARE, FIELDTYPE_SELECT);
+		        put(BETWEEN_TRANSLATION, FIELDTYPE_SELECT);
+		        put(AND_TRANSLATION, FIELDTYPE_SELECT);
+		        put(BETWEEN_INTERPRETATION, FIELDTYPE_SELECT);
+		        put(AND_INTERPRETATION, FIELDTYPE_SELECT);
+		        put(TOTAL_LENGTH_OF_SERVICE_HOURS, FIELDTYPE_SELECT);
+		        put(TOTAL_LENGTH_OF_SERVICE_MINUTES, FIELDTYPE_SELECT);
+		        put(REASON_FOR_UPDATE, FIELDTYPE_SELECT);
+		        put(TOTAL_LENGTH_OF_ORIENTATION, FIELDTYPE_SELECT);
+		        put(TOTAL_LENGTH_OF_ORIENTATION_HOURS, FIELDTYPE_SELECT);
+		        put(TOTAL_LENGTH_OF_ORIENTATION_MINUTES, FIELDTYPE_SELECT);
+		        put(NUMBER_OF_CLIENTS_IN_GROUP, FIELDTYPE_SELECT);
+		        	//
 		    }});
 	
 	
@@ -176,6 +285,17 @@ public final class Field
 	public static final String IN_PERSON_INSTRUCTION_PERCENT = "in_person_instruction_percent";
 	public static final String ONLINE_DISTANCE_INSTRUCTION_PERCENT = "online_distance_instruction_percent";
 	public static final String TOTAL_NUMBER_OF_SPOTS_IN_COURSE = "total_number_of_spots_in_course";
+	
+		//103
+	public static final String PROCESSING_DETAILS = "processing_details";
+	public static final String UPDATE_RECORD_ID = "update_record_id";
+	public static final String DATE_OF_BIRTH_YYYY_MM_DD = "date_of_birth_yyyy_mm_dd";
+	public static final String POSTAL_CODE_WHERE_THE_SERVICE_WAS_RECEIVED = "postal_code_where_the_service_was_received";
+	public static final String START_DATE_YYYY_MM_DD = "start_date_yyyy_mm_dd";
+	public static final String END_DATE_YYYY_MM_DD = "end_date_yyyy_mm_dd";
+	public static final String PROJECTED_END_DATE_YYYY_MM_DD = "projected_end_date_yyyy_mm_dd";
+	public static final String START_DATE_OF_SERVICE_YYYY_MM_DD = "start_date_of_service_yyyy_mm_dd";
+		//
 
 	//Boolean fields go here
 	public static final String HAS_EMAIL_ADDRESS = "has_email_address";
@@ -235,7 +355,68 @@ public final class Field
 	public static final String REGISTRATION_IN_AN_EMPLOYMENT_INTERVENTION = "registration_in_an_employment_intervention";
 	public static final String COURSE_HELD_ON_AN_ONGOING_BASIS = "course_held_on_an_ongoing_basis";
 
-
+		//103
+	public static final String DID_VOLUNTEERS_FROM_THE_HOST_COMMUNITY_PARTICIPATE_IN_THE_ACTIVITY = "did_volunteers_from_the_host_community_participate_in_the_activity";
+	public static final String DIRECTED_AT_A_SPECIFIC_TARGET_GROUP = "directed_at_a_specific_target_group";
+	public static final String TARGET_GROUP_CHILDREN_0_14_YRS = "target_group_children_0_14_yrs";
+	public static final String TARGET_GROUP_YOUTH_15_24_YRS = "target_group_youth_15_24_yrs";
+	public static final String TARGET_GROUP_SENIOR = "target_group_senior";
+	public static final String TARGET_GROUP_GENDER_SPECIFIC = "target_group_gender_specific";
+	public static final String TARGET_GROUP_REFUGEES = "target_group_refugees";
+	public static final String TARGET_GROUP_ETHNIC_CULTURAL_LINGUISTIC_GROUP = "target_group_ethnic_cultural_linguistic_group";
+	public static final String TARGET_GROUP_DEAF_OR_HARD_OF_HEARING = "target_group_deaf_or_hard_of_hearing";
+	public static final String TARGET_GROUP_BLIND_OR_PARTIALLY_SIGHTED = "target_group_blind_or_partially_sighted";
+	public static final String TARGET_GROUP_LESBIAN_GAY_BISEXUAL_TRANSGENDER_QUEER_LGBTQ = "target_group_lesbian_gay_bisexual_transgender_queer_lgbtq";
+	public static final String TARGET_GROUP_FAMILIES_PARENTS = "target_group_families_parents";
+	public static final String TARGET_GROUP_OTHER_IMPAIRMENTS_PHYSICAL_MENTAL = "target_group_other_impairments_physical_mental";
+	public static final String TARGET_GROUP_CLIENTS_WITH_INTERNATIONAL_TRAINING_IN_A_REGULATED_PROFESSION = "target_group_clients_with_international_training_in_a_regulated_profession";
+	public static final String TARGET_GROUP_CLIENTS_WITH_INTERNATIONAL_TRAINING_IN_A_REGULATED_TRADE = "target_group_clients_with_international_training_in_a_regulated_trade";
+	public static final String TARGET_GROUP_OFFICIAL_LANGUAGE_MINORITIES = "target_group_official_language_minorities";
+	public static final String WAS_ESSENTIAL_SKILLS_AND_APTITUDES_TRAINING_RECEIVED_AS_PART_OF_THE_SERVICE = "was_essential_skills_and_aptitudes_training_received_as_part_of_the_service";
+	public static final String COMPUTER_SKILLS = "computer_skills";
+	public static final String DOCUMENT_USE = "document_use";
+	public static final String INTERPERSONAL_SKILLS_AND_WORKPLACE_CULTURE = "interpersonal_skills_and_workplace_culture";
+	public static final String LEADERSHIP_TRAINING = "leadership_training";
+	public static final String LIFE_SKILLS = "life_skills";
+	public static final String NUMERACY = "numeracy";
+	public static final String SUPPORT_SERVICES_RECEIVED = "support_services_received";
+	public static final String CARE_FOR_NEWCOMER_CHILDREN = "care_for_newcomer_children";
+	public static final String TRANSPORTATION_CHILD = "transportation_child";
+	public static final String PROVISIONS_FOR_DISABILITIES = "provisions_for_disabilities";
+	public static final String TRANSLATION = "translation";
+	public static final String INTERPRETATION = "interpretation";
+	public static final String CRISIS_COUNSELLING = "crisis_counselling";
+	public static final String OVERVIEW_OF_CANADA = "overview_of_canada";
+	public static final String OVERVIEW_OF_CANADA_REFERRALS = "overview_of_canada_referrals";
+	public static final String SOURCES_OF_INFORMATION = "sources_of_information";
+	public static final String SOURCES_OF_INFORMATION_REFERRALS = "sources_of_information_referrals";
+	public static final String RIGHTS_AND_FREEDOMS = "rights_and_freedoms";
+	public static final String RIGHTS_AND_FREEDOMS_REFERRALS = "rights_and_freedoms_referrals";
+	public static final String CANADIAN_LAW_AND_JUSTICE = "canadian_law_and_justice";
+	public static final String CANADIAN_LAW_AND_JUSTICE_REFERRALS = "canadian_law_and_justice_referrals";
+	public static final String IMPORTANT_DOCUMENTS = "important_documents";
+	public static final String IMPORTANT_DOCUMENTS_REFERRALS = "important_documents_referrals";
+	public static final String IMPROVING_ENGLISH_OR_FRENCH = "improving_english_or_french";
+	public static final String IMPROVING_ENGLISH_OR_FRENCH_REFERRALS = "improving_english_or_french_referrals";
+	public static final String EMPLOYMENT_AND_INCOME = "employment_and_income";
+	public static final String EMPLOYMENT_AND_INCOME_REFERRALS = "employment_and_income_referrals";
+	public static final String EDUCATION = "education";
+	public static final String EDUCATION_REFERRALS = "education_referrals";
+	public static final String HOUSING = "housing";
+	public static final String HOUSING_REFERRALS = "housing_referrals";
+	public static final String HEALTH = "health";
+	public static final String HEALTH_REFERRALS = "health_referrals";
+	public static final String MONEY_AND_FINANCES = "money_and_finances";
+	public static final String MONEY_AND_FINANCES_REFERRALS = "money_and_finances_referrals";
+	public static final String TRANSPORTATION_ADULT = "transportation_adult";
+	public static final String TRANSPORTATION_REFERRALS = "transportation_referrals";
+	public static final String COMMUNICATIONS_AND_MEDIA = "communications_and_media";
+	public static final String COMMUNICATIONS_AND_MEDIA_REFERRALS = "communications_and_media_referrals";
+	public static final String COMMUNITY_ENGAGEMENT = "community_engagement";
+	public static final String COMMUNITY_ENGAGEMENT_REFERRALS = "community_engagement_referrals";
+	public static final String BECOMING_A_CANADIAN_CITIZEN = "becoming_a_canadian_citizen";
+	public static final String BECOMING_A_CANADIAN_CITIZEN_REFERRALS = "becoming_a_canadian_citizen_referrals";
+		//
 	
 	//Fields that have a specific list of choices go here (ones that have drop-down lists)
 	public static final String UNIQUE_IDENTIFIER = "unique_identifier";
@@ -271,7 +452,40 @@ public final class Field
 	public static final String FORMAT_OF_TRAINING_PROVIDED = "format_of_training_provided";
 	public static final String CLASSES_HELD_AT = "classes_held_at";
 	
-	
+		//103
+	public static final String LANGUAGE_OF_SERVICE = "language_of_service";
+	public static final String REFERRED_BY = "referred_by";
+	public static final String ACTIVITY_UNDER_WHICH_CLIENT_RECEIVED_SERVICES = "activity_under_which_client_received_services";
+	public static final String TYPE_OF_INSTITUTION_ORGANIZATION_WHERE_CLIENT_RECEIVED_SERVICES = "type_of_institution_organization_where_client_received_services";
+	public static final String TYPE_OF_EVENT_ATTENDED = "type_of_event_attended";
+	public static final String TYPE_OF_SERVICE = "type_of_service";
+	public static final String MAIN_TOPIC_FOCUS_OF_THE_SERVICE_RECEIVED = "main_topic_focus_of_the_service_received";
+	public static final String SERVICE_RECEIVED = "service_received";
+	public static final String NUMBER_OF_UNIQUE_PARTICIPANTS = "number_of_unique_participants";
+	public static final String STATUS_OF_SERVICE = "status_of_service";
+	public static final String REASON_FOR_LEAVING_SERVICE = "reason_for_leaving_service";
+	public static final String CHILD_1_AGE = "child_1_age";
+	public static final String CHILD_1_TYPE_OF_CARE = "child_1_type_of_care";
+	public static final String CHILD_2_AGE = "child_2_age";
+	public static final String CHILD_2_TYPE_OF_CARE = "child_2_type_of_care";
+	public static final String CHILD_3_AGE = "child_3_age";
+	public static final String CHILD_3_TYPE_OF_CARE = "child_3_type_of_care";
+	public static final String CHILD_4_AGE = "child_4_age";
+	public static final String CHILD_4_TYPE_OF_CARE = "child_4_type_of_care";
+	public static final String CHILD_5_AGE = "child_5_age";
+	public static final String CHILD_5_TYPE_OF_CARE = "child_5_type_of_care";
+	public static final String BETWEEN_TRANSLATION = "between_translation";
+	public static final String AND_TRANSLATION = "and_translation";
+	public static final String BETWEEN_INTERPRETATION = "between_interpretation";
+	public static final String AND_INTERPRETATION = "and_interpretation";
+	public static final String TOTAL_LENGTH_OF_SERVICE_HOURS = "total_length_of_service_hours";
+	public static final String TOTAL_LENGTH_OF_SERVICE_MINUTES = "total_length_of_service_minutes";
+	public static final String REASON_FOR_UPDATE = "reason_for_update";
+	public static final String TOTAL_LENGTH_OF_ORIENTATION = "total_length_of_orientation";
+	public static final String TOTAL_LENGTH_OF_ORIENTATION_HOURS = "total_length_of_orientation_hours";
+	public static final String TOTAL_LENGTH_OF_ORIENTATION_MINUTES = "total_length_of_orientation_minutes";
+	public static final String NUMBER_OF_CLIENTS_IN_GROUP = "number_of_clients_in_group";
+		//
 	public static final boolean isType(String field, String type)
 	{
 		return (FIELD_TYPES.get(field) == type);

@@ -21,7 +21,7 @@ public final class Field
 		        put(EMAIL_ADDRESS, FIELDTYPE_STRING);
 		        put(STREET_NUMBER, FIELDTYPE_STRING);
 		        put(STREET_NAME, FIELDTYPE_STRING);
-		        put(UNIT, FIELDTYPE_STRING);
+		        put(UNIT_SUITE_APT, FIELDTYPE_STRING);
 		        put(CITY, FIELDTYPE_STRING);
 		        put(POSTAL_CODE, FIELDTYPE_STRING);
 		        
@@ -59,8 +59,8 @@ public final class Field
 				put(DATE_CLIENT_EXITED_COURSE_YYYY_MM_DD, FIELDTYPE_STRING);
 		        
 		        //Boolean fields go here
-		        put(HAS_EMAIL_ADDRESS, FIELDTYPE_BOOLEAN);
-		        put(HAS_CONSENT_FOR_FUTURE_RESEARCH_OR_CONSULTATION, FIELDTYPE_BOOLEAN);
+		        put(DOES_THE_CLIENT_HAVE_AN_EMAIL_ADDRESS, FIELDTYPE_BOOLEAN);
+		        put(CONSENT_FOR_FUTURE_RESEARCH_CONSULTATION, FIELDTYPE_BOOLEAN);
 		        
 		        put(INTERPERSONAL_CONFLICT, FIELDTYPE_BOOLEAN);
 		        put(INTERPERSONAL_CONFLICT_REFERRALS, FIELDTYPE_BOOLEAN);
@@ -371,7 +371,7 @@ public final class Field
 	public static final String EMAIL_ADDRESS = "email_address";
 	public static final String STREET_NUMBER = "street_number";
 	public static final String STREET_NAME = "street_name";
-	public static final String UNIT = "unit";
+	public static final String UNIT_SUITE_APT = "unit_suite_apt";
 	public static final String CITY = "city";
 	public static final String POSTAL_CODE = "postal_code";
 	
@@ -409,8 +409,8 @@ public final class Field
 	public static final String DATE_CLIENT_EXITED_COURSE_YYYY_MM_DD = "date_client_exited_course_yyyy_mm_dd";
 
 	//Boolean fields go here
-	public static final String HAS_EMAIL_ADDRESS = "has_email_address";
-	public static final String HAS_CONSENT_FOR_FUTURE_RESEARCH_OR_CONSULTATION = "has_consent_for_future_research_or_consultation";
+	public static final String DOES_THE_CLIENT_HAVE_AN_EMAIL_ADDRESS = "does_the_client_have_an_email_address";
+	public static final String CONSENT_FOR_FUTURE_RESEARCH_CONSULTATION = "consent_for_future_research_consultation";
 	
 	
 	public static final String INTERPERSONAL_CONFLICT = "interpersonal_conflict";
@@ -462,7 +462,7 @@ public final class Field
 	public static final String COMMUNITY_SERVICES = "community_services";
 	public static final String COMMUNITY_SERVICES_REFERRALS = "community_services_referrals";
 	public static final String SETTLEMENT_PLAN_COMPLETED_AND_SHARED_WITH_CLIENT = "settlement_plan_completed_and_shared_with_client";
-	public static final String CONSENT_FOR_FUTURE_RESEARCH_CONSULTATION = "consent_for_future_research_consultation";
+	//public static final String CONSENT_FOR_FUTURE_RESEARCH_CONSULTATION = "consent_for_future_research_consultation";
 	public static final String REGISTRATION_IN_AN_EMPLOYMENT_INTERVENTION = "registration_in_an_employment_intervention";
 	public static final String COURSE_HELD_ON_AN_ONGOING_BASIS = "course_held_on_an_ongoing_basis";
 

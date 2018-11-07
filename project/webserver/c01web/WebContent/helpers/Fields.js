@@ -16,7 +16,7 @@ const PHONE_NUMBER = "phone_number";
 const EMAIL_ADDRESS = "email_address";
 const STREET_NUMBER = "street_number";
 const STREET_NAME = "street_name";
-const UNIT = "unit";
+const UNIT_SUITE_APT = "unit_suite_apt";
 const CITY = "city";
 const POSTAL_CODE = "postal_code";
 
@@ -56,8 +56,8 @@ const COURSE_END_DATE_YYYY_MM_DD = "course_end_date_yyyy_mm_dd";
 const DATE_CLIENT_EXITED_COURSE_YYYY_MM_DD = "date_client_exited_course_yyyy_mm_dd";
 
 //Boolean fields go here
-const HAS_EMAIL_ADDRESS = "has_email_address";
-const HAS_CONSENT_FOR_FUTURE_RESEARCH_OR_CONSULTATION = "has_consent_for_future_research_or_consultation";
+const DOES_THE_CLIENT_HAVE_AN_EMAIL_ADDRESS = "does_the_client_have_an_email_address";
+const CONSENT_FOR_FUTURE_RESEARCH_CONSULTATION = "consent_for_future_research_consultation";
 
 	//103
 const DID_VOLUNTEERS_FROM_THE_HOST_COMMUNITY_PARTICIPATE_IN_THE_ACTIVITY = "did_volunteers_from_the_host_community_participate_in_the_activity";
@@ -170,7 +170,7 @@ const LEGAL_INFORMATION_AND_SERVICES_REFERRALS = "legal_information_and_services
 const COMMUNITY_SERVICES = "community_services";
 const COMMUNITY_SERVICES_REFERRALS = "community_services_referrals";
 const SETTLEMENT_PLAN_COMPLETED_AND_SHARED_WITH_CLIENT = "settlement_plan_completed_and_shared_with_client";
-const CONSENT_FOR_FUTURE_RESEARCH_CONSULTATION = "consent_for_future_research_consultation";
+//const CONSENT_FOR_FUTURE_RESEARCH_CONSULTATION = "consent_for_future_research_consultation";
 const REGISTRATION_IN_AN_EMPLOYMENT_INTERVENTION = "registration_in_an_employment_intervention";
 const COURSE_HELD_ON_AN_ONGOING_BASIS = "course_held_on_an_ongoing_basis";
 
@@ -355,7 +355,7 @@ function mapTypes()
 	setType(EMAIL_ADDRESS, FIELDTYPE_STRING);
 	setType(STREET_NUMBER, FIELDTYPE_STRING);
 	setType(STREET_NAME, FIELDTYPE_STRING);
-	setType(UNIT, FIELDTYPE_STRING);
+	setType(UNIT_SUITE_APT, FIELDTYPE_STRING);
 	setType(CITY, FIELDTYPE_STRING);
 	setType(POSTAL_CODE, FIELDTYPE_STRING);
 	
@@ -393,8 +393,8 @@ function mapTypes()
      
 	
 	//Boolean fields go here
-	setType(HAS_EMAIL_ADDRESS, FIELDTYPE_BOOLEAN);
-	setType(HAS_CONSENT_FOR_FUTURE_RESEARCH_OR_CONSULTATION, FIELDTYPE_BOOLEAN);
+	setType(DOES_THE_CLIENT_HAVE_AN_EMAIL_ADDRESS, FIELDTYPE_BOOLEAN);
+	setType(CONSENT_FOR_FUTURE_RESEARCH_CONSULTATION, FIELDTYPE_BOOLEAN);
 	
 	setType(INTERPERSONAL_CONFLICT, FIELDTYPE_BOOLEAN);
 	setType(INTERPERSONAL_CONFLICT_REFERRALS, FIELDTYPE_BOOLEAN);
@@ -445,7 +445,7 @@ function mapTypes()
 	setType(COMMUNITY_SERVICES, FIELDTYPE_BOOLEAN);
 	setType(COMMUNITY_SERVICES_REFERRALS, FIELDTYPE_BOOLEAN);
 	setType(SETTLEMENT_PLAN_COMPLETED_AND_SHARED_WITH_CLIENT, FIELDTYPE_BOOLEAN);
-	setType(CONSENT_FOR_FUTURE_RESEARCH_CONSULTATION, FIELDTYPE_BOOLEAN);
+	//setType(CONSENT_FOR_FUTURE_RESEARCH_CONSULTATION, FIELDTYPE_BOOLEAN);
 	setType(REGISTRATION_IN_AN_EMPLOYMENT_INTERVENTION, FIELDTYPE_BOOLEAN);
 	setType(COURSE_HELD_ON_AN_ONGOING_BASIS, FIELDTYPE_BOOLEAN);
 	

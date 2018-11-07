@@ -46,6 +46,15 @@ const IN_PERSON_INSTRUCTION_PERCENT = "in_person_instruction_percent";
 const ONLINE_DISTANCE_INSTRUCTION_PERCENT = "online_distance_instruction_percent";
 const TOTAL_NUMBER_OF_SPOTS_IN_COURSE = "total_number_of_spots_in_course";
 
+// 207 - 309
+
+const final String NUMBER_OF_IRCC_FUNDED_SPOTS_IN_COURSE = "number_of_ircc_funded_spots_in_course";
+const final String CONTACT_NAME = "contact_name";
+const final String TELEPHONE_EXTENSION = "telephone_extension";
+const final String COURSE_START_DATE_YYYY_MM_DD = "course_start_date_yyyy_mm_dd";
+const final String COURSE_END_DATE_YYYY_MM_DD = "course_end_date_yyyy_mm_dd";
+const final String DATE_CLIENT_EXITED_COURSE_YYYY_MM_DD = "date_client_exited_course_yyyy_mm_dd";
+
 //Boolean fields go here
 const HAS_EMAIL_ADDRESS = "has_email_address";
 const HAS_CONSENT_FOR_FUTURE_RESEARCH_OR_CONSULTATION = "has_consent_for_future_research_or_consultation";
@@ -165,6 +174,33 @@ const CONSENT_FOR_FUTURE_RESEARCH_CONSULTATION = "consent_for_future_research_co
 const REGISTRATION_IN_AN_EMPLOYMENT_INTERVENTION = "registration_in_an_employment_intervention";
 const COURSE_HELD_ON_AN_ONGOING_BASIS = "course_held_on_an_ongoing_basis";
 
+// 207-309
+const String SUPPORT_SERVICES_AVAILABLE_FOR_CLIENT_IN_THIS_COURSE = "support_services_available_for_client_in_this_course";
+const String COURSE_DIRECTED_AT_A_SPECIFIC_TARGET_GROUP = "course_directed_at_a_specific_target_group";
+const String CHILDREN_0_14_YRS = "children_0_14_yrs";
+const String YOUTH_15_24_YRS = "youth_15_24_yrs";
+const String SENIOR = "senior";
+const String GENDER_SPECIFIC = "gender_specific";
+const String REFUGEES = "refugees";
+const String OFFICIAL_LANGUAGE_MINORITIES = "official_language_minorities";
+const String ETHNIC_CULTURAL_LINGUISTIC_GROUP = "ethnic_cultural_linguistic_group";
+const String DEAF_OR_HARD_OF_HEARING = "deaf_or_hard_of_hearing";
+const String BLIND_OR_PARTIALLY_SIGHTED = "blind_or_partially_sighted";
+const String CLIENTS_WITH_OTHER_IMPAIRMENTS_PHYSICAL_MENTAL = "clients_with_other_impairments_physical_mental";
+const String LESBIAN_GAY_BISEXUAL_TRANSGENDER_QUEER_LGBTQ = "lesbian_gay_bisexual_transgender_queer_lgbtq";
+const String FAMILIES_PARENTS = "families_parents";
+const String CLIENTS_WITH_INTERNATIONAL_TRAINING_IN_A_REGULATED_PROFESSION = "clients_with_international_training_in_a_regulated_profession";
+const String CLIENTS_WITH_INTERNATIONAL_TRAINING_IN_A_REGULATED_TRADE = "clients_with_international_training_in_a_regulated_trade";
+const String MATERIALS_USED_IN_COURSE = "materials_used_in_course";
+const String CITIZENSHIP_PREPARATION = "citizenship_preparation";
+const String PBLA_LANGUAGE_COMPANION = "pbla_language_companion";
+const String SCHEDULE_MORNING = "schedule_morning";
+const String SCHEDULE_AFTERNOON = "schedule_afternoon";
+const String SCHEDULE_EVENING = "schedule_evening";
+const String SCHEDULE_WEEKEND = "schedule_weekend";
+const String SCHEDULE_ANYTIME = "schedule_anytime";
+const String SCHEDULE_ONLINE = "schedule_online";
+
 //Fields that have a specific list of choices go here (ones that have drop-down lists)
 const UNIQUE_IDENTIFIER = "unique_identifier";
 const STREET_TYPE = "street_type";
@@ -233,7 +269,79 @@ const TOTAL_LENGTH_OF_ORIENTATION = "total_length_of_orientation";
 const TOTAL_LENGTH_OF_ORIENTATION_HOURS = "total_length_of_orientation_hours";
 const TOTAL_LENGTH_OF_ORIENTATION_MINUTES = "total_length_of_orientation_minutes";
 const NUMBER_OF_CLIENTS_IN_GROUP = "number_of_clients_in_group";
-	//
+	// 207 - 309
+const String LISTENING_SKILL_LEVEL_1 = "listening_skill_level_1";
+const String LISTENING_SKILL_LEVEL_2 = "listening_skill_level_2";
+const String LISTENING_SKILL_LEVEL_3 = "listening_skill_level_3";
+const String LISTENING_SKILL_LEVEL_4 = "listening_skill_level_4";
+const String LISTENING_SKILL_LEVEL_5 = "listening_skill_level_5";
+const String LISTENING_SKILL_LEVEL_6 = "listening_skill_level_6";
+const String LISTENING_SKILL_LEVEL_7 = "listening_skill_level_7";
+const String LISTENING_SKILL_LEVEL_8 = "listening_skill_level_8";
+const String LISTENING_SKILL_LEVEL_9 = "listening_skill_level_9";
+const String LISTENING_SKILL_LEVEL_10 = "listening_skill_level_10";
+const String LISTENING_SKILL_LEVEL_11 = "listening_skill_level_11";
+const String LISTENING_SKILL_LEVEL_12 = "listening_skill_level_12";
+const String SPEAKING_SKILL_LEVEL_1 = "speaking_skill_level_1";
+const String SPEAKING_SKILL_LEVEL_2 = "speaking_skill_level_2";
+const String SPEAKING_SKILL_LEVEL_3 = "speaking_skill_level_3";
+const String SPEAKING_SKILL_LEVEL_4 = "speaking_skill_level_4";
+const String SPEAKING_SKILL_LEVEL_5 = "speaking_skill_level_5";
+const String SPEAKING_SKILL_LEVEL_6 = "speaking_skill_level_6";
+const String SPEAKING_SKILL_LEVEL_7 = "speaking_skill_level_7";
+const String SPEAKING_SKILL_LEVEL_8 = "speaking_skill_level_8";
+const String SPEAKING_SKILL_LEVEL_9 = "speaking_skill_level_9";
+const String SPEAKING_SKILL_LEVEL_10 = "speaking_skill_level_10";
+const String SPEAKING_SKILL_LEVEL_11 = "speaking_skill_level_11";
+const String SPEAKING_SKILL_LEVEL_12 = "speaking_skill_level_12";
+const String READING_SKILL_LEVEL_1 = "reading_skill_level_1";
+const String READING_SKILL_LEVEL_2 = "reading_skill_level_2";
+const String READING_SKILL_LEVEL_3 = "reading_skill_level_3";
+const String READING_SKILL_LEVEL_4 = "reading_skill_level_4";
+const String READING_SKILL_LEVEL_5 = "reading_skill_level_5";
+const String READING_SKILL_LEVEL_6 = "reading_skill_level_6";
+const String READING_SKILL_LEVEL_7 = "reading_skill_level_7";
+const String READING_SKILL_LEVEL_8 = "reading_skill_level_8";
+const String READING_SKILL_LEVEL_9 = "reading_skill_level_9";
+const String READING_SKILL_LEVEL_10 = "reading_skill_level_10";
+const String READING_SKILL_LEVEL_11 = "reading_skill_level_11";
+const String READING_SKILL_LEVEL_12 = "reading_skill_level_12";
+const String READING_SKILL_LEVEL_13 = "reading_skill_level_13";
+const String READING_SKILL_LEVEL_14 = "reading_skill_level_14";
+const String READING_SKILL_LEVEL_15 = "reading_skill_level_15";
+const String READING_SKILL_LEVEL_16 = "reading_skill_level_16";
+const String READING_SKILL_LEVEL_17 = "reading_skill_level_17";
+const String WRITING_SKILL_LEVEL_1 = "writing_skill_level_1";
+const String WRITING_SKILL_LEVEL_2 = "writing_skill_level_2";
+const String WRITING_SKILL_LEVEL_3 = "writing_skill_level_3";
+const String WRITING_SKILL_LEVEL_4 = "writing_skill_level_4";
+const String WRITING_SKILL_LEVEL_5 = "writing_skill_level_5";
+const String WRITING_SKILL_LEVEL_6 = "writing_skill_level_6";
+const String WRITING_SKILL_LEVEL_7 = "writing_skill_level_7";
+const String WRITING_SKILL_LEVEL_8 = "writing_skill_level_8";
+const String WRITING_SKILL_LEVEL_9 = "writing_skill_level_9";
+const String WRITING_SKILL_LEVEL_10 = "writing_skill_level_10";
+const String WRITING_SKILL_LEVEL_11 = "writing_skill_level_11";
+const String WRITING_SKILL_LEVEL_12 = "writing_skill_level_12";
+const String WRITING_SKILL_LEVEL_13 = "writing_skill_level_13";
+const String WRITING_SKILL_LEVEL_14 = "writing_skill_level_14";
+const String WRITING_SKILL_LEVEL_15 = "writing_skill_level_15";
+const String WRITING_SKILL_LEVEL_16 = "writing_skill_level_16";
+const String WRITING_SKILL_LEVEL_17 = "writing_skill_level_17";
+const String LISTENING_CLB_LEVEL = "listening_clb_level";
+const String SPEAKING_CLB_LEVEL = "speaking_clb_level";
+const String READING_CLB_LEVEL = "reading_clb_level";
+const String WRITING_CLB_LEVEL = "writing_clb_level";
+const String LISTENING_LEVEL_INDICATED_ON_CERTIFICATE = "listening_level_indicated_on_certificate";
+const String SPEAKING_LEVEL_INDICATED_ON_CERTIFICATE = "speaking_level_indicated_on_certificate";
+const String INSTRUCTIONAL_HOURS_PER_CLASS = "instructional_hours_per_class";
+const String CLASSES_PER_WEEK = "classes_per_week";
+const String WEEKS_OF_INSTRUCTION = "weeks_of_instruction";
+const String WEEKS_OF_INSTRUCTION_PER_YEAR = "weeks_of_instruction_per_year";
+const String NEW_STUDENTS_CAN_ENROL_IN_THE_COURSE = "new_students_can_enrol_in_the_course";
+const String DOMINANT_FOCUS_OF_THE_COURSE = "dominant_focus_of_the_course";
+const String CLIENTS_TRAINING_STATUS = "clients_training_status";
+const String REASON_FOR_EXITING_COURSE = "reason_for_exiting_course";
 
 function mapTypes()
 {
@@ -275,7 +383,14 @@ function mapTypes()
 	setType(END_DATE_YYYY_MM_DD, FIELDTYPE_STRING);
 	setType(PROJECTED_END_DATE_YYYY_MM_DD, FIELDTYPE_STRING);
 	setType(START_DATE_OF_SERVICE_YYYY_MM_DD, FIELDTYPE_STRING);
-		//
+		// 207 - 309
+	setType(NUMBER_OF_IRCC_FUNDED_SPOTS_IN_COURSE, FIELDTYPE_STRING);
+	setType(COURSE_START_DATE_YYYY_MM_DD, FIELDTYPE_STRING);
+	setType(COURSE_END_DATE_YYYY_MM_DD, FIELDTYPE_STRING);
+	setType(CONTACT_NAME, FIELDTYPE_STRING);
+	setType(TELEPHONE_EXTENSION, FIELDTYPE_STRING);
+	setType(DATE_CLIENT_EXITED_COURSE_YYYY_MM_DD, FIELDTYPE_STRING);
+     
 	
 	//Boolean fields go here
 	setType(HAS_EMAIL_ADDRESS, FIELDTYPE_BOOLEAN);
@@ -395,7 +510,32 @@ function mapTypes()
 	setType(COMMUNITY_ENGAGEMENT_REFERRALS, FIELDTYPE_BOOLEAN);
 	setType(BECOMING_A_CANADIAN_CITIZEN, FIELDTYPE_BOOLEAN);
 	setType(BECOMING_A_CANADIAN_CITIZEN_REFERRALS, FIELDTYPE_BOOLEAN);
-		//
+		// 207 - 309
+	setType(SUPPORT_SERVICES_AVAILABLE_FOR_CLIENT_IN_THIS_COURSE, FIELDTYPE_BOOLEAN);
+	setType(SCHEDULE_MORNING, FIELDTYPE_BOOLEAN);
+	setType(SCHEDULE_AFTERNOON, FIELDTYPE_BOOLEAN);
+	setType(SCHEDULE_EVENING, FIELDTYPE_BOOLEAN);
+	setType(SCHEDULE_WEEKEND, FIELDTYPE_BOOLEAN);
+	setType(SCHEDULE_ANYTIME, FIELDTYPE_BOOLEAN);
+	setType(SCHEDULE_ONLINE, FIELDTYPE_BOOLEAN);
+	setType(COURSE_DIRECTED_AT_A_SPECIFIC_TARGET_GROUP, FIELDTYPE_BOOLEAN);
+	setType(CHILDREN_0_14_YRS, FIELDTYPE_BOOLEAN);
+	setType(YOUTH_15_24_YRS, FIELDTYPE_BOOLEAN);
+	setType(SENIOR, FIELDTYPE_BOOLEAN);
+	setType(GENDER_SPECIFIC, FIELDTYPE_BOOLEAN);
+	setType(REFUGEES, FIELDTYPE_BOOLEAN);
+	setType(OFFICIAL_LANGUAGE_MINORITIES, FIELDTYPE_BOOLEAN);
+	setType(ETHNIC_CULTURAL_LINGUISTIC_GROUP, FIELDTYPE_BOOLEAN);
+	setType(DEAF_OR_HARD_OF_HEARING, FIELDTYPE_BOOLEAN);
+	setType(BLIND_OR_PARTIALLY_SIGHTED, FIELDTYPE_BOOLEAN);
+	setType(CLIENTS_WITH_OTHER_IMPAIRMENTS_PHYSICAL_MENTAL, FIELDTYPE_BOOLEAN);
+	setType(LESBIAN_GAY_BISEXUAL_TRANSGENDER_QUEER_LGBTQ, FIELDTYPE_BOOLEAN);
+	setType(FAMILIES_PARENTS, FIELDTYPE_BOOLEAN);
+	setType(CLIENTS_WITH_INTERNATIONAL_TRAINING_IN_A_REGULATED_PROFESSION, FIELDTYPE_BOOLEAN);
+	setType(CLIENTS_WITH_INTERNATIONAL_TRAINING_IN_A_REGULATED_TRADE, FIELDTYPE_BOOLEAN);
+	setType(MATERIALS_USED_IN_COURSE, FIELDTYPE_BOOLEAN);
+	setType(CITIZENSHIP_PREPARATION, FIELDTYPE_BOOLEAN);
+	setType(PBLA_LANGUAGE_COMPANION, FIELDTYPE_BOOLEAN);
 	
 	//Fields that have a specific list of choices go here (ones that have drop-down lists)
 	setType(UNIQUE_IDENTIFIER, FIELDTYPE_SELECT);
@@ -464,7 +604,79 @@ function mapTypes()
 	setType(TOTAL_LENGTH_OF_ORIENTATION_HOURS, FIELDTYPE_SELECT);
 	setType(TOTAL_LENGTH_OF_ORIENTATION_MINUTES, FIELDTYPE_SELECT);
 	setType(NUMBER_OF_CLIENTS_IN_GROUP, FIELDTYPE_SELECT);
-		//
+		// 207 - 309
+	setType(NEW_STUDENTS_CAN_ENROL_IN_THE_COURSE, FIELDTYPE_SELECT);
+	setType(LISTENING_SKILL_LEVEL_1, FIELDTYPE_SELECT);
+	setType(LISTENING_SKILL_LEVEL_2, FIELDTYPE_SELECT);
+	setType(LISTENING_SKILL_LEVEL_3, FIELDTYPE_SELECT);
+	setType(LISTENING_SKILL_LEVEL_4, FIELDTYPE_SELECT);
+	setType(LISTENING_SKILL_LEVEL_5, FIELDTYPE_SELECT);
+	setType(LISTENING_SKILL_LEVEL_6, FIELDTYPE_SELECT);
+	setType(LISTENING_SKILL_LEVEL_7, FIELDTYPE_SELECT);
+	setType(LISTENING_SKILL_LEVEL_8, FIELDTYPE_SELECT);
+	setType(LISTENING_SKILL_LEVEL_9, FIELDTYPE_SELECT);
+	setType(LISTENING_SKILL_LEVEL_10, FIELDTYPE_SELECT);
+	setType(LISTENING_SKILL_LEVEL_11, FIELDTYPE_SELECT);
+	setType(LISTENING_SKILL_LEVEL_12, FIELDTYPE_SELECT);
+	setType(SPEAKING_SKILL_LEVEL_1, FIELDTYPE_SELECT);
+	setType(SPEAKING_SKILL_LEVEL_2, FIELDTYPE_SELECT);
+	setType(SPEAKING_SKILL_LEVEL_3, FIELDTYPE_SELECT);
+	setType(SPEAKING_SKILL_LEVEL_4, FIELDTYPE_SELECT);
+	setType(SPEAKING_SKILL_LEVEL_5, FIELDTYPE_SELECT);
+	setType(SPEAKING_SKILL_LEVEL_6, FIELDTYPE_SELECT);
+	setType(SPEAKING_SKILL_LEVEL_7, FIELDTYPE_SELECT);
+	setType(SPEAKING_SKILL_LEVEL_8, FIELDTYPE_SELECT);
+	setType(SPEAKING_SKILL_LEVEL_9, FIELDTYPE_SELECT);
+	setType(SPEAKING_SKILL_LEVEL_10, FIELDTYPE_SELECT);
+	setType(SPEAKING_SKILL_LEVEL_11, FIELDTYPE_SELECT);
+	setType(SPEAKING_SKILL_LEVEL_12, FIELDTYPE_SELECT);
+	setType(READING_SKILL_LEVEL_1, FIELDTYPE_SELECT);
+	setType(READING_SKILL_LEVEL_2, FIELDTYPE_SELECT);
+	setType(READING_SKILL_LEVEL_3, FIELDTYPE_SELECT);
+	setType(READING_SKILL_LEVEL_4, FIELDTYPE_SELECT);
+	setType(READING_SKILL_LEVEL_5, FIELDTYPE_SELECT);
+	setType(READING_SKILL_LEVEL_6, FIELDTYPE_SELECT);
+	setType(READING_SKILL_LEVEL_7, FIELDTYPE_SELECT);
+	setType(READING_SKILL_LEVEL_8, FIELDTYPE_SELECT);
+	setType(READING_SKILL_LEVEL_9, FIELDTYPE_SELECT);
+	setType(READING_SKILL_LEVEL_10, FIELDTYPE_SELECT);
+	setType(READING_SKILL_LEVEL_11, FIELDTYPE_SELECT);
+	setType(READING_SKILL_LEVEL_12, FIELDTYPE_SELECT);
+	setType(READING_SKILL_LEVEL_13, FIELDTYPE_SELECT);
+	setType(READING_SKILL_LEVEL_14, FIELDTYPE_SELECT);
+	setType(READING_SKILL_LEVEL_15, FIELDTYPE_SELECT);
+	setType(READING_SKILL_LEVEL_16, FIELDTYPE_SELECT);
+	setType(READING_SKILL_LEVEL_17, FIELDTYPE_SELECT);
+	setType(WRITING_SKILL_LEVEL_1, FIELDTYPE_SELECT);
+	setType(WRITING_SKILL_LEVEL_2, FIELDTYPE_SELECT);
+	setType(WRITING_SKILL_LEVEL_3, FIELDTYPE_SELECT);
+	setType(WRITING_SKILL_LEVEL_4, FIELDTYPE_SELECT);
+	setType(WRITING_SKILL_LEVEL_5, FIELDTYPE_SELECT);
+	setType(WRITING_SKILL_LEVEL_6, FIELDTYPE_SELECT);
+	setType(WRITING_SKILL_LEVEL_7, FIELDTYPE_SELECT);
+	setType(WRITING_SKILL_LEVEL_8, FIELDTYPE_SELECT);
+	setType(WRITING_SKILL_LEVEL_9, FIELDTYPE_SELECT);
+	setType(WRITING_SKILL_LEVEL_10, FIELDTYPE_SELECT);
+	setType(WRITING_SKILL_LEVEL_11, FIELDTYPE_SELECT);
+	setType(WRITING_SKILL_LEVEL_12, FIELDTYPE_SELECT);
+	setType(WRITING_SKILL_LEVEL_13, FIELDTYPE_SELECT);
+	setType(WRITING_SKILL_LEVEL_14, FIELDTYPE_SELECT);
+	setType(WRITING_SKILL_LEVEL_15, FIELDTYPE_SELECT);
+	setType(WRITING_SKILL_LEVEL_16, FIELDTYPE_SELECT);
+	setType(WRITING_SKILL_LEVEL_17, FIELDTYPE_SELECT);
+	setType(INSTRUCTIONAL_HOURS_PER_CLASS, FIELDTYPE_SELECT);
+	setType(CLASSES_PER_WEEK, FIELDTYPE_SELECT);
+	setType(WEEKS_OF_INSTRUCTION, FIELDTYPE_SELECT);
+	setType(WEEKS_OF_INSTRUCTION_PER_YEAR, FIELDTYPE_SELECT);
+	setType(DOMINANT_FOCUS_OF_THE_COURSE, FIELDTYPE_SELECT);
+	setType(CLIENTS_TRAINING_STATUS, FIELDTYPE_SELECT);
+	setType(REASON_FOR_EXITING_COURSE, FIELDTYPE_SELECT);
+	setType(LISTENING_CLB_LEVEL, FIELDTYPE_SELECT);
+	setType(SPEAKING_CLB_LEVEL, FIELDTYPE_SELECT);
+	setType(READING_CLB_LEVEL, FIELDTYPE_SELECT);
+	setType(WRITING_CLB_LEVEL, FIELDTYPE_SELECT);
+	setType(LISTENING_LEVEL_INDICATED_ON_CERTIFICATE, FIELDTYPE_SELECT);
+	setType(SPEAKING_LEVEL_INDICATED_ON_CERTIFICATE, FIELDTYPE_SELECT);
 }
 
 function mapLists()
@@ -538,7 +750,7 @@ function mapLists()
 	mapListToField(TOTAL_LENGTH_OF_ORIENTATION_HOURS, LIST_TOTAL_LENGTH_OF_ORIENTATION_HOURS);
 	mapListToField(TOTAL_LENGTH_OF_ORIENTATION_MINUTES, LIST_TOTAL_LENGTH_OF_ORIENTATION_MINUTES);
 	mapListToField(NUMBER_OF_CLIENTS_IN_GROUP, LIST_NUMBER_OF_CLIENTS_IN_GROUP);
-		//
+		// 207 - 309
 }
 
 /*function mapNames()

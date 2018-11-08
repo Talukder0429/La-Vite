@@ -15,8 +15,13 @@ public final class Field
 				//////////////////////////////        NEW FIELDS GO HERE                                         /////////
 				//////////////////////////////////////////////////////////////////////////////////////////////////////////
 				//Regular string fields you fill on your own go here
+				
+				//was missing from aggregate form
+				put(TELEPHONE_NUMBER, FIELDTYPE_STRING);
+				put(WAS_A_CERTIFICATE_ISSUED_TO_THE_CLIENT, FIELDTYPE_BOOLEAN);
+				//
+				
 		        put(UNIQUE_IDENTIFIER_VALUE, FIELDTYPE_STRING);
-		        put(DATE_OF_BIRTH, FIELDTYPE_STRING);
 		        put(PHONE_NUMBER, FIELDTYPE_STRING);
 		        put(EMAIL_ADDRESS, FIELDTYPE_STRING);
 		        put(STREET_NUMBER, FIELDTYPE_STRING);
@@ -358,19 +363,23 @@ public final class Field
 	//Each new table has its referenced name go here
 	public static final String TABLE_CLIENT_PROFILE = "client_profile";
 	
-	
-	
 	public static final String TABLE_EMPLOYMENT = "employment";
 	public static final String TABLE_LANGUAGE_TRAINING_CLIENT_ENROLMENT = "languagetrainingclientenrolment";
 	public static final String TABLE_LANGUAGE_TRAINING_COURSE_SETUP = "languagetrainingcoursesetup";
 	public static final String TABLE_LANGUAGE_TRAINING_CLIENT_EXIT = "languagetrainingclientexit";
+	
 	// TODO
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////        NEW FIELDS GO HERE                                         /////////
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//Regular string fields you fill on your own go here
+	
+	// WAS MISSING FROM AGGREGATE FORM
+	public static final String TELEPHONE_NUMBER = "telephone_number";
+	public static final String WAS_A_CERTIFICATE_ISSUED_TO_THE_CLIENT = "was_a_certificate_issued_to_the_client";
+	// WAS MISSING FROM AGGREGATE FORM
+	
 	public static final String UNIQUE_IDENTIFIER_VALUE = "unique_identifier_value";
-	public static final String DATE_OF_BIRTH = "date_of_birth";
 	public static final String PHONE_NUMBER = "phone_number";
 	public static final String EMAIL_ADDRESS = "email_address";
 	public static final String STREET_NUMBER = "street_number";

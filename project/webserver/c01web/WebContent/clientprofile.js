@@ -15,7 +15,7 @@ function generatePageElements()
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	addFieldElement(UNIQUE_IDENTIFIER);
 	addFieldElement(UNIQUE_IDENTIFIER_VALUE);
-	addFieldElement(DATE_OF_BIRTH);
+	addFieldElement(DATE_OF_BIRTH_YYYY_MM_DD);
 	addFieldElement(PHONE_NUMBER);
 	addFieldElement(DOES_THE_CLIENT_HAVE_AN_EMAIL_ADDRESS);
 	addFieldElement(EMAIL_ADDRESS);

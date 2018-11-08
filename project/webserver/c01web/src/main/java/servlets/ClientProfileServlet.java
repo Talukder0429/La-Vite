@@ -50,7 +50,7 @@ public class ClientProfileServlet extends FormServlet {
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		this.addField(Field.UNIQUE_IDENTIFIER);
 		this.addField(Field.UNIQUE_IDENTIFIER_VALUE);
-		this.addField(Field.DATE_OF_BIRTH);
+		this.addField(Field.DATE_OF_BIRTH_YYYY_MM_DD);
 		this.addField(Field.PHONE_NUMBER);
 		this.addField(Field.DOES_THE_CLIENT_HAVE_AN_EMAIL_ADDRESS);
 		this.addField(Field.EMAIL_ADDRESS);

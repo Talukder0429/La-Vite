@@ -360,6 +360,10 @@ public final class Field
 	
 	
 	
+	public static final String TABLE_EMPLOYMENT = "employment";
+	public static final String TABLE_LANGUAGE_TRAINING_CLIENT_ENROLMENT = "languagetrainingclientenrolment";
+	public static final String TABLE_LANGUAGE_TRAINING_COURSE_SETUP = "languagetrainingcoursesetup";
+	public static final String TABLE_LANGUAGE_TRAINING_CLIENT_EXIT = "languagetrainingclientexit";
 	// TODO
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////        NEW FIELDS GO HERE                                         /////////

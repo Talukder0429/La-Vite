@@ -26,7 +26,7 @@ function generatePageElements()
 	addFieldElement(READING_CLB_LEVEL);
 	addFieldElement(SPEAKING_CLB_LEVEL);
 	addFieldElement(WRITING_CLB_LEVEL);
-	//was certificate issued to client
+	addFieldElement(WAS_A_CERTIFICATE_ISSUED_TO_THE_CLIENT);
 	addFieldElement(LISTENING_LEVEL_INDICATED_ON_CERTIFICATE);
 	addFieldElement(SPEAKING_LEVEL_INDICATED_ON_CERTIFICATE);
 	addFieldElement(SUPPORT_SERVICES_RECEIVED);

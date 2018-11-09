@@ -30,7 +30,6 @@ function generatePageElements()
 	addFieldElement(SUPPORT_SERVICES_AVAILABLE_FOR_CLIENT_IN_THIS_COURSE);
 	addFieldElement(CARE_FOR_NEWCOMER_CHILDREN);
 	addFieldElement(TRANSPORTATION_ADULT);
-	addFieldElement(TRANSPORTATION_CHILD);
 	addFieldElement(PROVISIONS_FOR_DISABILITIES);
 	addFieldElement(COURSE_START_DATE_YYYY_MM_DD);
 	addFieldElement(COURSE_END_DATE_YYYY_MM_DD);
@@ -72,8 +71,8 @@ function generatePageElements()
 	addFieldElement(PROVINCE);
 	addFieldElement(CITY);
 	addFieldElement(POSTAL_CODE);
+	addFieldElement(TELEPHONE_NUMBER);
 	addFieldElement(TELEPHONE_EXTENSION);
-	//TELEPHONE_NUMBER
 	addFieldElement(EMAIL_ADDRESS);
 	addFieldElement(LISTENING_SKILL_LEVEL_1);
 	addFieldElement(LISTENING_SKILL_LEVEL_2);

@@ -367,7 +367,7 @@ public final class Field
 	public static final String TABLE_INFORMATION_AND_ORIENTATION = "information_and_orientation";
 	
 	public static final String TABLE_EMPLOYMENT = "employment";
-	public static final String TABLE_LANGUAGE_TRAINING_CLIENT_ENROLMENT = "language_training_client_enrolment";
+	public static final String TABLE_LANGUAGE_TRAINING_CLIENT_ENROLLMENT = "language_training_client_enrollment";
 	public static final String TABLE_LANGUAGE_TRAINING_COURSE_SETUP = "language_training_course_setup";
 	public static final String TABLE_LANGUAGE_TRAINING_CLIENT_EXIT = "language_training_client_exit";
 	

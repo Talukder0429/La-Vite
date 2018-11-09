@@ -1,5 +1,5 @@
 //change this to your own servlet mapped url
-var servletUrl = "LanguageTrainingClientEnrolment"
+var servletUrl = "LanguageTrainingClientEnrollment"
 
 function overrideNames()
 {
@@ -34,7 +34,6 @@ function generatePageElements()
 	addFieldElement(CHILD_4_TYPE_OF_CARE);
 	addFieldElement(CHILD_5_AGE);
 	addFieldElement(CHILD_5_TYPE_OF_CARE);
-	addFieldElement(TRANSPORTATION_ADULT);
 	addFieldElement(TRANSPORTATION_CHILD);
 	addFieldElement(PROVISIONS_FOR_DISABILITIES);
 	addFieldElement(TRANSLATION);

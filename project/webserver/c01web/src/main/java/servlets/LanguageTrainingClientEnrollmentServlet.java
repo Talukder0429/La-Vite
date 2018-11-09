@@ -12,14 +12,14 @@ import queryhelper.Field;
 /**
  * Servlet implementation class LanguageTraining
  */
-@WebServlet("/LanguageTrainingClientEnrolment")
-public class LanguageTrainingClientEnrolmentServlet extends FormServlet {
+@WebServlet("/LanguageTrainingClientEnrollment")
+public class LanguageTrainingClientEnrollmentServlet extends FormServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LanguageTrainingClientEnrolmentServlet() {
+    public LanguageTrainingClientEnrollmentServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,7 +38,7 @@ public class LanguageTrainingClientEnrolmentServlet extends FormServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.clearFields();
 		//set table to be used here
-		super.setTableName(Field.TABLE_LANGUAGE_TRAINING_CLIENT_ENROLMENT);
+		super.setTableName(Field.TABLE_LANGUAGE_TRAINING_CLIENT_ENROLLMENT);
 		// TODO
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//////////////////////////////        NEW FIELDS GO HERE                                         /////////
@@ -62,7 +62,6 @@ public class LanguageTrainingClientEnrolmentServlet extends FormServlet {
 		this.addField(Field.CHILD_4_TYPE_OF_CARE);
 		this.addField(Field.CHILD_5_AGE);
 		this.addField(Field.CHILD_5_TYPE_OF_CARE);
-		this.addField(Field.TRANSPORTATION_ADULT);
 		this.addField(Field.TRANSPORTATION_CHILD);
 		this.addField(Field.PROVISIONS_FOR_DISABILITIES);
 		this.addField(Field.TRANSLATION);

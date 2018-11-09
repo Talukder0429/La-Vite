@@ -58,7 +58,6 @@ public class LanguageTrainingCourseSetupServlet extends FormServlet {
 		this.addField(Field.SUPPORT_SERVICES_AVAILABLE_FOR_CLIENT_IN_THIS_COURSE);
 		this.addField(Field.CARE_FOR_NEWCOMER_CHILDREN);
 		this.addField(Field.TRANSPORTATION_ADULT);
-		this.addField(Field.TRANSPORTATION_CHILD);
 		this.addField(Field.PROVISIONS_FOR_DISABILITIES);
 		this.addField(Field.COURSE_START_DATE_YYYY_MM_DD);
 		this.addField(Field.COURSE_END_DATE_YYYY_MM_DD);
@@ -100,8 +99,8 @@ public class LanguageTrainingCourseSetupServlet extends FormServlet {
 		this.addField(Field.PROVINCE);
 		this.addField(Field.CITY);
 		this.addField(Field.POSTAL_CODE);
+		this.addField(Field.TELEPHONE_NUMBER);
 		this.addField(Field.TELEPHONE_EXTENSION);
-		//TELEPHONE_NUMBER
 		this.addField(Field.EMAIL_ADDRESS);
 		this.addField(Field.LISTENING_SKILL_LEVEL_1);
 		this.addField(Field.LISTENING_SKILL_LEVEL_2);

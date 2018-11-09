@@ -51,7 +51,7 @@ public class LanguageTrainingClientExitServlet extends FormServlet {
 		this.addField(Field.READING_CLB_LEVEL);
 		this.addField(Field.SPEAKING_CLB_LEVEL);
 		this.addField(Field.WRITING_CLB_LEVEL);
-		//was certificate issued to client
+		this.addField(Field.WAS_A_CERTIFICATE_ISSUED_TO_THE_CLIENT);
 		this.addField(Field.LISTENING_LEVEL_INDICATED_ON_CERTIFICATE);
 		this.addField(Field.SPEAKING_LEVEL_INDICATED_ON_CERTIFICATE);
 		this.addField(Field.SUPPORT_SERVICES_RECEIVED);

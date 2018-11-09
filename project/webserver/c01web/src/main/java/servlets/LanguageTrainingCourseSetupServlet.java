@@ -43,11 +43,11 @@ public class LanguageTrainingCourseSetupServlet extends FormServlet {
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//////////////////////////////        NEW FIELDS GO HERE                                         /////////
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
-		this.addField(Field.UNIQUE_IDENTIFIER);
+		this.addField(Field.UPDATE_RECORD_ID);
 		this.addField(Field.COURSE_CODE);
 		this.addField(Field.NOTES);
 		this.addField(Field.COURSE_HELD_ON_AN_ONGOING_BASIS);
-		this.addField(Field.OFFICIAL_LANGUAGE_OF_PREFERENCE); // actual field is missing
+		this.addField(Field.OFFICIAL_LANGUAGE_OF_COURSE);
 		this.addField(Field.FORMAT_OF_TRAINING_PROVIDED);
 		this.addField(Field.CLASSES_HELD_AT);
 		this.addField(Field.IN_PERSON_INSTRUCTION_PERCENT);

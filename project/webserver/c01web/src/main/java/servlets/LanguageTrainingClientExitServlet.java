@@ -40,6 +40,7 @@ public class LanguageTrainingClientExitServlet extends FormServlet {
 		//set table to be used here
 		super.setTableName(Field.TABLE_LANGUAGE_TRAINING_CLIENT_EXIT);
 
+		this.addField(Field.UPDATE_RECORD_ID);
 		this.addField(Field.UNIQUE_IDENTIFIER);
 		this.addField(Field.UNIQUE_IDENTIFIER_VALUE);
 		this.addField(Field.DATE_OF_BIRTH_YYYY_MM_DD);
@@ -78,6 +79,8 @@ public class LanguageTrainingClientExitServlet extends FormServlet {
 		this.addField(Field.CRISIS_COUNSELLING_CHILD);
 		this.addField(Field.REASON_FOR_UPDATE);
 		
+		//this does all the work
+		super.doPost(request, response);
 	}
 
 }

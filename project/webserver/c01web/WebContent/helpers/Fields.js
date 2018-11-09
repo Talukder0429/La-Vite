@@ -14,6 +14,14 @@ const LONGFIELD_1 = "longfield_1";
 const LONGFIELD_2 = "longfield_2";
 const LONGFIELD_3 = "longfield_3";
 const LONGFIELD_4 = "longfield_4";
+const LONGFIELD_5 = "longfield_5";
+const LONGFIELD_6 = "longfield_6";
+const LONGFIELD_7 = "longfield_7";
+const LONGFIELD_8 = "longfield_8";
+const LONGFIELD_9 = "longfield_9";
+const LONGFIELD_10 = "longfield_10";
+const LONGFIELD_11 = "longfield_11";
+const LONGFIELD_12 = "longfield_12";
 //Regular string fields you fill on your own go here
 
 //was missing from aggregate form
@@ -69,7 +77,7 @@ const DATE_CLIENT_EXITED_COURSE_YYYY_MM_DD = "date_client_exited_course_yyyy_mm_
 
 
 	//103
-const DID_VOLUNTEERS_FROM_THE_HOST_COMMUNITY_PARTICIPATE_IN_THE_ACTIVITY = "did_volunteers_from_the_host_community_participate_in_the_activity";
+const DID_VOLUNTEERS_FROM_THE_HOST_COMMUNITY_PARTICIPATE_IN_THE_ACTIVITY = LONGFIELD_5;
 const DIRECTED_AT_A_SPECIFIC_TARGET_GROUP = "directed_at_a_specific_target_group";
 const TARGET_GROUP_CHILDREN_0_14_YRS = "target_group_children_0_14_yrs";
 const TARGET_GROUP_YOUTH_15_24_YRS = "target_group_youth_15_24_yrs";
@@ -82,10 +90,13 @@ const TARGET_GROUP_BLIND_OR_PARTIALLY_SIGHTED = "target_group_blind_or_partially
 const TARGET_GROUP_LESBIAN_GAY_BISEXUAL_TRANSGENDER_QUEER_LGBTQ = "target_group_lesbian_gay_bisexual_transgender_queer_lgbtq";
 const TARGET_GROUP_FAMILIES_PARENTS = "target_group_families_parents";
 const TARGET_GROUP_OTHER_IMPAIRMENTS_PHYSICAL_MENTAL = "target_group_other_impairments_physical_mental";
-const TARGET_GROUP_CLIENTS_WITH_INTERNATIONAL_TRAINING_IN_A_REGULATED_PROFESSION = "target_group_clients_with_international_training_in_a_regulated_profession";
-const TARGET_GROUP_CLIENTS_WITH_INTERNATIONAL_TRAINING_IN_A_REGULATED_TRADE = "target_group_clients_with_international_training_in_a_regulated_trade";
+//const TARGET_GROUP_CLIENTS_WITH_INTERNATIONAL_TRAINING_IN_A_REGULATED_PROFESSION = "target_group_clients_with_international_training_in_a_regulated_profession";
+const TARGET_GROUP_CLIENTS_WITH_INTERNATIONAL_TRAINING_IN_A_REGULATED_PROFESSION = LONGFIELD_6;
+//const TARGET_GROUP_CLIENTS_WITH_INTERNATIONAL_TRAINING_IN_A_REGULATED_TRADE = "target_group_clients_with_international_training_in_a_regulated_trade";
+const TARGET_GROUP_CLIENTS_WITH_INTERNATIONAL_TRAINING_IN_A_REGULATED_TRADE = LONGFIELD_7;
 const TARGET_GROUP_OFFICIAL_LANGUAGE_MINORITIES = "target_group_official_language_minorities";
-const WAS_ESSENTIAL_SKILLS_AND_APTITUDES_TRAINING_RECEIVED_AS_PART_OF_THE_SERVICE = "was_essential_skills_and_aptitudes_training_received_as_part_of_the_service";
+//const WAS_ESSENTIAL_SKILLS_AND_APTITUDES_TRAINING_RECEIVED_AS_PART_OF_THE_SERVICE = "was_essential_skills_and_aptitudes_training_received_as_part_of_the_service";
+const WAS_ESSENTIAL_SKILLS_AND_APTITUDES_TRAINING_RECEIVED_AS_PART_OF_THE_SERVICE = LONGFIELD_8;
 const COMPUTER_SKILLS = "computer_skills";
 const DOCUMENT_USE = "document_use";
 const INTERPERSONAL_SKILLS_AND_WORKPLACE_CULTURE = "interpersonal_skills_and_workplace_culture";
@@ -139,8 +150,10 @@ const BECOMING_A_CANADIAN_CITIZEN_REFERRALS = "becoming_a_canadian_citizen_refer
 
 const INTERPERSONAL_CONFLICT = "interpersonal_conflict";
 const INTERPERSONAL_CONFLICT_REFERRALS = "interpersonal_conflict_referrals";
-const WAS_LIFE_SKILLS_OR_RESPONSIBILITIES_OF_CITIZENSHIP_INFORMATION_RECEIVED_AS_PART_OF_THIS_SERVICE = "was_life_skills_or_responsibilities_of_citizenship_information_received_as_part_of_this_service";
-const RIGHTS_AND_RESPONSIBILITIES_OF_CITIZENSHIP_BASED_ON_DISCOVER_CANADA = "rights_and_responsibilities_of_citizenship_based_on_discover_canada";
+//const WAS_LIFE_SKILLS_OR_RESPONSIBILITIES_OF_CITIZENSHIP_INFORMATION_RECEIVED_AS_PART_OF_THIS_SERVICE = "was_life_skills_or_responsibilities_of_citizenship_information_received_as_part_of_this_service";
+const WAS_LIFE_SKILLS_OR_RESPONSIBILITIES_OF_CITIZENSHIP_INFORMATION_RECEIVED_AS_PART_OF_THIS_SERVICE = LONGFIELD_9;
+//const RIGHTS_AND_RESPONSIBILITIES_OF_CITIZENSHIP_BASED_ON_DISCOVER_CANADA = "rights_and_responsibilities_of_citizenship_based_on_discover_canada";
+const RIGHTS_AND_RESPONSIBILITIES_OF_CITIZENSHIP_BASED_ON_DISCOVER_CANADA = LONGFIELD_10;
 const INCREASE_KNOWLEDGE_OF_LIFE_IN_CANADA = "increase_knowledge_of_life_in_canada";
 const INCREASE_KNOWLEDGE_OF_LIFE_IN_CANADA_REFERRALS = "increase_knowledge_of_life_in_canada_referrals";
 const INCREASE_KNOWLEDGE_OF_COMMUNITY_AND_GOVERNMENT_SERVICES = "increase_knowledge_of_community_and_government_services";
@@ -225,6 +238,7 @@ const STREET_TYPE = "street_type";
 const STREET_DIRECTION = "street_direction";
 const PROVINCE = "province";
 const OFFICIAL_LANGUAGE_OF_PREFERENCE = "official_language_of_preference";
+const OFFICIAL_LANGUAGE_OF_COURSE = "official_language_of_course";
 
 const IMPROVE_LANGUAGE_SKILLS_TO = "improve_language_skills_to";
 const IMPROVE_OTHER_SKILLS_TO = "improve_other_skills_to";
@@ -250,9 +264,11 @@ const LONG_TERM_INTERVENTION_PLACEMENT_WAS = "long_term_intervention_placement_w
 const LONG_TERM_INTERVENTION_HOURS_PER_WEEK = "long_term_intervention_hours_per_week";
 const LONG_TERM_INTERVENTION_CLIENT_MET_MENTOR_REGULARLY_AT = "long_term_intervention_client_met_mentor_regularly_at";
 const LONG_TERM_INTERVENTION_AVERAGE_HOURS_WEEK_IN_CONTACT_WITH_MENTOR = "long_term_intervention_average_hours_week_in_contact_with_mentor";
-const LONG_TERM_INTERVENTION_PROFESSION_TRADE_FOR_WHICH_SERVICES_WERE_RECEIVED = "long_term_intervention_profession_trade_for_which_services_were_received";
+//const LONG_TERM_INTERVENTION_PROFESSION_TRADE_FOR_WHICH_SERVICES_WERE_RECEIVED = "long_term_intervention_profession_trade_for_which_services_were_received";
+const LONG_TERM_INTERVENTION_PROFESSION_TRADE_FOR_WHICH_SERVICES_WERE_RECEIVED = LONGFIELD_11;
 const SHORT_TERM_INTERVENTION_SERVICE_RECEIVED = "short_term_intervention_service_received";
-const TIME_SPENT_WITH_CLIENT_ADDRESSING_CLIENTS_EMPLOYMENT_NEEDS_MINUTES = "time_spent_with_client_addressing_clients_employment_needs_minutes";
+//const TIME_SPENT_WITH_CLIENT_ADDRESSING_CLIENTS_EMPLOYMENT_NEEDS_MINUTES = "time_spent_with_client_addressing_clients_employment_needs_minutes";
+const TIME_SPENT_WITH_CLIENT_ADDRESSING_CLIENTS_EMPLOYMENT_NEEDS_MINUTES = LONGFIELD_12;
 const FORMAT_OF_TRAINING_PROVIDED = "format_of_training_provided";
 const CLASSES_HELD_AT = "classes_held_at";
 
@@ -600,6 +616,7 @@ function mapTypes()
 	setType(UNIQUE_IDENTIFIER, FIELDTYPE_SELECT);
 	setType(LANGUAGE_OF_SERVICE, FIELDTYPE_SELECT);
 	setType(OFFICIAL_LANGUAGE_OF_PREFERENCE, FIELDTYPE_SELECT);
+	setType(OFFICIAL_LANGUAGE_OF_COURSE, FIELDTYPE_SELECT);
 	setType(REFERRED_BY, FIELDTYPE_SELECT);
 	setType(ACTIVITY_UNDER_WHICH_CLIENT_RECEIVED_SERVICES, FIELDTYPE_SELECT);
 	setType(TYPE_OF_INSTITUTION_ORGANIZATION_WHERE_CLIENT_RECEIVED_SERVICES, FIELDTYPE_SELECT);
@@ -748,6 +765,7 @@ function mapLists()
 	mapListToField(UNIQUE_IDENTIFIER, LIST_UNIQUE_IDENTIFIER);
 	mapListToField(LANGUAGE_OF_SERVICE, LIST_LANGUAGE_OF_SERVICE);
 	mapListToField(OFFICIAL_LANGUAGE_OF_PREFERENCE, LIST_OFFICIAL_LANGUAGE_OF_PREFERENCE);
+	mapListToField(OFFICIAL_LANGUAGE_OF_COURSE, LIST_OFFICIAL_LANGUAGE_OF_PREFERENCE); //not technically correct, but this field did not exist in master list of fields so...
 	mapListToField(REFERRED_BY, LIST_REFERRED_BY);
 	mapListToField(ACTIVITY_UNDER_WHICH_CLIENT_RECEIVED_SERVICES, LIST_ACTIVITY_UNDER_WHICH_CLIENT_RECEIVED_SERVICES);
 	mapListToField(TYPE_OF_INSTITUTION_ORGANIZATION_WHERE_CLIENT_RECEIVED_SERVICES, LIST_TYPE_OF_INSTITUTION_ORGANIZATION_WHERE_CLIENT_RECEIVED_SERVICES);

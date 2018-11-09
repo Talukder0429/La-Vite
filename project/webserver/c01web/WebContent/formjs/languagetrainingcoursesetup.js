@@ -14,12 +14,11 @@ function generatePageElements()
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////		  NEW FIELDS GO HERE                                         /////////
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-	addFieldElement(UNIQUE_IDENTIFIER);
+	addFieldElement(UPDATE_RECORD_ID);
 	addFieldElement(COURSE_CODE);
 	addFieldElement(NOTES);
 	addFieldElement(COURSE_HELD_ON_AN_ONGOING_BASIS);
-	addFieldElement(OFFICIAL_LANGUAGE_OF_PREFERENCE); // actual field is missing, should be called offical language of course
+	addFieldElement(OFFICIAL_LANGUAGE_OF_COURSE);
 	addFieldElement(FORMAT_OF_TRAINING_PROVIDED);
 	addFieldElement(CLASSES_HELD_AT);
 	addFieldElement(IN_PERSON_INSTRUCTION_PERCENT);

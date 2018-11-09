@@ -82,7 +82,7 @@ public class EmploymentServlet extends FormServlet {
 		this.addField(Field.SHORT_TERM_INTERVENTION_SERVICE_RECEIVED);
 		this.addField(Field.SHORT_TERM_INTERVENTION_DATE_YYYY_MM_DD);
 		this.addField(Field.SUPPORT_SERVICES_RECEIVED);
-		this.addField(Field.CARE_FOR_NEWCOMER_CHILDREN);
+		this.addField(Field.CARE_FOR_NEWCOMER_CHILDREN_CHILD);
 		this.addField(Field.CHILD_1_AGE);
 		this.addField(Field.CHILD_1_TYPE_OF_CARE);
 		this.addField(Field.CHILD_2_AGE);
@@ -95,14 +95,14 @@ public class EmploymentServlet extends FormServlet {
 		this.addField(Field.CHILD_5_TYPE_OF_CARE);
 		this.addField(Field.TRANSPORTATION_ADULT);
 		this.addField(Field.TRANSPORTATION_CHILD);
-		this.addField(Field.PROVISIONS_FOR_DISABILITIES);
-		this.addField(Field.TRANSLATION);
+		this.addField(Field.PROVISIONS_FOR_DISABILITIES_CHILD);
+		this.addField(Field.TRANSLATION_CHILD);
 		this.addField(Field.BETWEEN_TRANSLATION);
 		this.addField(Field.AND_TRANSLATION);
-		this.addField(Field.INTERPRETATION);
+		this.addField(Field.INTERPRETATION_CHILD);
 		this.addField(Field.BETWEEN_INTERPRETATION);
 		this.addField(Field.AND_INTERPRETATION);
-		this.addField(Field.CRISIS_COUNSELLING);
+		this.addField(Field.CRISIS_COUNSELLING_CHILD);
 		this.addField(Field.TIME_SPENT_WITH_CLIENT_ADDRESSING_CLIENTS_EMPLOYMENT_NEEDS_HOURS);
 		this.addField(Field.TIME_SPENT_WITH_CLIENT_ADDRESSING_CLIENTS_EMPLOYMENT_NEEDS_MINUTES);
 		this.addField(Field.REASON_FOR_UPDATE);

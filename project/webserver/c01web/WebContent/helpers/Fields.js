@@ -9,6 +9,11 @@ const FIELDTYPE_SELECT = "select";
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////        NEW FIELDS GO HERE                                         /////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
+//these field names are used for fields that have names that are too long but must remain unique
+const LONGFIELD_1 = "longfield_1";
+const LONGFIELD_2 = "longfield_2";
+const LONGFIELD_3 = "longfield_3";
+const LONGFIELD_4 = "longfield_4";
 //Regular string fields you fill on your own go here
 
 //was missing from aggregate form
@@ -88,12 +93,18 @@ const LEADERSHIP_TRAINING = "leadership_training";
 const LIFE_SKILLS = "life_skills";
 const NUMERACY = "numeracy";
 const SUPPORT_SERVICES_RECEIVED = "support_services_received";
-const CARE_FOR_NEWCOMER_CHILDREN = "care_for_newcomer_children";
+//this field can appear more than once in the same form, but I have no idea what the difference is
+const CARE_FOR_NEWCOMER_CHILDREN_ADULT = "care_for_newcomer_children_adult";
+const CARE_FOR_NEWCOMER_CHILDREN_CHILD = "care_for_newcomer_children_child";
 const TRANSPORTATION_CHILD = "transportation_child";
-const PROVISIONS_FOR_DISABILITIES = "provisions_for_disabilities";
-const TRANSLATION = "translation";
-const INTERPRETATION = "interpretation";
-const CRISIS_COUNSELLING = "crisis_counselling";
+const PROVISIONS_FOR_DISABILITIES_ADULT = "provisions_for_disabilities_adult";
+const PROVISIONS_FOR_DISABILITIES_CHILD = "provisions_for_disabilities_child";
+const TRANSLATION_ADULT = "translation_adult";
+const TRANSLATION_CHILD = "translation_child";
+const INTERPRETATION_ADULT = "interpretation_adult";
+const INTERPRETATION_CHILD = "interpretation_child";
+const CRISIS_COUNSELLING_ADULT = "crisis_counselling_adult";
+const CRISIS_COUNSELLING_CHILD = "crisis_counselling_child";
 const OVERVIEW_OF_CANADA = "overview_of_canada";
 const OVERVIEW_OF_CANADA_REFERRALS = "overview_of_canada_referrals";
 const SOURCES_OF_INFORMATION = "sources_of_information";
@@ -133,7 +144,8 @@ const RIGHTS_AND_RESPONSIBILITIES_OF_CITIZENSHIP_BASED_ON_DISCOVER_CANADA = "rig
 const INCREASE_KNOWLEDGE_OF_LIFE_IN_CANADA = "increase_knowledge_of_life_in_canada";
 const INCREASE_KNOWLEDGE_OF_LIFE_IN_CANADA_REFERRALS = "increase_knowledge_of_life_in_canada_referrals";
 const INCREASE_KNOWLEDGE_OF_COMMUNITY_AND_GOVERNMENT_SERVICES = "increase_knowledge_of_community_and_government_services";
-const INCREASE_KNOWLEDGE_OF_COMMUNITY_AND_GOVERNMENT_SERVICES_REFERRALS = "increase_knowledge_of_community_and_government_services_referrals";
+//const INCREASE_KNOWLEDGE_OF_COMMUNITY_AND_GOVERNMENT_SERVICES_REFERRALS = "increase_knowledge_of_community_and_government_services_referrals";
+const INCREASE_KNOWLEDGE_OF_COMMUNITY_AND_GOVERNMENT_SERVICES_REFERRALS = LONGFIELD_1;
 const INCREASE_KNOWLEDGE_OF_WORKING_IN_CANADA = "increase_knowledge_of_working_in_canada";
 const INCREASE_KNOWLEDGE_OF_WORKING_IN_CANADA_REFERRALS = "increase_knowledge_of_working_in_canada_referrals";
 const INCREASE_KNOWLEDGE_OF_EDUCATION_IN_CANADA = "increase_knowledge_of_education_in_canada";
@@ -143,7 +155,8 @@ const INCREASE_THE_FOLLOWING_SOCIAL_NETWORKS_REFERRALS = "increase_the_following
 const INCREASE_THE_FOLLOWING_PROFESSIONAL_NETWORKS = "increase_the_following_professional_networks";
 const INCREASE_THE_FOLLOWING_PROFESSIONAL_NETWORKS_REFERRALS = "increase_the_following_professional_networks_referrals";
 const INCREASE_THE_FOLLOWING_ACCESS_TO_LOCAL_COMMUNITY_SERVICES = "increase_the_following_access_to_local_community_services";
-const INCREASE_THE_FOLLOWING_ACCESS_TO_LOCAL_COMMUNITY_SERVICES_REFERRALS = "increase_the_following_access_to_local_community_services_referrals";
+//const INCREASE_THE_FOLLOWING_ACCESS_TO_LOCAL_COMMUNITY_SERVICES_REFERRALS = "increase_the_following_access_to_local_community_services_referrals";
+const INCREASE_THE_FOLLOWING_ACCESS_TO_LOCAL_COMMUNITY_SERVICES_REFERRALS = LONGFIELD_2;
 const INCREASE_THE_FOLLOWING_LEVEL_OF_COMMUNITY_INVOLVEMENT = "increase_the_following_level_of_community_involvement";
 const INCREASE_THE_FOLLOWING_LEVEL_OF_COMMUNITY_INVOLVEMENT_REFERRALS = "increase_the_following_level_of_community_involvement_referrals";
 const IMPROVE_LANGUAGE_SKILLS = "improve_language_skills";
@@ -218,8 +231,10 @@ const IMPROVE_OTHER_SKILLS_TO = "improve_other_skills_to";
 const FIND_EMPLOYMENT_REFERRALS = "find_employment_referrals";
 const FIND_EMPLOYMENT_TIMEFRAME = "find_employment_timeframe";
 const FIND_EMPLOYMENT_MINIMUM_ONE_YEARS_WORK_EXPERIENCE = "find_employment_minimum_one_years_work_experience";
-const FIND_EMPLOYMENT_INTENDS_TO_WORK_IN_AN_OCCUPATION_CORRESPONDING_TO_WHICH_NATIONAL_OCCUPATION_CLASSIFICATION_SKILL_LEVEL = "find_employment_intends_to_work_in_an_occupation_corresponding_to_which_national_occupation_classification_skill_level";
-const FIND_EMPLOYMENT_INTENDS_TO_OBTAIN_CREDENTIAL_RECOGNITION_OR_OBTAIN_LICENSE_TO_WORK_IN_CANADA = "find_employment_intends_to_obtain_credential_recognition_or_obtain_license_to_work_in_canada";
+//const FIND_EMPLOYMENT_INTENDS_TO_WORK_IN_AN_OCCUPATION_CORRESPONDING_TO_WHICH_NATIONAL_OCCUPATION_CLASSIFICATION_SKILL_LEVEL = "find_employment_intends_to_work_in_an_occupation_corresponding_to_which_national_occupation_classification_skill_level";
+const FIND_EMPLOYMENT_INTENDS_TO_WORK_IN_AN_OCCUPATION_CORRESPONDING_TO_WHICH_NATIONAL_OCCUPATION_CLASSIFICATION_SKILL_LEVEL = LONGFIELD_3;
+//const FIND_EMPLOYMENT_INTENDS_TO_OBTAIN_CREDENTIAL_RECOGNITION_OR_OBTAIN_LICENSE_TO_WORK_IN_CANADA = "find_employment_intends_to_obtain_credential_recognition_or_obtain_license_to_work_in_canada";
+const FIND_EMPLOYMENT_INTENDS_TO_OBTAIN_CREDENTIAL_RECOGNITION_OR_OBTAIN_LICENSE_TO_WORK_IN_CANADA = LONGFIELD_4;
 const CLIENT_INTENDS_TO_BECOME_A_CANADIAN_CITIZEN = "client_intends_to_become_a_canadian_citizen";
 const A_REFERRAL_TO = "a_referral_to";
 const EMPLOYMENT_STATUS = "employment_status";
@@ -481,12 +496,17 @@ function mapTypes()
 	setType(LIFE_SKILLS, FIELDTYPE_BOOLEAN);
 	setType(NUMERACY, FIELDTYPE_BOOLEAN);
 	setType(SUPPORT_SERVICES_RECEIVED, FIELDTYPE_BOOLEAN);
-	setType(CARE_FOR_NEWCOMER_CHILDREN, FIELDTYPE_BOOLEAN);
+	setType(CARE_FOR_NEWCOMER_CHILDREN_ADULT, FIELDTYPE_BOOLEAN);
+	setType(CARE_FOR_NEWCOMER_CHILDREN_CHILD, FIELDTYPE_BOOLEAN);
 	setType(TRANSPORTATION_CHILD, FIELDTYPE_BOOLEAN);
-	setType(PROVISIONS_FOR_DISABILITIES, FIELDTYPE_BOOLEAN);
-	setType(TRANSLATION, FIELDTYPE_BOOLEAN);
-	setType(INTERPRETATION, FIELDTYPE_BOOLEAN);
-	setType(CRISIS_COUNSELLING, FIELDTYPE_BOOLEAN);
+	setType(PROVISIONS_FOR_DISABILITIES_ADULT, FIELDTYPE_BOOLEAN);
+	setType(PROVISIONS_FOR_DISABILITIES_CHILD, FIELDTYPE_BOOLEAN);
+	setType(TRANSLATION_ADULT, FIELDTYPE_BOOLEAN);
+	setType(TRANSLATION_CHILD, FIELDTYPE_BOOLEAN);
+	setType(INTERPRETATION_ADULT, FIELDTYPE_BOOLEAN);
+	setType(INTERPRETATION_CHILD, FIELDTYPE_BOOLEAN);
+	setType(CRISIS_COUNSELLING_ADULT, FIELDTYPE_BOOLEAN);
+	setType(CRISIS_COUNSELLING_CHILD, FIELDTYPE_BOOLEAN);
 	setType(OVERVIEW_OF_CANADA, FIELDTYPE_BOOLEAN);
 	setType(OVERVIEW_OF_CANADA_REFERRALS, FIELDTYPE_BOOLEAN);
 	setType(SOURCES_OF_INFORMATION, FIELDTYPE_BOOLEAN);

@@ -145,12 +145,16 @@ public final class Field
 		        put(LIFE_SKILLS, FIELDTYPE_BOOLEAN);
 		        put(NUMERACY, FIELDTYPE_BOOLEAN);
 		        put(SUPPORT_SERVICES_RECEIVED, FIELDTYPE_BOOLEAN);
-		        put(CARE_FOR_NEWCOMER_CHILDREN, FIELDTYPE_BOOLEAN);
-		        put(TRANSPORTATION_CHILD, FIELDTYPE_BOOLEAN);
-		        put(PROVISIONS_FOR_DISABILITIES, FIELDTYPE_BOOLEAN);
-		        put(TRANSLATION, FIELDTYPE_BOOLEAN);
-		        put(INTERPRETATION, FIELDTYPE_BOOLEAN);
-		        put(CRISIS_COUNSELLING, FIELDTYPE_BOOLEAN);
+		        put(CARE_FOR_NEWCOMER_CHILDREN_ADULT, FIELDTYPE_BOOLEAN);
+		        put(CARE_FOR_NEWCOMER_CHILDREN_CHILD, FIELDTYPE_BOOLEAN);
+		        put(PROVISIONS_FOR_DISABILITIES_ADULT, FIELDTYPE_BOOLEAN);
+		        put(PROVISIONS_FOR_DISABILITIES_CHILD, FIELDTYPE_BOOLEAN);
+		        put(TRANSLATION_ADULT, FIELDTYPE_BOOLEAN);
+		        put(TRANSLATION_CHILD, FIELDTYPE_BOOLEAN);
+		        put(INTERPRETATION_ADULT, FIELDTYPE_BOOLEAN);
+		        put(INTERPRETATION_CHILD, FIELDTYPE_BOOLEAN);
+		        put(CRISIS_COUNSELLING_ADULT, FIELDTYPE_BOOLEAN);
+		        put(CRISIS_COUNSELLING_CHILD, FIELDTYPE_BOOLEAN);
 		        put(OVERVIEW_OF_CANADA, FIELDTYPE_BOOLEAN);
 		        put(OVERVIEW_OF_CANADA_REFERRALS, FIELDTYPE_BOOLEAN);
 		        put(SOURCES_OF_INFORMATION, FIELDTYPE_BOOLEAN);
@@ -174,6 +178,7 @@ public final class Field
 		        put(MONEY_AND_FINANCES, FIELDTYPE_BOOLEAN);
 		        put(MONEY_AND_FINANCES_REFERRALS, FIELDTYPE_BOOLEAN);
 		        put(TRANSPORTATION_ADULT, FIELDTYPE_BOOLEAN);
+		        put(TRANSPORTATION_CHILD, FIELDTYPE_BOOLEAN);
 		        put(TRANSPORTATION_REFERRALS, FIELDTYPE_BOOLEAN);
 		        put(COMMUNICATIONS_AND_MEDIA, FIELDTYPE_BOOLEAN);
 		        put(COMMUNICATIONS_AND_MEDIA_REFERRALS, FIELDTYPE_BOOLEAN);
@@ -375,6 +380,11 @@ public final class Field
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////        NEW FIELDS GO HERE                                         /////////
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
+	//these field names are used for fields that have names that are too long but must remain unique
+	private static final String LONGFIELD_1 = "longfield_1";
+	private static final String LONGFIELD_2 = "longfield_2";
+	private static final String LONGFIELD_3 = "longfield_3";
+	private static final String LONGFIELD_4 = "longfield_4";
 	//Regular string fields you fill on your own go here
 	
 	// WAS MISSING FROM AGGREGATE FORM
@@ -436,7 +446,8 @@ public final class Field
 	public static final String INCREASE_KNOWLEDGE_OF_LIFE_IN_CANADA = "increase_knowledge_of_life_in_canada";
 	public static final String INCREASE_KNOWLEDGE_OF_LIFE_IN_CANADA_REFERRALS = "increase_knowledge_of_life_in_canada_referrals";
 	public static final String INCREASE_KNOWLEDGE_OF_COMMUNITY_AND_GOVERNMENT_SERVICES = "increase_knowledge_of_community_and_government_services";
-	public static final String INCREASE_KNOWLEDGE_OF_COMMUNITY_AND_GOVERNMENT_SERVICES_REFERRALS = "increase_knowledge_of_community_and_government_services_referrals";
+	//public static final String INCREASE_KNOWLEDGE_OF_COMMUNITY_AND_GOVERNMENT_SERVICES_REFERRALS = "increase_knowledge_of_community_and_government_services_referrals";
+	public static final String INCREASE_KNOWLEDGE_OF_COMMUNITY_AND_GOVERNMENT_SERVICES_REFERRALS = LONGFIELD_1;
 	public static final String INCREASE_KNOWLEDGE_OF_WORKING_IN_CANADA = "increase_knowledge_of_working_in_canada";
 	public static final String INCREASE_KNOWLEDGE_OF_WORKING_IN_CANADA_REFERRALS = "increase_knowledge_of_working_in_canada_referrals";
 	public static final String INCREASE_KNOWLEDGE_OF_EDUCATION_IN_CANADA = "increase_knowledge_of_education_in_canada";
@@ -446,7 +457,8 @@ public final class Field
 	public static final String INCREASE_THE_FOLLOWING_PROFESSIONAL_NETWORKS = "increase_the_following_professional_networks";
 	public static final String INCREASE_THE_FOLLOWING_PROFESSIONAL_NETWORKS_REFERRALS = "increase_the_following_professional_networks_referrals";
 	public static final String INCREASE_THE_FOLLOWING_ACCESS_TO_LOCAL_COMMUNITY_SERVICES = "increase_the_following_access_to_local_community_services";
-	public static final String INCREASE_THE_FOLLOWING_ACCESS_TO_LOCAL_COMMUNITY_SERVICES_REFERRALS = "increase_the_following_access_to_local_community_services_referrals";
+	//public static final String INCREASE_THE_FOLLOWING_ACCESS_TO_LOCAL_COMMUNITY_SERVICES_REFERRALS = "increase_the_following_access_to_local_community_services_referrals";
+	public static final String INCREASE_THE_FOLLOWING_ACCESS_TO_LOCAL_COMMUNITY_SERVICES_REFERRALS = LONGFIELD_2;
 	public static final String INCREASE_THE_FOLLOWING_LEVEL_OF_COMMUNITY_INVOLVEMENT = "increase_the_following_level_of_community_involvement";
 	public static final String INCREASE_THE_FOLLOWING_LEVEL_OF_COMMUNITY_INVOLVEMENT_REFERRALS = "increase_the_following_level_of_community_involvement_referrals";
 	public static final String IMPROVE_LANGUAGE_SKILLS = "improve_language_skills";
@@ -507,12 +519,24 @@ public final class Field
 	public static final String LIFE_SKILLS = "life_skills";
 	public static final String NUMERACY = "numeracy";
 	public static final String SUPPORT_SERVICES_RECEIVED = "support_services_received";
-	public static final String CARE_FOR_NEWCOMER_CHILDREN = "care_for_newcomer_children";
+	//XXX duplicate
+	public static final String CARE_FOR_NEWCOMER_CHILDREN_ADULT = "care_for_newcomer_children_adult";
+	public static final String CARE_FOR_NEWCOMER_CHILDREN_CHILD = "care_for_newcomer_children_child";
+	//XXX duplicate
+	public static final String TRANSPORTATION_ADULT = "transportation_adult";
 	public static final String TRANSPORTATION_CHILD = "transportation_child";
-	public static final String PROVISIONS_FOR_DISABILITIES = "provisions_for_disabilities";
-	public static final String TRANSLATION = "translation";
-	public static final String INTERPRETATION = "interpretation";
-	public static final String CRISIS_COUNSELLING = "crisis_counselling";
+	//XXX duplicate
+	public static final String PROVISIONS_FOR_DISABILITIES_ADULT = "provisions_for_disabilities_adult";
+	public static final String PROVISIONS_FOR_DISABILITIES_CHILD = "provisions_for_disabilities_child";
+	//XXX duplicate
+	public static final String TRANSLATION_ADULT = "translation_adult";
+	public static final String TRANSLATION_CHILD = "translation_child";
+	//XXX duplicate
+	public static final String INTERPRETATION_ADULT = "interpretation_adult";
+	public static final String INTERPRETATION_CHILD = "interpretation_child";
+	//XXX duplicate
+	public static final String CRISIS_COUNSELLING_ADULT = "crisis_counselling_adult";
+	public static final String CRISIS_COUNSELLING_CHILD = "crisis_counselling_child";
 	public static final String OVERVIEW_OF_CANADA = "overview_of_canada";
 	public static final String OVERVIEW_OF_CANADA_REFERRALS = "overview_of_canada_referrals";
 	public static final String SOURCES_OF_INFORMATION = "sources_of_information";
@@ -535,7 +559,6 @@ public final class Field
 	public static final String HEALTH_REFERRALS = "health_referrals";
 	public static final String MONEY_AND_FINANCES = "money_and_finances";
 	public static final String MONEY_AND_FINANCES_REFERRALS = "money_and_finances_referrals";
-	public static final String TRANSPORTATION_ADULT = "transportation_adult";
 	public static final String TRANSPORTATION_REFERRALS = "transportation_referrals";
 	public static final String COMMUNICATIONS_AND_MEDIA = "communications_and_media";
 	public static final String COMMUNICATIONS_AND_MEDIA_REFERRALS = "communications_and_media_referrals";
@@ -582,8 +605,10 @@ public final class Field
 	public static final String IMPROVE_OTHER_SKILLS_TO = "improve_other_skills_to";
 	public static final String FIND_EMPLOYMENT_TIMEFRAME = "find_employment_timeframe";
 	public static final String FIND_EMPLOYMENT_MINIMUM_ONE_YEARS_WORK_EXPERIENCE = "find_employment_minimum_one_years_work_experience";
-	public static final String FIND_EMPLOYMENT_INTENDS_TO_WORK_IN_AN_OCCUPATION_CORRESPONDING_TO_WHICH_NATIONAL_OCCUPATION_CLASSIFICATION_SKILL_LEVEL = "find_employment_intends_to_work_in_an_occupation_corresponding_to_which_national_occupation_classification_skill_level";
-	public static final String FIND_EMPLOYMENT_INTENDS_TO_OBTAIN_CREDENTIAL_RECOGNITION_OR_OBTAIN_LICENSE_TO_WORK_IN_CANADA = "find_employment_intends_to_obtain_credential_recognition_or_obtain_license_to_work_in_canada";
+	//public static final String FIND_EMPLOYMENT_INTENDS_TO_WORK_IN_AN_OCCUPATION_CORRESPONDING_TO_WHICH_NATIONAL_OCCUPATION_CLASSIFICATION_SKILL_LEVEL = "find_employment_intends_to_work_in_an_occupation_corresponding_to_which_national_occupation_classification_skill_level";
+	public static final String FIND_EMPLOYMENT_INTENDS_TO_WORK_IN_AN_OCCUPATION_CORRESPONDING_TO_WHICH_NATIONAL_OCCUPATION_CLASSIFICATION_SKILL_LEVEL = LONGFIELD_3;
+	//public static final String FIND_EMPLOYMENT_INTENDS_TO_OBTAIN_CREDENTIAL_RECOGNITION_OR_OBTAIN_LICENSE_TO_WORK_IN_CANADA = "find_employment_intends_to_obtain_credential_recognition_or_obtain_license_to_work_in_canada";
+	public static final String FIND_EMPLOYMENT_INTENDS_TO_OBTAIN_CREDENTIAL_RECOGNITION_OR_OBTAIN_LICENSE_TO_WORK_IN_CANADA = LONGFIELD_4;
 	public static final String CLIENT_INTENDS_TO_BECOME_A_CANADIAN_CITIZEN = "client_intends_to_become_a_canadian_citizen";
 	public static final String A_REFERRAL_TO = "a_referral_to";
 	public static final String EMPLOYMENT_STATUS = "employment_status";

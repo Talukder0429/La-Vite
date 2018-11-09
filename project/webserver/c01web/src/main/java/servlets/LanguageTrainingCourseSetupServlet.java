@@ -56,9 +56,9 @@ public class LanguageTrainingCourseSetupServlet extends FormServlet {
 		this.addField(Field.NUMBER_OF_IRCC_FUNDED_SPOTS_IN_COURSE);
 		this.addField(Field.NEW_STUDENTS_CAN_ENROL_IN_THE_COURSE);
 		this.addField(Field.SUPPORT_SERVICES_AVAILABLE_FOR_CLIENT_IN_THIS_COURSE);
-		this.addField(Field.CARE_FOR_NEWCOMER_CHILDREN);
+		this.addField(Field.CARE_FOR_NEWCOMER_CHILDREN_ADULT);
 		this.addField(Field.TRANSPORTATION_ADULT);
-		this.addField(Field.PROVISIONS_FOR_DISABILITIES);
+		this.addField(Field.PROVISIONS_FOR_DISABILITIES_ADULT);
 		this.addField(Field.COURSE_START_DATE_YYYY_MM_DD);
 		this.addField(Field.COURSE_END_DATE_YYYY_MM_DD);
 		this.addField(Field.SCHEDULE_MORNING);

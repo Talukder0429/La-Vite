@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<!-- CHANGE THIS TO YOUR FORM .js -->
-		<script type="text/javascript" src="communityconnections.js"></script>
+		<script type="text/javascript" src="formjs\communityconnections.js"></script>
 		
 		<script type="text/javascript" src="helpers\Fields.js"></script>
 		<script type="text/javascript" src="helpers\FieldBuilder.js"></script>

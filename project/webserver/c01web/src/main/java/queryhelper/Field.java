@@ -362,6 +362,7 @@ public final class Field
 	
 	//Each new table has its referenced name go here
 	public static final String TABLE_CLIENT_PROFILE = "client_profile";
+	public static final String TABLE_NEEDS_ASSESSMENT_AND_REFERRALS = "needs_assessment_and_referrals";
 	
 	public static final String TABLE_EMPLOYMENT = "employment";
 	public static final String TABLE_LANGUAGE_TRAINING_CLIENT_ENROLMENT = "language_training_client_enrolment";

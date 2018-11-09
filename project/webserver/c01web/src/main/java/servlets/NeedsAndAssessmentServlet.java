@@ -13,7 +13,7 @@ import queryhelper.Field;
 /**
  * Servlet implementation class ClientProfileServlet
  */
-@WebServlet("/ClientProfile")
+@WebServlet("/NeedsAssessmentAndReferrals")
 public class NeedsAndAssessmentServlet extends FormServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -42,7 +42,7 @@ public class NeedsAndAssessmentServlet extends FormServlet {
 		super.clearFields();
 		
 		//set table to be used here
-		super.setTableName(Field.TABLE_CLIENT_PROFILE);
+		super.setTableName(Field.TABLE_NEEDS_ASSESSMENT_AND_REFERRALS);
 		
 		// TODO
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -14,13 +14,13 @@ import queryhelper.Field;
  * Servlet implementation class ClientProfileServlet
  */
 @WebServlet("/NeedsAssessmentAndReferrals")
-public class NeedsAndAssessmentServlet extends FormServlet {
+public class NeedsAssessmentAndReferrals extends FormServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public NeedsAndAssessmentServlet() {
+	public NeedsAssessmentAndReferrals() {
 		super();
 	}
 

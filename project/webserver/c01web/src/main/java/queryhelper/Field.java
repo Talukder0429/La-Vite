@@ -364,6 +364,7 @@ public final class Field
 	public static final String TABLE_CLIENT_PROFILE = "client_profile";
 	public static final String TABLE_NEEDS_ASSESSMENT_AND_REFERRALS = "needs_assessment_and_referrals";
 	public static final String TABLE_COMMUNITY_CONNECTIONS = "community_connections";
+	public static final String TABLE_INFORMATION_AND_ORIENTATION = "information_and_orientation";
 	
 	public static final String TABLE_EMPLOYMENT = "employment";
 	public static final String TABLE_LANGUAGE_TRAINING_CLIENT_ENROLMENT = "language_training_client_enrolment";

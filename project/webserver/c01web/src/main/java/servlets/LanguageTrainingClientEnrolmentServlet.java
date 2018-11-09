@@ -45,7 +45,7 @@ public class LanguageTrainingClientEnrolmentServlet extends FormServlet {
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		this.addField(Field.UNIQUE_IDENTIFIER);
 		this.addField(Field.UNIQUE_IDENTIFIER_VALUE);
-		this.addField(Field.DATE_OF_BIRTH);
+		this.addField(Field.DATE_OF_BIRTH_YYYY_MM_DD);
 		this.addField(Field.POSTAL_CODE_WHERE_THE_SERVICE_WAS_RECEIVED);
 		this.addField(Field.COURSE_CODE);
 		this.addField(Field.DATE_OF_CLIENTS_FIRST_CLASS_YYYY_MM_DD);

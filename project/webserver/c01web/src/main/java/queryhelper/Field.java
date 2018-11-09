@@ -364,9 +364,9 @@ public final class Field
 	public static final String TABLE_CLIENT_PROFILE = "client_profile";
 	
 	public static final String TABLE_EMPLOYMENT = "employment";
-	public static final String TABLE_LANGUAGE_TRAINING_CLIENT_ENROLMENT = "languagetrainingclientenrolment";
-	public static final String TABLE_LANGUAGE_TRAINING_COURSE_SETUP = "languagetrainingcoursesetup";
-	public static final String TABLE_LANGUAGE_TRAINING_CLIENT_EXIT = "languagetrainingclientexit";
+	public static final String TABLE_LANGUAGE_TRAINING_CLIENT_ENROLMENT = "language_training_client_enrolment";
+	public static final String TABLE_LANGUAGE_TRAINING_COURSE_SETUP = "language_training_course_setup";
+	public static final String TABLE_LANGUAGE_TRAINING_CLIENT_EXIT = "language_training_client_exit";
 	
 	// TODO
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -48,7 +48,7 @@ public class EmploymentServlet extends FormServlet {
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		this.addField(Field.UNIQUE_IDENTIFIER);
 		this.addField(Field.UNIQUE_IDENTIFIER_VALUE);
-		this.addField(Field.DATE_OF_BIRTH);
+		this.addField(Field.DATE_OF_BIRTH_YYYY_MM_DD);
 		this.addField(Field.POSTAL_CODE_WHERE_THE_SERVICE_WAS_RECEIVED);
 		this.addField(Field.REGISTRATION_IN_AN_EMPLOYMENT_INTERVENTION);
 		this.addField(Field.A_REFERRAL_TO);

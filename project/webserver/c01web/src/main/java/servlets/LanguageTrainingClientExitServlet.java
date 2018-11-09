@@ -39,9 +39,10 @@ public class LanguageTrainingClientExitServlet extends FormServlet {
 		super.clearFields();
 		//set table to be used here
 		super.setTableName(Field.TABLE_LANGUAGE_TRAINING_CLIENT_EXIT);
+
 		this.addField(Field.UNIQUE_IDENTIFIER);
 		this.addField(Field.UNIQUE_IDENTIFIER_VALUE);
-		this.addField(Field.DATE_OF_BIRTH);
+		this.addField(Field.DATE_OF_BIRTH_YYYY_MM_DD);
 		this.addField(Field.COURSE_CODE);
 		this.addField(Field.CLIENTS_TRAINING_STATUS);
 		this.addField(Field.DATE_CLIENT_EXITED_COURSE_YYYY_MM_DD);

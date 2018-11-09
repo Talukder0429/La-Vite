@@ -17,7 +17,7 @@ function generatePageElements()
 
 	addFieldElement(UNIQUE_IDENTIFIER);
 	addFieldElement(UNIQUE_IDENTIFIER_VALUE);
-	addFieldElement(DATE_OF_BIRTH);
+	addFieldElement(DATE_OF_BIRTH_YYYY_MM_DD);
 	addFieldElement(COURSE_CODE);
 	addFieldElement(CLIENTS_TRAINING_STATUS);
 	addFieldElement(DATE_CLIENT_EXITED_COURSE_YYYY_MM_DD);

@@ -17,7 +17,7 @@ function generatePageElements()
 
 	addFieldElement(UNIQUE_IDENTIFIER);
 	addFieldElement(UNIQUE_IDENTIFIER_VALUE);
-	addFieldElement(DATE_OF_BIRTH);
+	addFieldElement(DATE_OF_BIRTH_YYYY_MM_DD);
 	addFieldElement(POSTAL_CODE_WHERE_THE_SERVICE_WAS_RECEIVED);
 	addFieldElement(REGISTRATION_IN_AN_EMPLOYMENT_INTERVENTION);
 	addFieldElement(A_REFERRAL_TO);

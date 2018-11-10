@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<script type="text/javascript" src="helpers\index.js"></script>
 	</head>
 	<body>
 		<a href="clientprofile.jsp">Client Profile</a> <br />
@@ -10,5 +11,7 @@
 		<a href="languagetrainingclientenrollment.jsp">Language Training Client Enrollment</a> <br />
 		<a href="languagetrainingcoursesetup.jsp">Language Training Course Setup</a> <br />
 		<a href="languagetrainingclientexit.jsp">Language Training Client Exit</a> <br />
+		<br />
+		In Testing Mode: <input type="checkbox" id="doTest" name="doTest" onclick="changeState();">
 	</body>
 </html>

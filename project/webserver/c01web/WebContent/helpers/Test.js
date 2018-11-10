@@ -1,6 +1,6 @@
 function runTesting()
 {
-	var doTests = true;
+	var doTests = getTestingStatus();
 	if (!doTests)
 	{
 		return;
@@ -13,6 +13,11 @@ function runTesting()
 	}
 	
 	submitButton.click();
+}
+
+function getTestingStatus()
+{
+	return (sessionStorage.getItem("doTest") === "true"); //compares what is returned with the string 'true'
 }
 
 function setRandomValue(field)

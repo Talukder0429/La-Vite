@@ -89,11 +89,11 @@ function getBooleanFieldValue(field)
 	
 	if (button0.checked)
 	{
-		return "0";
+		return "No";
 	}
 	else
 	{
-		return "1";
+		return "Yes";
 	}
 }
 

@@ -11,6 +11,8 @@ function runTesting()
 		var field = fields[a];
 		setRandomValue(field);
 	}
+	
+	submitButton.click();
 }
 
 function setRandomValue(field)

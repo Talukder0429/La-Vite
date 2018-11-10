@@ -1,8 +1,11 @@
 var form;
+var submitButton;
 
 function findForm()
 {
 	form = document.getElementById("form");
+	
+	submitButton = document.getElementById("submit");
 }
 
 function generateField(field)

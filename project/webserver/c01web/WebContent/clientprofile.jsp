@@ -15,6 +15,6 @@
 		</div>
 		
 		<br />
-		<input type="submit" onclick="submit()">
+		<input id="submit" type="submit" onclick="submit()">
 	</body>
 </html>

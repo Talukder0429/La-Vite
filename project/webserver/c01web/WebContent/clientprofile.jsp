@@ -7,6 +7,7 @@
 		<script type="text/javascript" src="helpers\FieldBuilder.js"></script>
 		<script type="text/javascript" src="helpers\RequestHelper.js"></script>
 		<script type="text/javascript" src="helpers\Lists.js"></script>
+		<script type="text/javascript" src="helpers\Test.js"></script>
 		<script type="text/javascript" src="helpers\Init.js"></script>
 	</head>
 	<body>

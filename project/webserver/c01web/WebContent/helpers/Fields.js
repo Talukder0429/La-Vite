@@ -964,7 +964,10 @@ function setFieldValue(field, value)
 	{
 		setFieldValueSelect(field, value);
 	}
-	console.log("no type found for: " + field);
+	else
+	{
+		console.log("no type found for: " + field);
+	}
 }
 
 function setFieldValueString(field, value)

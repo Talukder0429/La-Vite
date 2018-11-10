@@ -949,3 +949,47 @@ function isSelect(field)
 {
 	return (getType(field) === FIELDTYPE_SELECT);
 }
+
+function setFieldValue(field, value)
+{
+	if (isString(field))
+	{
+		setFieldValueString(field, value);
+	}
+	else if (isBoolean(field))
+	{
+		setFieldValueBoolean(field, value);
+	}
+	else if (isSelect(field))
+	{
+		setFieldValueSelect(field, value);
+	}
+	console.log("no type found for: " + field);
+}
+
+function setFieldValueString(field, value)
+{
+	var textbox = getElement(field);
+	textbox.value = value;
+}
+
+function setFieldValueBoolean(field, isYes)
+{
+	var buttons = getElement(field);
+	if (isYes)
+	{
+		buttons[0].checked = false;
+		buttons[1].checked = true;
+	}
+	else
+	{
+		buttons[0].checked = true;
+		buttons[1].checked = false;
+	}
+}
+
+function setFieldValueSelect(field, index)
+{
+	var select = getElement(field);
+	select.selectedIndex = index;
+}

@@ -8,6 +8,8 @@ function Init()
 	findForm();
 	
 	generatePageElements();
+	
+	runTesting();
 }
 
 function submit()

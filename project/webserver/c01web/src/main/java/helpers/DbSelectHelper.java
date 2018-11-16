@@ -90,6 +90,19 @@ public class DbSelectHelper
 		{
 			result += "*";
 		}
+		else
+		{
+			for (int a = 0; a < this.returnFields.size(); a++)
+			{
+				QueryParameter qb = this.returnFields.get(a);
+				result += qb.getName();
+				
+				if (a != this.returnFields.size() - 1)
+				{
+					result += ", ";
+				}
+			}
+		}
 		
 		return result;
 	}

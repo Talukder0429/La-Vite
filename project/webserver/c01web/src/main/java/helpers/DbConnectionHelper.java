@@ -57,4 +57,9 @@ public class DbConnectionHelper
 		}
 		return this.connection;
 	}
+	
+	public void close()
+	{
+		this.connection = null;
+	}
 }

@@ -20,7 +20,7 @@ public abstract class FormServlet extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
 
-	private DbConnectionHelper dbHelper; //TODO change to private
+	private DbConnectionHelper dbHelper;
 	
 	private List<String> fields;
 	private String tableName;
@@ -71,6 +71,7 @@ public abstract class FormServlet extends HttpServlet
 			response.setStatus(HttpServletResponse.SC_CONFLICT);
 			response.getOutputStream().println(e.getMessage());
 		}
+		this.dbHelper.close();
 	}
 	
 	protected DbConnectionHelper getDbConnectionHelper()

@@ -28,4 +28,10 @@ public class QueryParameter
 	{
 		return (Field.isType(this.name, Field.FIELDTYPE_BOOLEAN));
 	}
+	
+	@Override
+	public String toString()
+	{
+		return this.getName();
+	}
 }

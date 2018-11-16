@@ -14,4 +14,10 @@ public class QueryParameterValue extends QueryParameter
 	{
 		return this.value;
 	}
+	
+	@Override
+	public String toString()
+	{
+		return this.getName() + ":" + this.getValue();
+	}
 }

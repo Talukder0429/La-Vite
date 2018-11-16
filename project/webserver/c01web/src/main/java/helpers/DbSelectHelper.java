@@ -2,6 +2,7 @@ package helpers;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -9,28 +10,30 @@ import java.util.List;
 
 import queryhelper.QueryParameter;
 import queryhelper.QueryParameterValue;
+import queryhelper.Row;
 
 public class DbSelectHelper
 {
 	private Connection connection;
 	private String tableName;
 	
-	private List<QueryParameter> resultFields;
+	private List<QueryParameter> returnFields;
 	private List<QueryParameterValue> conditionFields;
+	private List<Row> resultFields;
 	
 	public DbSelectHelper(Connection connection, String tableName)
 	{
 		this.connection = connection;
 		this.tableName = tableName;
 		
-		this.resultFields = new ArrayList<QueryParameter>();
+		this.returnFields = new ArrayList<QueryParameter>();
 		this.conditionFields = new ArrayList<QueryParameterValue>();
 	}
 	
 	public void addResultField(String field)
 	{
 		QueryParameter qb = new QueryParameter(field);
-		this.resultFields.add(qb);
+		this.returnFields.add(qb);
 	}
 	
 	public void addConditionField(String field, String value)
@@ -39,14 +42,26 @@ public class DbSelectHelper
 		this.conditionFields.add(qbv);
 	}
 	
-	public void getRows() throws SQLException
+	public void retrieveRows() throws SQLException
 	{
 		String query = this.buildQueryString();
 		
 		Statement statement = this.connection.createStatement();
 		ResultSet results = statement.executeQuery(query);
+		ResultSetMetaData meta = results.getMetaData();
 		
-		
+		this.resultFields = new ArrayList<Row>();
+		while (results.next())
+		{
+			Row row = new Row();
+			for (int a = 1; a <= meta.getColumnCount(); a++)
+			{
+				String name = meta.getColumnName(a);
+				String value = results.getString(a);
+				row.addField(name, value);
+			}
+			this.resultFields.add(row);
+		}
 		
 		results.close();
 		statement.close();
@@ -71,7 +86,7 @@ public class DbSelectHelper
 	{
 		String result = "";
 		
-		if (this.resultFields.size() == 0)
+		if (this.returnFields.size() == 0)
 		{
 			result += "*";
 		}
@@ -88,5 +103,10 @@ public class DbSelectHelper
 		}
 		
 		return result;
+	}
+	
+	public List<Row> getRows()
+	{
+		return this.resultFields;
 	}
 }

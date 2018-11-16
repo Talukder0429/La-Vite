@@ -22,6 +22,6 @@ public class DbSelectHelper
 	
 	public void addResultField(String field)
 	{
-		
+		QueryParameter qb = new QueryParameter(field);
 	}
 }

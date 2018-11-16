@@ -1,5 +1,9 @@
 package helpers;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,13 +12,15 @@ import queryhelper.QueryParameterValue;
 
 public class DbSelectHelper
 {
+	private Connection connection;
 	private String tableName;
 	
 	private List<QueryParameter> resultFields;
 	private List<QueryParameterValue> conditionFields;
 	
-	public DbSelectHelper(String tableName)
+	public DbSelectHelper(Connection connection, String tableName)
 	{
+		this.connection = connection;
 		this.tableName = tableName;
 		
 		this.resultFields = new ArrayList<QueryParameter>();
@@ -31,6 +37,19 @@ public class DbSelectHelper
 	{
 		QueryParameterValue qbv = new QueryParameterValue(field, value);
 		this.conditionFields.add(qbv);
+	}
+	
+	public void getRows() throws SQLException
+	{
+		String query = this.buildQueryString();
+		
+		Statement statement = this.connection.createStatement();
+		ResultSet results = statement.executeQuery(query);
+		
+		
+		
+		results.close();
+		statement.close();
 	}
 	
 	private String buildQueryString()

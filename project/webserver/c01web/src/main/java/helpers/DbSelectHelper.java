@@ -113,6 +113,17 @@ public class DbSelectHelper
 		
 		if (this.conditionFields.size() > 0)
 		{
+			result += "WHERE ";
+			for (int a = 0; a < this.conditionFields.size(); a++)
+			{
+				QueryParameterValue qbv = this.conditionFields.get(a);
+				result += qbv.getName() + "=" + "\"" + qbv.getValue() + "\"" + " ";
+				
+				if (a != this.conditionFields.size() - 1)
+				{
+					result += "AND ";
+				}
+			}
 		}
 		
 		return result;

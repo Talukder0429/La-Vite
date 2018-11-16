@@ -20,6 +20,7 @@ public class DbSelectHelper
 	private List<QueryParameter> returnFields;
 	private List<QueryParameterValue> conditionFields;
 	private List<Row> resultFields;
+	private boolean isDistinct;
 	
 	public DbSelectHelper(Connection connection, String tableName)
 	{
@@ -28,6 +29,8 @@ public class DbSelectHelper
 		
 		this.returnFields = new ArrayList<QueryParameter>();
 		this.conditionFields = new ArrayList<QueryParameterValue>();
+		
+		this.setDistinct(false);
 	}
 	
 	public void addResultField(String field)
@@ -40,6 +43,11 @@ public class DbSelectHelper
 	{
 		QueryParameterValue qbv = new QueryParameterValue(field, value);
 		this.conditionFields.add(qbv);
+	}
+	
+	public void setDistinct(boolean distinct)
+	{
+		this.isDistinct = distinct;
 	}
 	
 	public void retrieveRows() throws SQLException
@@ -72,6 +80,7 @@ public class DbSelectHelper
 		String result = "";
 		
 		result += "SELECT ";
+		result += this.buildDistinctString();
 		result += this.buildResultFieldsString();
 		result += " FROM ";
 		result += this.tableName + " ";
@@ -80,6 +89,15 @@ public class DbSelectHelper
 		
 		System.out.println(result);
 		return result;
+	}
+	
+	private String buildDistinctString()
+	{
+		if (this.isDistinct)
+		{
+			return "DISTINCT ";
+		}
+		return "";
 	}
 	
 	private String buildResultFieldsString()

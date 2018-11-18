@@ -3,5 +3,13 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+	<display-name>Archetype Created Web Application</display-name>
+	<servlet>
+		<servlet-name>FileUploadHandler</servlet-name>
+		<servlet-class>helper.FileUploadHandler</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FileUploadHandler</servlet-name>
+		<url-pattern>/FileUploadHandler/*</url-pattern>
+	</servlet-mapping>
 </web-app>

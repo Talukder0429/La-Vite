@@ -18,6 +18,7 @@ public class Row
 		this.fields.add(qbv);
 	}
 	
+	//This returns null if the field is not found
 	public String getValue(String field)
 	{
 		String result = null;

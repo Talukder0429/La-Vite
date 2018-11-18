@@ -1,6 +1,5 @@
 package helpers;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Iterator;
@@ -41,18 +40,15 @@ public class FileUploadHandler extends HttpServlet {
 			}
 			while (it.hasNext()) {
 				FileItem fileItem = it.next();
-				boolean isFormField = fileItem.isFormField();
-				if (isFormField) {
-					if (file_name == null) {
-						if (fileItem.getFieldName().equals("file_name")) {
-							file_name = fileItem.getString();
-						}
-					}
-				} else {
-					if (fileItem.getSize() > 0) {
-						fileItem.write(new File("C:\\uploaded_files_t27\\" + fileItem.getName()));
+				//fileItem.getString() returns file content
+				String[] allLines = fileItem.getString().split("[\\r\\n]+");
+				for (String row:allLines) {
+					System.out.println(row);
+					for (String element:row.split(",")) {
+						System.out.println(element);
 					}
 				}
+				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

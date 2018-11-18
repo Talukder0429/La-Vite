@@ -51,7 +51,7 @@ public class DbConnectionHelper
 	{
 		String url = "jdbc:mysql://localhost:3306/" + this.dbName + "?useSSL=false&allowPublicKeyRetrieval=true";
 		//return DriverManager.getConnection(url, this.dbUsername, this.dbPassword);
-		if (this.connection == null)
+		if (this.connection == null || this.connection.isClosed())
 		{
 			this.connection = DriverManager.getConnection(url, this.dbUsername, this.dbPassword);
 		}
@@ -60,6 +60,12 @@ public class DbConnectionHelper
 	
 	public void close()
 	{
+		try {
+			this.connection.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		this.connection = null;
 	}
 }

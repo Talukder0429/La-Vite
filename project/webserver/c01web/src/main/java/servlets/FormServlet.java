@@ -66,6 +66,12 @@ public abstract class FormServlet extends HttpServlet
 				response.getOutputStream().println("User already exists in form");
 				return; //instead of stopping should instead merge
 			}
+			if (dbcr.checkUserMonthAlreadyExist(row))
+			{
+				response.setStatus(HttpServletResponse.SC_CONFLICT);
+				response.getOutputStream().println("User already exists for that month");
+				return; //instead of stopping should instead merge
+			}
 			
 			
 			

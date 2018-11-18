@@ -2,7 +2,6 @@ package helpers;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -65,6 +64,23 @@ public class DbConflictResolver
 	
 	public boolean checkUserMonthAlreadyExist(Row row)
 	{
+		if (MONTH_TABLES.indexOf(this.tableName) == -1) //if the table doesn't even require this check then just skip it
+		{
+			return false;
+		}
+		
+		DbSelectHelper dbsh = new DbSelectHelper(this.connection, this.tableName);
+		dbsh.addResultField(FIELD_TYPES.get(this.tableName)); //gets the specific date field that is used for the table
+		dbsh.addConditionField(Field.UNIQUE_IDENTIFIER, row.getValue(Field.UNIQUE_IDENTIFIER));
+		dbsh.addConditionField(Field.UNIQUE_IDENTIFIER_VALUE, row.getValue(Field.UNIQUE_IDENTIFIER_VALUE));
+		try {
+			dbsh.retrieveRows();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return true; //something went wrong, the row should fail the check to prevent going further
+		}
+		
 		return false;
 	}
 	

@@ -18,6 +18,22 @@ public class Row
 		this.fields.add(qbv);
 	}
 	
+	public String getValue(String field)
+	{
+		String result = null;
+		
+		for (QueryParameterValue qpv : this.fields)
+		{
+			if (qpv.getName().equals(field))
+			{
+				result = qpv.getValue();
+				break;
+			}
+		}
+		
+		return result;
+	}
+	
 	@Override
 	public String toString()
 	{

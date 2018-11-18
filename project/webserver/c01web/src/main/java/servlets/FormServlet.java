@@ -12,9 +12,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import helpers.DbConflictResolver;
 import helpers.DbConnectionHelper;
 import helpers.HttpServletRequestHelper;
 import queryhelper.QueryBuilder;
+import queryhelper.Row;
 
 public abstract class FormServlet extends HttpServlet
 {
@@ -48,7 +50,28 @@ public abstract class FormServlet extends HttpServlet
 				Connection conn = this.dbHelper.connect();
 			)
 		{
+			//TODO fix insert helper to use Row
 			HttpServletRequestHelper helper = new HttpServletRequestHelper(request);
+			
+			//This portion makes sure that the information about to be added is valid
+			DbConflictResolver dbcr = new DbConflictResolver(conn, this.tableName);
+			Row row = new Row();
+			for (String field : this.fields)
+			{
+				row.addField(field, helper.getParam(field));
+			}
+			if (dbcr.checkIdentifierAlreadyExist(row)) //best to have this throw exception but oh well
+			{
+				response.setStatus(HttpServletResponse.SC_CONFLICT);
+				response.getOutputStream().println("User already exists in form");
+				return; //instead of stopping should instead merge
+			}
+			
+			
+			
+			
+			
+			
 			QueryBuilder qb = new QueryBuilder(this.tableName);
 			qb.setRequestHelper(helper);
 			

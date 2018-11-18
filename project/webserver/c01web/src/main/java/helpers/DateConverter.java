@@ -12,15 +12,10 @@ public class DateConverter {
 	String date_string = "";
 	Date date;
 	
-	public DateConverter(String text) {
+	public DateConverter(String text) throws ParseException {
 		date_string = text;
-		try {
-			DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-			date = df.parse(text);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		date = df.parse(text);
 	}
 	
 	public DateConverter(Date input_date) {

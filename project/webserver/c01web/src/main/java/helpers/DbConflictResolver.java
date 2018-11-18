@@ -2,6 +2,7 @@ package helpers;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -69,8 +70,23 @@ public class DbConflictResolver
 			return false;
 		}
 		
+		String dateField = FIELD_TYPES.get(this.tableName);
+		String dateValue = row.getValue(dateField);
+		DateConverter date;
+		try {
+			date = new DateConverter(dateValue);
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+			return true; //date in row cannot be converted into an actual date, so it is not a date
+		}
+		if (dateValue == null)
+		{
+			return false; //unexpected behaviour
+		}
+		
 		DbSelectHelper dbsh = new DbSelectHelper(this.connection, this.tableName);
-		dbsh.addResultField(FIELD_TYPES.get(this.tableName)); //gets the specific date field that is used for the table
+		dbsh.addResultField(dateField); //gets the specific date field that is used for the table
 		dbsh.addConditionField(Field.UNIQUE_IDENTIFIER, row.getValue(Field.UNIQUE_IDENTIFIER));
 		dbsh.addConditionField(Field.UNIQUE_IDENTIFIER_VALUE, row.getValue(Field.UNIQUE_IDENTIFIER_VALUE));
 		try {
@@ -79,6 +95,28 @@ public class DbConflictResolver
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return true; //something went wrong, the row should fail the check to prevent going further
+		}
+		
+		for (Row dbrow : dbsh.getRows())
+		{
+			String dbDateString = dbrow.getValue(dateField);
+			if (dbDateString == null)
+			{
+				continue; //unexpected behaviour
+			}
+			DateConverter dbDate;
+			try {
+				dbDate = new DateConverter(dbDateString);
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				continue; //if date connot be converted, it shouldn't even be in database but if it is just skip
+			}
+			
+			if (date.isSameYearAndMonth(dbDate)) //matching year and month
+			{
+				return true;
+			}
 		}
 		
 		return false;

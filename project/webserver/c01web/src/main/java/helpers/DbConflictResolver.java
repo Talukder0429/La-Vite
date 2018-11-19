@@ -19,15 +19,28 @@ public class DbConflictResolver
 																		Field.TABLE_CLIENT_PROFILE, 
 																		Field.TABLE_NEEDS_ASSESSMENT_AND_REFERRALS
 																		);
+	/*TODO what to do for Language Training - Course Setup
+		 * a) describing courses there
+		 * b) describing a specific instance of person X taking course Y
+		 */
 	//contains the tables for which there can only be one row per person per month
-	private static final List<String> MONTH_TABLES = Arrays.asList(Field.TABLE_EMPLOYMENT);
+	private static final List<String> MONTH_TABLES = Arrays.asList(
+																	Field.TABLE_EMPLOYMENT,
+																	Field.TABLE_COMMUNITY_CONNECTIONS,
+																	Field.TABLE_INFORMATION_AND_ORIENTATION,
+																	Field.TABLE_LANGUAGE_TRAINING_CLIENT_ENROLLMENT,
+																	Field.TABLE_LANGUAGE_TRAINING_CLIENT_EXIT
+																	);
 	//this is a mapping, for each table there is a specific field that should be used as the date
 	@SuppressWarnings("serial")
 	private static final Map<String, String> FIELD_TYPES = Collections.unmodifiableMap(
 		    new HashMap<String, String>() {
 			{
 				put(Field.TABLE_EMPLOYMENT, Field.REFERRAL_DATE_YYYY_MM_DD);
-				//put(Field.TABLE_COMMUNITY_CONNECTIONS, Field.START_DATE_YYYY_MM_DD);
+				put(Field.TABLE_COMMUNITY_CONNECTIONS, Field.START_DATE_YYYY_MM_DD);
+				put(Field.TABLE_INFORMATION_AND_ORIENTATION, Field.START_DATE_OF_SERVICE_YYYY_MM_DD);
+				put(Field.TABLE_LANGUAGE_TRAINING_CLIENT_ENROLLMENT, Field.DATE_OF_CLIENTS_FIRST_CLASS_YYYY_MM_DD);
+				put(Field.TABLE_LANGUAGE_TRAINING_CLIENT_EXIT, Field.DATE_CLIENT_EXITED_COURSE_YYYY_MM_DD);
 			}});
 	
 	private String tableName;

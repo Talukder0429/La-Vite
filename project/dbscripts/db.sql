@@ -62,7 +62,7 @@ DROP TABLE IF EXISTS `community_connections`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `community_connections` (
-  `update_record_id` varchar(255) NOT NULL,
+  `update_record_id` tinytext NOT NULL,
   `unique_identifier` varchar(255) NOT NULL,
   `unique_identifier_value` varchar(255) NOT NULL,
   `date_of_birth_yyyy_mm_dd` tinytext NOT NULL,
@@ -95,7 +95,7 @@ CREATE TABLE `community_connections` (
   `target_group_official_language_minorities` tinytext NOT NULL,
   `status_of_service` tinytext NOT NULL,
   `reason_for_leaving_service` tinytext NOT NULL,
-  `start_date_yyyy_mm_dd` tinytext NOT NULL,
+  `start_date_yyyy_mm_dd` varchar(255) NOT NULL,
   `end_date_yyyy_mm_dd` tinytext NOT NULL,
   `projected_end_date_yyyy_mm_dd` tinytext NOT NULL,
   `longfield_8` tinytext NOT NULL,
@@ -129,7 +129,7 @@ CREATE TABLE `community_connections` (
   `total_length_of_service_hours` tinytext NOT NULL,
   `total_length_of_service_minutes` tinytext NOT NULL,
   `reason_for_update` tinytext NOT NULL,
-  PRIMARY KEY (`update_record_id`,`unique_identifier`,`unique_identifier_value`)
+  PRIMARY KEY (`unique_identifier`,`unique_identifier_value`,`start_date_yyyy_mm_dd`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -150,7 +150,7 @@ DROP TABLE IF EXISTS `employment`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `employment` (
-  `update_record_id` varchar(255) NOT NULL,
+  `update_record_id` tinytext NOT NULL,
   `unique_identifier` varchar(255) NOT NULL,
   `unique_identifier_value` varchar(255) NOT NULL,
   `date_of_birth_yyyy_mm_dd` tinytext NOT NULL,
@@ -161,7 +161,7 @@ CREATE TABLE `employment` (
   `official_language_of_preference` tinytext NOT NULL,
   `type_of_institution_organization_where_client_received_services` tinytext NOT NULL,
   `referred_by` tinytext NOT NULL,
-  `referral_date_yyyy_mm_dd` tinytext NOT NULL,
+  `referral_date_yyyy_mm_dd` varchar(255) NOT NULL,
   `employment_status` tinytext NOT NULL,
   `education_status` tinytext NOT NULL,
   `occupation_in_canada` tinytext NOT NULL,
@@ -211,7 +211,7 @@ CREATE TABLE `employment` (
   `time_spent_with_client_addressing_clients_employment_needs_hours` tinytext NOT NULL,
   `longfield_12` tinytext NOT NULL,
   `reason_for_update` tinytext NOT NULL,
-  PRIMARY KEY (`update_record_id`,`unique_identifier`,`unique_identifier_value`)
+  PRIMARY KEY (`unique_identifier`,`unique_identifier_value`,`referral_date_yyyy_mm_dd`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -221,6 +221,7 @@ CREATE TABLE `employment` (
 
 LOCK TABLES `employment` WRITE;
 /*!40000 ALTER TABLE `employment` DISABLE KEYS */;
+INSERT INTO `employment` VALUES ('','FOSS/GCMS Client ID','123','','','No','Another IRCC-funded service','English','English','Settlement service provider','Community centre / library','2017-10-15','Unemployed','Full-time student','00 Senior management occupations','00 Senior management occupations','Long Term','Work placement','Intervention ended early (i.e. client ended participation)','Found Employment','','','Small-medium enterprise - fewer than 500 employees','Paid','Part-time - less than 30 hours at main or only job','Mentor\'s place of work during work hours','1','Acupuncturists','No','No','No','No','No','No','Networking opportunities','','No','No','Infant (6-18 months)','Short term','Infant (6-18 months)','Short term','Infant (6-18 months)','Short term','Infant (6-18 months)','Short term','Infant (6-18 months)','Short term','No','No','No','No','English','English','No','English','English','No','','0','Amend record'),('','FOSS/GCMS Client ID','123','','','No','Another IRCC-funded service','English','English','Settlement service provider','Community centre / library','2017-12-15','Unemployed','Full-time student','00 Senior management occupations','00 Senior management occupations','Long Term','Work placement','Intervention ended early (i.e. client ended participation)','Found Employment','','','Small-medium enterprise - fewer than 500 employees','Paid','Part-time - less than 30 hours at main or only job','Mentor\'s place of work during work hours','1','Acupuncturists','No','No','No','No','No','No','Networking opportunities','','No','No','Infant (6-18 months)','Short term','Infant (6-18 months)','Short term','Infant (6-18 months)','Short term','Infant (6-18 months)','Short term','Infant (6-18 months)','Short term','No','No','No','No','English','English','No','English','English','No','','0','Amend record'),('','FOSS/GCMS Client ID','123','','','No','Another IRCC-funded service','English','English','Settlement service provider','Community centre / library','2018-01-01','Unemployed','Full-time student','00 Senior management occupations','00 Senior management occupations','Long Term','Work placement','Intervention ended early (i.e. client ended participation)','Found Employment','','','Small-medium enterprise - fewer than 500 employees','Paid','Part-time - less than 30 hours at main or only job','Mentor\'s place of work during work hours','1','Acupuncturists','No','No','No','No','No','No','Networking opportunities','','No','No','Infant (6-18 months)','Short term','Infant (6-18 months)','Short term','Infant (6-18 months)','Short term','Infant (6-18 months)','Short term','Infant (6-18 months)','Short term','No','No','No','No','English','English','No','English','English','No','','0','Amend record'),('','FOSS/GCMS Client ID','123','','','No','Another IRCC-funded service','English','English','Settlement service provider','Community centre / library','2018-09-15','Unemployed','Full-time student','00 Senior management occupations','00 Senior management occupations','Long Term','Work placement','Intervention ended early (i.e. client ended participation)','Found Employment','','','Small-medium enterprise - fewer than 500 employees','Paid','Part-time - less than 30 hours at main or only job','Mentor\'s place of work during work hours','1','Acupuncturists','No','No','No','No','No','No','Networking opportunities','','No','No','Infant (6-18 months)','Short term','Infant (6-18 months)','Short term','Infant (6-18 months)','Short term','Infant (6-18 months)','Short term','Infant (6-18 months)','Short term','No','No','No','No','English','English','No','English','English','No','','0','Amend record'),('','FOSS/GCMS Client ID','123','','','No','Another IRCC-funded service','English','English','Settlement service provider','Community centre / library','2018-10-15','Unemployed','Full-time student','00 Senior management occupations','00 Senior management occupations','Long Term','Work placement','Intervention ended early (i.e. client ended participation)','Found Employment','','','Small-medium enterprise - fewer than 500 employees','Paid','Part-time - less than 30 hours at main or only job','Mentor\'s place of work during work hours','1','Acupuncturists','No','No','No','No','No','No','Networking opportunities','','No','No','Infant (6-18 months)','Short term','Infant (6-18 months)','Short term','Infant (6-18 months)','Short term','Infant (6-18 months)','Short term','Infant (6-18 months)','Short term','No','No','No','No','English','English','No','English','English','No','','0','Amend record'),('','FOSS/GCMS Client ID','1234','','','No','Another IRCC-funded service','English','English','Settlement service provider','Community centre / library','2018-01-01','Unemployed','Full-time student','00 Senior management occupations','00 Senior management occupations','Long Term','Work placement','Intervention ended early (i.e. client ended participation)','Found Employment','','','Small-medium enterprise - fewer than 500 employees','Paid','Part-time - less than 30 hours at main or only job','Mentor\'s place of work during work hours','1','Acupuncturists','No','No','No','No','No','No','Networking opportunities','','No','No','Infant (6-18 months)','Short term','Infant (6-18 months)','Short term','Infant (6-18 months)','Short term','Infant (6-18 months)','Short term','Infant (6-18 months)','Short term','No','No','No','No','English','English','No','English','English','No','','0','Amend record');
 /*!40000 ALTER TABLE `employment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -232,12 +233,12 @@ DROP TABLE IF EXISTS `information_and_orientation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `information_and_orientation` (
-  `update_record_id` varchar(255) NOT NULL,
+  `update_record_id` tinytext NOT NULL,
   `unique_identifier` varchar(255) NOT NULL,
   `unique_identifier_value` varchar(255) NOT NULL,
   `date_of_birth_yyyy_mm_dd` tinytext NOT NULL,
   `postal_code_where_the_service_was_received` tinytext NOT NULL,
-  `start_date_of_service_yyyy_mm_dd` tinytext NOT NULL,
+  `start_date_of_service_yyyy_mm_dd` varchar(255) NOT NULL,
   `language_of_service` tinytext NOT NULL,
   `official_language_of_preference` tinytext NOT NULL,
   `type_of_institution_organization_where_client_received_services` tinytext NOT NULL,
@@ -326,7 +327,7 @@ CREATE TABLE `information_and_orientation` (
   `crisis_counselling_child` tinytext NOT NULL,
   `end_date_of_service_yyyy_mm_dd` tinytext NOT NULL,
   `reason_for_update` tinytext NOT NULL,
-  PRIMARY KEY (`update_record_id`,`unique_identifier`,`unique_identifier_value`)
+  PRIMARY KEY (`unique_identifier`,`unique_identifier_value`,`start_date_of_service_yyyy_mm_dd`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -347,13 +348,13 @@ DROP TABLE IF EXISTS `language_training_client_enrollment`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `language_training_client_enrollment` (
-  `update_record_id` varchar(255) NOT NULL,
+  `update_record_id` tinytext NOT NULL,
   `unique_identifier` varchar(255) NOT NULL,
   `unique_identifier_value` varchar(255) NOT NULL,
   `date_of_birth_yyyy_mm_dd` tinytext NOT NULL,
   `postal_code_where_the_service_was_received` tinytext NOT NULL,
   `course_code` tinytext NOT NULL,
-  `date_of_clients_first_class_yyyy_mm_dd` tinytext NOT NULL,
+  `date_of_clients_first_class_yyyy_mm_dd` varchar(255) NOT NULL,
   `official_language_of_preference` tinytext NOT NULL,
   `support_services_received` tinytext NOT NULL,
   `care_for_newcomer_children_child` tinytext NOT NULL,
@@ -377,7 +378,7 @@ CREATE TABLE `language_training_client_enrollment` (
   `and_interpretation` tinytext NOT NULL,
   `crisis_counselling_child` tinytext NOT NULL,
   `reason_for_update` tinytext NOT NULL,
-  PRIMARY KEY (`update_record_id`,`unique_identifier`,`unique_identifier_value`)
+  PRIMARY KEY (`unique_identifier`,`unique_identifier_value`,`date_of_clients_first_class_yyyy_mm_dd`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -398,13 +399,13 @@ DROP TABLE IF EXISTS `language_training_client_exit`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `language_training_client_exit` (
-  `update_record_id` varchar(255) NOT NULL,
+  `update_record_id` tinytext NOT NULL,
   `unique_identifier` varchar(255) NOT NULL,
   `unique_identifier_value` varchar(255) NOT NULL,
   `date_of_birth_yyyy_mm_dd` tinytext NOT NULL,
   `course_code` tinytext NOT NULL,
   `clients_training_status` tinytext NOT NULL,
-  `date_client_exited_course_yyyy_mm_dd` tinytext NOT NULL,
+  `date_client_exited_course_yyyy_mm_dd` varchar(255) NOT NULL,
   `reason_for_exiting_course` tinytext NOT NULL,
   `listening_clb_level` tinytext NOT NULL,
   `reading_clb_level` tinytext NOT NULL,
@@ -436,7 +437,7 @@ CREATE TABLE `language_training_client_exit` (
   `and_interpretation` tinytext NOT NULL,
   `crisis_counselling_child` tinytext NOT NULL,
   `reason_for_update` tinytext NOT NULL,
-  PRIMARY KEY (`update_record_id`,`unique_identifier`,`unique_identifier_value`)
+  PRIMARY KEY (`unique_identifier`,`unique_identifier_value`,`date_client_exited_course_yyyy_mm_dd`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -708,4 +709,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-09 18:40:57
+-- Dump completed on 2018-11-20 10:55:54

@@ -58,6 +58,14 @@ function generateFieldBoolean(field)
 	var div = document.createElement("div");
 	div.id = field;
 	
+	var input0title = document.createElement("span");
+	input0title.innerHTML = " Unknown";
+	
+	var input0 = document.createElement("input");
+	input0.type = "radio";
+	input0.name = field;
+	input0.value = "unknown";
+	
 	var input1title = document.createElement("span");
 	input1title.innerHTML = " No";
 	
@@ -65,8 +73,6 @@ function generateFieldBoolean(field)
 	input1.type = "radio";
 	input1.name = field;
 	input1.value = "False";
-	
-	input1.checked = true; //default value
 	
 	var input2title = document.createElement("span");
 	input2title.innerHTML = " Yes";
@@ -76,6 +82,11 @@ function generateFieldBoolean(field)
 	input2.name = field;
 	input2.value = "True";
 	
+	input0.checked = true; //default value
+	
+	div.appendChild(input0);
+	div.appendChild(input0title);
+	div.appendChild(document.createElement("br"));
 	div.appendChild(input1);
 	div.appendChild(input1title);
 	div.appendChild(document.createElement("br"));
@@ -86,7 +97,7 @@ function generateFieldBoolean(field)
 	form.appendChild(title);
 	form.appendChild(div);
 	
-	return [input1, input2];
+	return [input1, input2, input0];
 }
 
 //creates and returns drop down list

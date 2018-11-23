@@ -8,8 +8,18 @@
 		<servlet-name>FileUploadHandler</servlet-name>
 		<servlet-class>helper.FileUploadHandler</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>import</servlet-name>
+		<display-name>import</display-name>
+		<description></description>
+		<jsp-file>/import.jsp</jsp-file>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>FileUploadHandler</servlet-name>
 		<url-pattern>/FileUploadHandler/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>import</servlet-name>
+		<url-pattern>/import</url-pattern>
 	</servlet-mapping>
 </web-app>

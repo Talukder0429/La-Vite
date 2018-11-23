@@ -5,16 +5,17 @@
 	<h3>Upload a CSV</h3>
 	<form action="FileUploadHandler" enctype="multipart/form-data"
 		method="post">
-		<input type="file" name="file_name"><br> <br> 
-		<input type="radio" name="command" value="clientprofile"/>Client Profile<br> <br>
-		<input type="radio" name="command" value="needsassessmentandreferrals"/>Needs Assessment And Referrals<br> <br>
-		<input type="radio" name="command" value="communityconnections"/>Community Connections<br> <br>
-		<input type="radio" name="command" value="informationandorientation"/>Information And Orientation<br> <br>
+		<input type="file" accept=".csv" name="file_name"><br> <br> 
+		<input type="radio" name="command" value="client_profile"/>Client Profile<br> <br>
+		<input type="radio" name="command" value="needs_assessment_and_referrals"/>Needs Assessment And Referrals<br> <br>
+		<input type="radio" name="command" value="community_connections"/>Community Connections<br> <br>
+		<input type="radio" name="command" value="information_and_orientation"/>Information And Orientation<br> <br>
 		<input type="radio" name="command" value="employment"/>Employment<br> <br>
-		<input type="radio" name="command" value="languagetrainingclientenrollment"/>Language Training Client Enrollment<br> <br>
-		<input type="radio" name="command" value="languagetrainingcoursesetup"/>Language Training Course Setup<br> <br>
-		<input type="radio" name="command" value="languagetrainingclientexit"/>Language Training Client Exit<br> <br>
-		<input type="submit" value="Upload File" />
+		<input type="radio" name="command" value="language_training_client_enrollment"/>Language Training Client Enrollment<br> <br>
+		<input type="radio" name="command" value="language_training_course_setup"/>Language Training Course Setup<br> <br>
+		<input type="radio" name="command" value="language_training_client_exit"/>Language Training Client Exit<br> <br>
+		<input type="submit" value="Upload File" /><br> <br>
+		<a href="index.jsp">Back</a> <br />
 	</form>
 </body>
 </html>

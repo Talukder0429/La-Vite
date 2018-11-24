@@ -24,7 +24,7 @@ public class DbConflictResolver
 		 * b) describing a specific instance of person X taking course Y
 		 */
 	//contains the tables for which there can only be one row per person per month
-	private static final List<String> MONTH_TABLES = Arrays.asList(
+	public static final List<String> MONTH_TABLES = Arrays.asList(
 																	Field.TABLE_EMPLOYMENT,
 																	Field.TABLE_COMMUNITY_CONNECTIONS,
 																	Field.TABLE_INFORMATION_AND_ORIENTATION,
@@ -33,7 +33,7 @@ public class DbConflictResolver
 																	);
 	//this is a mapping, for each table there is a specific field that should be used as the date
 	@SuppressWarnings("serial")
-	private static final Map<String, String> FIELD_TYPES = Collections.unmodifiableMap(
+	public static final Map<String, String> DATE_MAPS = Collections.unmodifiableMap(
 		    new HashMap<String, String>() {
 			{
 				put(Field.TABLE_EMPLOYMENT, Field.REFERRAL_DATE_YYYY_MM_DD);
@@ -84,7 +84,7 @@ public class DbConflictResolver
 			return null;
 		}
 		
-		String dateField = FIELD_TYPES.get(this.tableName);
+		String dateField = DATE_MAPS.get(this.tableName);
 		String dateValue = row.getValue(dateField);
 		DateConverter date;
 		try {

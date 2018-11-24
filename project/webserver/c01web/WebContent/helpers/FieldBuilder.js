@@ -109,6 +109,11 @@ function generateFieldSelect(field)
 	var select = document.createElement("select");
 	select.id = field;
 	
+	var emptyOption = document.createElement("option");
+	emptyOption.value = "";
+	emptyOption.innerHTML = "Unknown";
+	select.appendChild(emptyOption);
+	
 	var options = getFieldList(field);
 	for (a = 0; a < options.length; a++)
 	{

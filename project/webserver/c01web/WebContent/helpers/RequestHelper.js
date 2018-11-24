@@ -106,7 +106,7 @@ function getSelectFieldValue(field)
 {
 	var select = getElement(field);
 	var option = select.options[select.selectedIndex];
-	return option.innerHTML;
+	return option.value;
 }
 
 function getElement(field)

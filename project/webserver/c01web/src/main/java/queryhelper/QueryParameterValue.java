@@ -15,6 +15,11 @@ public class QueryParameterValue extends QueryParameter
 		return this.value;
 	}
 	
+	public void setValue(String value)
+	{
+		this.value = value;
+	}
+	
 	@Override
 	public String toString()
 	{

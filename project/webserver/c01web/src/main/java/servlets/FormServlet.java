@@ -58,7 +58,7 @@ public abstract class FormServlet extends HttpServlet
 			Row row = new Row();
 			for (String field : this.fields)
 			{
-				row.addField(field, helper.getParam(field));
+				row.setField(field, helper.getParam(field));
 			}
 			Row conflict = dbcr.checkIdentifierAlreadyExist(row);
 			if (conflict != null) //best to have this throw exception but oh well

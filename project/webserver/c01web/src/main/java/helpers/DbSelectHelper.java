@@ -66,7 +66,7 @@ public class DbSelectHelper
 			{
 				String name = meta.getColumnName(a);
 				String value = results.getString(a);
-				row.addField(name, value);
+				row.setField(name, value);
 			}
 			this.resultFields.add(row);
 		}

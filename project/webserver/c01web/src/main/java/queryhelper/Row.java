@@ -17,11 +17,25 @@ public class Row
 		this.fields = new HashMap<String, QueryParameterValue>();
 	}
 	
-	public void addField(String field, String value)
+	public Map<String, QueryParameterValue> getFields()
 	{
-		QueryParameterValue qbv = new QueryParameterValue(field, value);
+		return this.fields;
+	}
+	
+	public void setField(String field, String value)
+	{
+		QueryParameterValue orig = this.fields.get(field);
+		if (orig == null)
+		{
+			QueryParameterValue qbv = new QueryParameterValue(field, value);
+			this.fields.put(field, qbv);
+		}
+		else
+		{
+			orig.setValue(value);
+		}
 		//this.fields.add(qbv);
-		this.fields.put(field, qbv);
+		//this.fields.put(field, qbv);
 	}
 	
 	//This returns null if the field is not found
@@ -48,7 +62,15 @@ public class Row
 	//Will merge this row and the one supplied, row overwrites any values in this, if the value exists in row
 	public void merge(Row row)
 	{
-		
+		Map<String, QueryParameterValue> newFields = row.getFields();
+		for (String field : newFields.keySet())
+		{
+			QueryParameterValue qbv = newFields.get(field);
+			if (qbv.getValue() != "") //if the field from new row has some value, then want to overwrite
+			{
+				this.setField(field, qbv.getValue());
+			}
+		}
 	}
 	
 	@Override

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import helpers.DbConflictResolver;
 import helpers.DbConnectionHelper;
+import helpers.DbUpdateHelper;
 import helpers.HttpServletRequestHelper;
+import queryhelper.Field;
 import queryhelper.QueryBuilder;
 import queryhelper.Row;
 
@@ -60,25 +63,33 @@ public abstract class FormServlet extends HttpServlet
 			{
 				row.setField(field, helper.getParam(field));
 			}
-			Row conflict = dbcr.checkIdentifierAlreadyExist(row);
-			if (conflict != null) //best to have this throw exception but oh well
+			Row conflict1 = dbcr.checkIdentifierAlreadyExist(row);
+			Row conflict2 = dbcr.checkUserMonthAlreadyExist(row);
+			if (conflict1 != null) //best to have this throw exception but oh well
 			{
-				response.setStatus(HttpServletResponse.SC_CONFLICT);
-				response.getOutputStream().println("User already exists in form");
+				this.mergeDbRow(conflict1, row, conn);
+				//response.setStatus(HttpServletResponse.SC_CONFLICT);
+				//response.getOutputStream().println("User already exists in form");
+				response.setStatus(HttpServletResponse.SC_OK);
+				response.getOutputStream().println("Row was merged with existing row");
 				return; //instead of stopping should instead merge
 			}
-			conflict = dbcr.checkUserMonthAlreadyExist(row);
-			if (conflict != null)
+			if (conflict2 != null)
 			{
-				response.setStatus(HttpServletResponse.SC_CONFLICT);
-				response.getOutputStream().println("User already exists for that month");
+				this.mergeDbRow(conflict2, row, conn);
+				//response.setStatus(HttpServletResponse.SC_CONFLICT);
+				//response.getOutputStream().println("User already exists for that month");
+				response.setStatus(HttpServletResponse.SC_OK);
+				response.getOutputStream().println("Row was merged with existing row");
 				return; //instead of stopping should instead merge
 			}
 			
 			
 			
 			
-			
+			//this part is all insertion
+			//it is very old
+			//therefore it is better than the newer stuff
 			
 			QueryBuilder qb = new QueryBuilder(this.tableName);
 			qb.setRequestHelper(helper);
@@ -97,12 +108,39 @@ public abstract class FormServlet extends HttpServlet
 			ps.executeUpdate();
 
 			response.setStatus(HttpServletResponse.SC_OK);
-		} catch (SQLException e) {
+		} catch (SQLException | ParseException e) {
 			e.printStackTrace();
 			response.setStatus(HttpServletResponse.SC_CONFLICT);
 			response.getOutputStream().println(e.getMessage());
 		}
 		this.dbHelper.close();
+	}
+	
+	private void mergeDbRow(Row originalRow, Row newRow, Connection conn) throws SQLException
+	{
+		//yes this is horrible, but need to prevent dates from being overwritten
+		if (DbConflictResolver.MONTH_TABLES.contains(this.tableName))
+		{
+			String dateField = DbConflictResolver.DATE_MAPS.get(this.tableName);
+			newRow.setField(dateField, "");
+		}
+		
+		originalRow.merge(newRow);
+		DbUpdateHelper dbuh = new DbUpdateHelper(conn, this.tableName);
+		for (String field : originalRow.getFields().keySet())
+		{
+			String value = originalRow.getValue(field);
+			dbuh.addUpdateField(field, value);
+		}
+		dbuh.addConditionField(Field.UNIQUE_IDENTIFIER, originalRow.getValue(Field.UNIQUE_IDENTIFIER));
+		dbuh.addConditionField(Field.UNIQUE_IDENTIFIER_VALUE, originalRow.getValue(Field.UNIQUE_IDENTIFIER_VALUE));
+		if (DbConflictResolver.MONTH_TABLES.contains(this.tableName)) //is a form which uses dates
+		{
+			String dateField = DbConflictResolver.DATE_MAPS.get(this.tableName);
+			dbuh.addConditionField(dateField, originalRow.getValue(dateField));
+		}
+		
+		dbuh.doUpdate();
 	}
 	
 	protected DbConnectionHelper getDbConnectionHelper()

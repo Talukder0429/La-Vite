@@ -52,7 +52,7 @@ public class DbUpdateHelper
 		return result;
 	}
 	
-	private void doUpdate() throws SQLException
+	public void doUpdate() throws SQLException
 	{
 		PreparedStatement ps = this.connection.prepareStatement(this.buildQueryString());
 		//done like this since there is an order to the ps

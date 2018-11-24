@@ -60,13 +60,15 @@ public abstract class FormServlet extends HttpServlet
 			{
 				row.addField(field, helper.getParam(field));
 			}
-			if (dbcr.checkIdentifierAlreadyExist(row)) //best to have this throw exception but oh well
+			Row conflict = dbcr.checkIdentifierAlreadyExist(row);
+			if (conflict != null) //best to have this throw exception but oh well
 			{
 				response.setStatus(HttpServletResponse.SC_CONFLICT);
 				response.getOutputStream().println("User already exists in form");
 				return; //instead of stopping should instead merge
 			}
-			if (dbcr.checkUserMonthAlreadyExist(row))
+			conflict = dbcr.checkUserMonthAlreadyExist(row);
+			if (conflict != null)
 			{
 				response.setStatus(HttpServletResponse.SC_CONFLICT);
 				response.getOutputStream().println("User already exists for that month");

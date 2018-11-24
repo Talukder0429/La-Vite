@@ -52,7 +52,7 @@ public class DbConflictResolver
 		this.connection = connection;
 	}
 	
-	public boolean checkRowValid(Row row)
+	/*public boolean checkRowValid(Row row)
 	{
 		if (row.getValue(Field.UNIQUE_IDENTIFIER) == null) //unique identifier does not exist
 		{
@@ -74,13 +74,14 @@ public class DbConflictResolver
 		}
 		
 		return true;
-	}
+	}*/
 	
-	public boolean checkUserMonthAlreadyExist(Row row)
+	//If conflicting row exists, that row is returned, returning null means that there is no conflict
+	public Row checkUserMonthAlreadyExist(Row row)
 	{
 		if (MONTH_TABLES.indexOf(this.tableName) == -1) //if the table doesn't even require this check then just skip it
 		{
-			return false;
+			return null;
 		}
 		
 		String dateField = FIELD_TYPES.get(this.tableName);
@@ -91,11 +92,11 @@ public class DbConflictResolver
 		} catch (ParseException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
-			return true; //date in row cannot be converted into an actual date, so it is not a date
+			return row; //date in row cannot be converted into an actual date, so it is not a date
 		}
 		if (dateValue == null)
 		{
-			return false; //unexpected behaviour
+			return null; //unexpected behaviour
 		}
 		
 		DbSelectHelper dbsh = new DbSelectHelper(this.connection, this.tableName);
@@ -107,7 +108,7 @@ public class DbConflictResolver
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return true; //something went wrong, the row should fail the check to prevent going further
+			return row; //something went wrong, the row should fail the check to prevent going further
 		}
 		
 		for (Row dbrow : dbsh.getRows())
@@ -128,18 +129,19 @@ public class DbConflictResolver
 			
 			if (date.isSameYearAndMonth(dbDate)) //matching year and month
 			{
-				return true;
+				return row;
 			}
 		}
 		
-		return false;
+		return null;
 	}
 	
-	public boolean checkIdentifierAlreadyExist(Row row)
+	//If conflicting row exists, that row is returned, returning null means that there is no conflict
+	public Row checkIdentifierAlreadyExist(Row row)
 	{
 		if (IDENTIIFIER_TABLES.indexOf(this.tableName) == -1) //if the table doesn't even require this check then just skip it
 		{
-			return false;
+			return null;
 		}
 		String countStr = "COUNT(*)";
 		
@@ -154,16 +156,22 @@ public class DbConflictResolver
 		catch(SQLException e)
 		{
 			e.printStackTrace();
-			return true; //something went wrong, the row should fail the check to prevent going further
+			return row; //something went wrong, the row should fail the check to prevent going further
 		}
 		
 		Row result = s.getRows().get(0);
 		String count = result.getValue(countStr);
 		if (count == null)
 		{
-			return true; //also fail here just in case
+			return row; //also fail here just in case
 		}
 		
-		return !count.equals("0"); //if the count is 0, then the identifier does not exist
+		//If conflicting row is found, then count is not 0 and return the row
+		if (!count.equals("0"))
+		{
+			return row;
+		}
+		return null;
+		//return !count.equals("0"); //if the count is 0, then the identifier does not exist
 	}
 }

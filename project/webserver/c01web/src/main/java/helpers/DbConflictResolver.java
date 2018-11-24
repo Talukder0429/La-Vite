@@ -77,7 +77,7 @@ public class DbConflictResolver
 	}*/
 	
 	//If conflicting row exists, that row is returned, returning null means that there is no conflict
-	public Row checkUserMonthAlreadyExist(Row row)
+	public Row checkUserMonthAlreadyExist(Row row) throws ParseException
 	{
 		if (MONTH_TABLES.indexOf(this.tableName) == -1) //if the table doesn't even require this check then just skip it
 		{
@@ -86,8 +86,8 @@ public class DbConflictResolver
 		
 		String dateField = DATE_MAPS.get(this.tableName);
 		String dateValue = row.getValue(dateField);
-		DateConverter date;
-		try {
+		DateConverter date = new DateConverter(dateValue);
+		/*try {
 			date = new DateConverter(dateValue);
 		} catch (ParseException e1) {
 			// TODO Auto-generated catch block
@@ -97,10 +97,10 @@ public class DbConflictResolver
 		if (dateValue == null)
 		{
 			return null; //unexpected behaviour
-		}
+		}*/
 		
 		DbSelectHelper dbsh = new DbSelectHelper(this.connection, this.tableName);
-		dbsh.addResultField(dateField); //gets the specific date field that is used for the table
+		//dbsh.addResultField(dateField); //gets the specific date field that is used for the table
 		dbsh.addConditionField(Field.UNIQUE_IDENTIFIER, row.getValue(Field.UNIQUE_IDENTIFIER));
 		dbsh.addConditionField(Field.UNIQUE_IDENTIFIER_VALUE, row.getValue(Field.UNIQUE_IDENTIFIER_VALUE));
 		try {
@@ -111,8 +111,10 @@ public class DbConflictResolver
 			return row; //something went wrong, the row should fail the check to prevent going further
 		}
 		
-		for (Row dbrow : dbsh.getRows())
+		//for (Row dbrow : dbsh.getRows())
+		for (int a = 0; a < dbsh.getRows().size(); a++)
 		{
+			Row dbrow = dbsh.getRows().get(a);
 			String dbDateString = dbrow.getValue(dateField);
 			if (dbDateString == null)
 			{
@@ -129,7 +131,7 @@ public class DbConflictResolver
 			
 			if (date.isSameYearAndMonth(dbDate)) //matching year and month
 			{
-				return row;
+				return dbrow;
 			}
 		}
 		
@@ -137,19 +139,19 @@ public class DbConflictResolver
 	}
 	
 	//If conflicting row exists, that row is returned, returning null means that there is no conflict
-	public Row checkIdentifierAlreadyExist(Row row)
+	public Row checkIdentifierAlreadyExist(Row row) throws SQLException
 	{
 		if (IDENTIIFIER_TABLES.indexOf(this.tableName) == -1) //if the table doesn't even require this check then just skip it
 		{
 			return null;
 		}
-		String countStr = "COUNT(*)";
+		//String countStr = "COUNT(*)";
 		
 		DbSelectHelper s = new DbSelectHelper(this.connection, this.tableName);
-		s.addResultField(countStr);
+		//s.addResultField(countStr);
 		s.addConditionField(Field.UNIQUE_IDENTIFIER, row.getValue(Field.UNIQUE_IDENTIFIER));
 		s.addConditionField(Field.UNIQUE_IDENTIFIER_VALUE, row.getValue(Field.UNIQUE_IDENTIFIER_VALUE));
-		try
+		/*try
 		{
 			s.retrieveRows();
 		}
@@ -157,11 +159,13 @@ public class DbConflictResolver
 		{
 			e.printStackTrace();
 			return row; //something went wrong, the row should fail the check to prevent going further
-		}
+		}*/
+		s.retrieveRows();
 		
-		Row result = s.getRows().get(0);
-		String count = result.getValue(countStr);
-		if (count == null)
+		//Row result = s.getRows().get(0);
+		int count = s.getRows().size();
+		//String count = result.getValue(countStr);
+		/*if (count == null)
 		{
 			return row; //also fail here just in case
 		}
@@ -170,8 +174,12 @@ public class DbConflictResolver
 		if (!count.equals("0"))
 		{
 			return row;
+		}*/
+		if (count == 0)
+		{
+			return null;
 		}
-		return null;
+		return s.getRows().get(0);
 		//return !count.equals("0"); //if the count is 0, then the identifier does not exist
 	}
 }

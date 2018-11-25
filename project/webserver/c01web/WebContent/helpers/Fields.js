@@ -925,8 +925,49 @@ function getName(field)
 
 function autoGenerateName(field)
 {
+	var name = field;
+	switch(field) //this part sets the name for longfield fields back to their original name, only affects name though, longfields are still referenced as longfield_x
+	{
+		case "longfield_1":
+			name = "increase_knowledge_of_community_and_government_services_referrals"
+			break;
+		case "longfield_2":
+			name = "increase_the_following_access_to_local_community_services_referrals"
+			break;
+		case "longfield_3":
+			name = "find_employment_intends_to_work_in_an_occupation_corresponding_to_which_national_occupation_classification_skill_level"
+			break;
+		case "longfield_4":
+			name = "find_employment_intends_to_obtain_credential_recognition_or_obtain_license_to_work_in_canada"
+			break;
+		case "longfield_5":
+			name = "did_volunteers_from_the_host_community_participate_in_the_activity"
+			break;
+		case "longfield_6":
+			name = "target_group_clients_with_international_training_in_a_regulated_profession"
+			break;
+		case "longfield_7":
+			name = "target_group_clients_with_international_training_in_a_regulated_trade"
+			break;
+		case "longfield_8":
+			name = "was_essential_skills_and_aptitudes_training_received_as_part_of_the_service"
+			break;
+		case "longfield_9":
+			name = "was_life_skills_or_responsibilities_of_citizenship_information_received_as_part_of_this_service"
+			break;
+		case "longfield_10":
+			name = "rights_and_responsibilities_of_citizenship_based_on_discover_canada"
+			break;
+		case "longfield_11":
+			name = "long_term_intervention_profession_trade_for_which_services_were_received"
+			break;
+		case "longfield_12":
+			name = "time_spent_with_client_addressing_clients_employment_needs_minutes"
+			break;
+	}
+	
 	//nifty solution I found to capitalize first letter of each word
-	var result = field.toLowerCase()
+	var result = name.toLowerCase()
 		.split('_')
 		.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
 		.join(' ');

@@ -75,7 +75,7 @@ public class DbSelectHelper
 		statement.close();
 	}
 	
-	private String buildQueryString()
+	public String buildQueryString()
 	{
 		String result = "";
 		

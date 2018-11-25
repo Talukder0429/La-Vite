@@ -38,7 +38,7 @@ public class DbUpdateHelper
 		this.conditionFields.add(qbv);
 	}
 	
-	private String buildQueryString()
+	public String buildQueryString()
 	{
 		String result = "";
 		

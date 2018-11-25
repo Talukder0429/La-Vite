@@ -971,6 +971,8 @@ function autoGenerateName(field)
 		.split('_')
 		.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
 		.join(' ');
+	result = result.replace("Yyyy Mm Dd", "YYYY-MM-DD");
+	console.log(result);
 	result += ": ";
 	setName(field, result);
 }

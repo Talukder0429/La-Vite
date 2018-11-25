@@ -83,7 +83,7 @@ public class DbSelectHelper
 		result += this.buildDistinctString();
 		result += this.buildResultFieldsString();
 		result += " FROM ";
-		result += this.tableName + " ";
+		result += this.tableName;
 		result += this.buildConditionFieldsString();
 		result += ";";
 		
@@ -117,7 +117,7 @@ public class DbSelectHelper
 				
 				if (a != this.returnFields.size() - 1)
 				{
-					result += ", ";
+					result += ",";
 				}
 			}
 		}
@@ -131,7 +131,7 @@ public class DbSelectHelper
 		
 		if (this.conditionFields.size() > 0)
 		{
-			result += "WHERE ";
+			result += " WHERE ";
 			for (int a = 0; a < this.conditionFields.size(); a++)
 			{
 				QueryParameterValue qbv = this.conditionFields.get(a);
@@ -142,8 +142,8 @@ public class DbSelectHelper
 					result += "AND ";
 				}
 			}
+			result = result.substring(0, result.length() - 1); //removes space at the end
 		}
-		
 		return result;
 	}
 	

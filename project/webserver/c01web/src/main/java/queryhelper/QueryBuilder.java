@@ -51,6 +51,7 @@ public class QueryBuilder
 		result += " VALUES";
 		result += this.generateQuestionMarks();
 		
+		System.out.println(result);
 		return result;
 	}
 	
@@ -74,7 +75,7 @@ public class QueryBuilder
 			
 			if (a != this.paramsList.size() - 1) //not last field
 			{
-				add += ", ";
+				add += ",";
 			}
 			
 			result += add;

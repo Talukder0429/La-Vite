@@ -97,8 +97,13 @@ public class DbUpdateHelper
 			
 			if (a != this.updateFields.size() - 1)
 			{
-				result += ", ";
+				result += ",";
 			}
+		}
+		
+		if (result.length() > 0 && result.charAt(result.length() - 1) == ',')
+		{
+			result = result.substring(0, result.length() - 1); //removes potential comma at end
 		}
 		
 		return result;
@@ -110,7 +115,7 @@ public class DbUpdateHelper
 		
 		if (this.conditionFields.size() > 0)
 		{
-			result += "WHERE ";
+			result += " WHERE ";
 			for (int a = 0; a < this.conditionFields.size(); a++)
 			{
 				QueryParameterValue qbv = this.conditionFields.get(a);
@@ -118,7 +123,7 @@ public class DbUpdateHelper
 				
 				if (a != this.conditionFields.size() - 1)
 				{
-					result += "AND ";
+					result += " AND ";
 				}
 			}
 		}

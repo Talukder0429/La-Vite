@@ -116,17 +116,18 @@ public abstract class FormServlet extends HttpServlet
 		this.dbHelper.close();
 	}
 	
-	public void mergeDbRow(Row originalRow, Row newRow, Connection conn) throws SQLException
+	//static because reasons
+	public static void mergeDbRow(Row originalRow, Row newRow, Connection conn, String tableName) throws SQLException
 	{
 		//yes this is horrible, but need to prevent dates from being overwritten
-		if (DbConflictResolver.MONTH_TABLES.contains(this.tableName))
+		if (DbConflictResolver.MONTH_TABLES.contains(tableName))
 		{
-			String dateField = DbConflictResolver.DATE_MAPS.get(this.tableName);
+			String dateField = DbConflictResolver.DATE_MAPS.get(tableName);
 			newRow.setField(dateField, "");
 		}
 		
 		originalRow.merge(newRow);
-		DbUpdateHelper dbuh = new DbUpdateHelper(conn, this.tableName);
+		DbUpdateHelper dbuh = new DbUpdateHelper(conn, tableName);
 		for (String field : originalRow.getFields().keySet())
 		{
 			String value = originalRow.getValue(field);
@@ -134,9 +135,9 @@ public abstract class FormServlet extends HttpServlet
 		}
 		dbuh.addConditionField(Field.UNIQUE_IDENTIFIER, originalRow.getValue(Field.UNIQUE_IDENTIFIER));
 		dbuh.addConditionField(Field.UNIQUE_IDENTIFIER_VALUE, originalRow.getValue(Field.UNIQUE_IDENTIFIER_VALUE));
-		if (DbConflictResolver.MONTH_TABLES.contains(this.tableName)) //is a form which uses dates
+		if (DbConflictResolver.MONTH_TABLES.contains(tableName)) //is a form which uses dates
 		{
-			String dateField = DbConflictResolver.DATE_MAPS.get(this.tableName);
+			String dateField = DbConflictResolver.DATE_MAPS.get(tableName);
 			dbuh.addConditionField(dateField, originalRow.getValue(dateField));
 		}
 		

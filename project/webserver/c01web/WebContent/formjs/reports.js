@@ -27,7 +27,7 @@ function generatePageElements()
 	addFieldElement(POSTAL_CODE);
 	//addFieldElement(OFFICIAL_LANGUAGE_OF_PREFERENCE);
 	addFieldElement(CONSENT_FOR_FUTURE_RESEARCH_CONSULTATION);
-	addFieldElement(UPDATE_RECORD_ID);
+	
 	//addFieldElement(DATE_OF_BIRTH_YYYY_MM_DD);
 	addFieldElement(POSTAL_CODE_WHERE_THE_SERVICE_WAS_RECEIVED);
 	addFieldElement(START_DATE_OF_ASSESSMENT_YYYY_MM_DD);

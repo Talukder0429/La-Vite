@@ -50,8 +50,7 @@ public class QueryBuilder
 		result += this.generateParamsList();
 		result += " VALUES";
 		result += this.generateQuestionMarks();
-		
-		System.out.println(result);
+
 		return result;
 	}
 	

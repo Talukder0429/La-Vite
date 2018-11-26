@@ -52,30 +52,6 @@ public class DbConflictResolver
 		this.connection = connection;
 	}
 	
-	/*public boolean checkRowValid(Row row)
-	{
-		if (row.getValue(Field.UNIQUE_IDENTIFIER) == null) //unique identifier does not exist
-		{
-			return false;
-		}
-		if (row.getValue(Field.UNIQUE_IDENTIFIER_VALUE) == null)
-		{
-			return false;
-		}
-		
-		if (this.checkIdentifierAlreadyExist(row))
-		{
-			return false;
-		}
-		
-		if (this.checkUserMonthAlreadyExist(row))
-		{
-			return false;
-		}
-		
-		return true;
-	}*/
-	
 	//If conflicting row exists, that row is returned, returning null means that there is no conflict
 	public Row checkUserMonthAlreadyExist(Row row) throws ParseException
 	{
@@ -87,20 +63,8 @@ public class DbConflictResolver
 		String dateField = DATE_MAPS.get(this.tableName);
 		String dateValue = row.getValue(dateField);
 		DateConverter date = new DateConverter(dateValue);
-		/*try {
-			date = new DateConverter(dateValue);
-		} catch (ParseException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-			return row; //date in row cannot be converted into an actual date, so it is not a date
-		}
-		if (dateValue == null)
-		{
-			return null; //unexpected behaviour
-		}*/
 		
 		DbSelectHelper dbsh = new DbSelectHelper(this.connection, this.tableName);
-		//dbsh.addResultField(dateField); //gets the specific date field that is used for the table
 		dbsh.addConditionField(Field.UNIQUE_IDENTIFIER, row.getValue(Field.UNIQUE_IDENTIFIER));
 		dbsh.addConditionField(Field.UNIQUE_IDENTIFIER_VALUE, row.getValue(Field.UNIQUE_IDENTIFIER_VALUE));
 		try {
@@ -151,35 +115,14 @@ public class DbConflictResolver
 		//s.addResultField(countStr);
 		s.addConditionField(Field.UNIQUE_IDENTIFIER, row.getValue(Field.UNIQUE_IDENTIFIER));
 		s.addConditionField(Field.UNIQUE_IDENTIFIER_VALUE, row.getValue(Field.UNIQUE_IDENTIFIER_VALUE));
-		/*try
-		{
-			s.retrieveRows();
-		}
-		catch(SQLException e)
-		{
-			e.printStackTrace();
-			return row; //something went wrong, the row should fail the check to prevent going further
-		}*/
 		s.retrieveRows();
 		
 		//Row result = s.getRows().get(0);
 		int count = s.getRows().size();
-		//String count = result.getValue(countStr);
-		/*if (count == null)
-		{
-			return row; //also fail here just in case
-		}
-		
-		//If conflicting row is found, then count is not 0 and return the row
-		if (!count.equals("0"))
-		{
-			return row;
-		}*/
 		if (count == 0)
 		{
 			return null;
 		}
 		return s.getRows().get(0);
-		//return !count.equals("0"); //if the count is 0, then the identifier does not exist
 	}
 }

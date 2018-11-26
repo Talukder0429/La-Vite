@@ -6,9 +6,7 @@ const FIELDTYPE_STRING = "string";
 const FIELDTYPE_BOOLEAN = "boolean";
 const FIELDTYPE_SELECT = "select";
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////        NEW FIELDS GO HERE                                         /////////
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 //these field names are used for fields that have names that are too long but must remain unique
 const LONGFIELD_1 = "longfield_1";
 const LONGFIELD_2 = "longfield_2";
@@ -90,12 +88,10 @@ const TARGET_GROUP_BLIND_OR_PARTIALLY_SIGHTED = "target_group_blind_or_partially
 const TARGET_GROUP_LESBIAN_GAY_BISEXUAL_TRANSGENDER_QUEER_LGBTQ = "target_group_lesbian_gay_bisexual_transgender_queer_lgbtq";
 const TARGET_GROUP_FAMILIES_PARENTS = "target_group_families_parents";
 const TARGET_GROUP_OTHER_IMPAIRMENTS_PHYSICAL_MENTAL = "target_group_other_impairments_physical_mental";
-//const TARGET_GROUP_CLIENTS_WITH_INTERNATIONAL_TRAINING_IN_A_REGULATED_PROFESSION = "target_group_clients_with_international_training_in_a_regulated_profession";
 const TARGET_GROUP_CLIENTS_WITH_INTERNATIONAL_TRAINING_IN_A_REGULATED_PROFESSION = LONGFIELD_6;
-//const TARGET_GROUP_CLIENTS_WITH_INTERNATIONAL_TRAINING_IN_A_REGULATED_TRADE = "target_group_clients_with_international_training_in_a_regulated_trade";
 const TARGET_GROUP_CLIENTS_WITH_INTERNATIONAL_TRAINING_IN_A_REGULATED_TRADE = LONGFIELD_7;
 const TARGET_GROUP_OFFICIAL_LANGUAGE_MINORITIES = "target_group_official_language_minorities";
-//const WAS_ESSENTIAL_SKILLS_AND_APTITUDES_TRAINING_RECEIVED_AS_PART_OF_THE_SERVICE = "was_essential_skills_and_aptitudes_training_received_as_part_of_the_service";
+
 const WAS_ESSENTIAL_SKILLS_AND_APTITUDES_TRAINING_RECEIVED_AS_PART_OF_THE_SERVICE = LONGFIELD_8;
 const COMPUTER_SKILLS = "computer_skills";
 const DOCUMENT_USE = "document_use";
@@ -150,14 +146,14 @@ const BECOMING_A_CANADIAN_CITIZEN_REFERRALS = "becoming_a_canadian_citizen_refer
 
 const INTERPERSONAL_CONFLICT = "interpersonal_conflict";
 const INTERPERSONAL_CONFLICT_REFERRALS = "interpersonal_conflict_referrals";
-//const WAS_LIFE_SKILLS_OR_RESPONSIBILITIES_OF_CITIZENSHIP_INFORMATION_RECEIVED_AS_PART_OF_THIS_SERVICE = "was_life_skills_or_responsibilities_of_citizenship_information_received_as_part_of_this_service";
+
 const WAS_LIFE_SKILLS_OR_RESPONSIBILITIES_OF_CITIZENSHIP_INFORMATION_RECEIVED_AS_PART_OF_THIS_SERVICE = LONGFIELD_9;
-//const RIGHTS_AND_RESPONSIBILITIES_OF_CITIZENSHIP_BASED_ON_DISCOVER_CANADA = "rights_and_responsibilities_of_citizenship_based_on_discover_canada";
+
 const RIGHTS_AND_RESPONSIBILITIES_OF_CITIZENSHIP_BASED_ON_DISCOVER_CANADA = LONGFIELD_10;
 const INCREASE_KNOWLEDGE_OF_LIFE_IN_CANADA = "increase_knowledge_of_life_in_canada";
 const INCREASE_KNOWLEDGE_OF_LIFE_IN_CANADA_REFERRALS = "increase_knowledge_of_life_in_canada_referrals";
 const INCREASE_KNOWLEDGE_OF_COMMUNITY_AND_GOVERNMENT_SERVICES = "increase_knowledge_of_community_and_government_services";
-//const INCREASE_KNOWLEDGE_OF_COMMUNITY_AND_GOVERNMENT_SERVICES_REFERRALS = "increase_knowledge_of_community_and_government_services_referrals";
+
 const INCREASE_KNOWLEDGE_OF_COMMUNITY_AND_GOVERNMENT_SERVICES_REFERRALS = LONGFIELD_1;
 const INCREASE_KNOWLEDGE_OF_WORKING_IN_CANADA = "increase_knowledge_of_working_in_canada";
 const INCREASE_KNOWLEDGE_OF_WORKING_IN_CANADA_REFERRALS = "increase_knowledge_of_working_in_canada_referrals";

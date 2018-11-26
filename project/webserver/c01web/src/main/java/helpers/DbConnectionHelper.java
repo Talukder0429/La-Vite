@@ -29,15 +29,11 @@ public class DbConnectionHelper
 		int i = s.lastIndexOf(".");
 		if(i > -1) s = s.substring(i + 1);
 		s = s + ".class";
-		System.out.println("name " +s);
 		String testPath = this.getClass().getResource(s).toString();
-		System.out.println(testPath);
 		String realpath = URLDecoder.decode(testPath.substring(6), "UTF-8");
-		System.out.println(realpath);
 		
 		Path p = Paths.get(realpath);
 		Path folder = p.getParent();
-		System.out.println(folder.toString());
 		File config = new File(folder.toString() + "\\" + "dbconfig.txt");
 
 		Scanner sc = new Scanner(config);

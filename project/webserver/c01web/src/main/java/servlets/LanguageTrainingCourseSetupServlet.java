@@ -39,10 +39,7 @@ public class LanguageTrainingCourseSetupServlet extends FormServlet {
 		super.clearFields();
 		//set table to be used here
 		super.setTableName(Field.TABLE_LANGUAGE_TRAINING_COURSE_SETUP);
-		// TODO
-		//////////////////////////////////////////////////////////////////////////////////////////////////////////
-		//////////////////////////////        NEW FIELDS GO HERE                                         /////////
-		//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		this.addField(Field.UPDATE_RECORD_ID);
 		this.addField(Field.COURSE_CODE);
 		this.addField(Field.NOTES);
@@ -161,7 +158,7 @@ public class LanguageTrainingCourseSetupServlet extends FormServlet {
 		this.addField(Field.WRITING_SKILL_LEVEL_16);
 		this.addField(Field.WRITING_SKILL_LEVEL_17);
 		
-		//this does all the work
+
 		super.doPost(request, response);
 
 	}

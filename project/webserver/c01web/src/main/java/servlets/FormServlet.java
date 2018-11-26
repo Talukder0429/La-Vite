@@ -68,8 +68,6 @@ public abstract class FormServlet extends HttpServlet
 			if (conflict1 != null) //best to have this throw exception but oh well
 			{
 				mergeDbRow(conflict1, row, conn, this.tableName);
-				//response.setStatus(HttpServletResponse.SC_CONFLICT);
-				//response.getOutputStream().println("User already exists in form");
 				response.setStatus(HttpServletResponse.SC_OK);
 				response.getOutputStream().println("Row was merged with existing row");
 				return; //instead of stopping should instead merge
@@ -77,20 +75,14 @@ public abstract class FormServlet extends HttpServlet
 			if (conflict2 != null)
 			{
 				mergeDbRow(conflict2, row, conn, this.tableName);
-				//response.setStatus(HttpServletResponse.SC_CONFLICT);
-				//response.getOutputStream().println("User already exists for that month");
 				response.setStatus(HttpServletResponse.SC_OK);
 				response.getOutputStream().println("Row was merged with existing row");
 				return; //instead of stopping should instead merge
 			}
 			
 			
-			
-			
 			//this part is all insertion
-			//it is very old
-			//therefore it is better than the newer stuff
-			
+		
 			QueryBuilder qb = new QueryBuilder(this.tableName);
 			qb.setRequestHelper(helper);
 			
@@ -103,7 +95,6 @@ public abstract class FormServlet extends HttpServlet
 			//Sets values into query
 			String queryString = qb.generateQueryString();
 			PreparedStatement ps = conn.prepareStatement(queryString);
-			System.out.println(queryString);
 			qb.fillPreparedStatement(ps);
 			ps.executeUpdate();
 

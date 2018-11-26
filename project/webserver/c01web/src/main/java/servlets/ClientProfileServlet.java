@@ -43,11 +43,7 @@ public class ClientProfileServlet extends FormServlet {
 		
 		//set table to be used here
 		super.setTableName(Field.TABLE_CLIENT_PROFILE);
-		
-		// TODO
-		//////////////////////////////////////////////////////////////////////////////////////////////////////////
-		//////////////////////////////        NEW FIELDS GO HERE                                         /////////
-		//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		this.addField(Field.UNIQUE_IDENTIFIER);
 		this.addField(Field.UNIQUE_IDENTIFIER_VALUE);
 		this.addField(Field.DATE_OF_BIRTH_YYYY_MM_DD);
@@ -64,8 +60,7 @@ public class ClientProfileServlet extends FormServlet {
 		this.addField(Field.POSTAL_CODE);
 		this.addField(Field.OFFICIAL_LANGUAGE_OF_PREFERENCE);
 		this.addField(Field.CONSENT_FOR_FUTURE_RESEARCH_CONSULTATION);
-		
-		//this does all the work
+
 		super.doPost(request, response);
 	}
 }

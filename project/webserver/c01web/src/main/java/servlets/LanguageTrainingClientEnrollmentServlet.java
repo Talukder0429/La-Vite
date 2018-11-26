@@ -39,10 +39,7 @@ public class LanguageTrainingClientEnrollmentServlet extends FormServlet {
 		super.clearFields();
 		//set table to be used here
 		super.setTableName(Field.TABLE_LANGUAGE_TRAINING_CLIENT_ENROLLMENT);
-		// TODO
-		//////////////////////////////////////////////////////////////////////////////////////////////////////////
-		//////////////////////////////        NEW FIELDS GO HERE                                         /////////
-		//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		this.addField(Field.UPDATE_RECORD_ID);
 		this.addField(Field.UNIQUE_IDENTIFIER);
 		this.addField(Field.UNIQUE_IDENTIFIER_VALUE);
@@ -73,8 +70,7 @@ public class LanguageTrainingClientEnrollmentServlet extends FormServlet {
 		this.addField(Field.AND_INTERPRETATION);
 		this.addField(Field.CRISIS_COUNSELLING_CHILD);
 		this.addField(Field.REASON_FOR_UPDATE);
-			
-		//this does all the work
+
 		super.doPost(request, response);
 	}
 

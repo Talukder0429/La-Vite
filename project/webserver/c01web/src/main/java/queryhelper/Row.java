@@ -30,23 +30,13 @@ public class Row
 		{
 			orig.setValue(value);
 		}
-		//this.fields.add(qbv);
-		//this.fields.put(field, qbv);
+
 	}
 	
 	//This returns null if the field is not found
 	public String getValue(String field)
 	{
 		String result = null;
-		
-		/*for (QueryParameterValue qpv : this.fields)
-		{
-			if (qpv.getName().equals(field))
-			{
-				result = qpv.getValue();
-				break;
-			}
-		}*/
 		if(this.fields.containsKey(field))
 		{
 			result = this.fields.get(field).getValue();
@@ -75,16 +65,12 @@ public class Row
 		String result = "";
 		
 		result += "{";
-		//for (int a = 0; a < this.fields.size(); a++)
+
 		for (String field : this.fields.keySet())
 		{
 			QueryParameterValue qbv = this.fields.get(field);
 			result += qbv.toString() + ",";
-			
-			/*if (a != this.fields.size() - 1)
-			{
-				result += ",";
-			}*/
+
 		}
 		result = result.substring(0, result.length() - 1);
 		result += "}";

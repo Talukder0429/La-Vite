@@ -47,8 +47,7 @@ public class DbUpdateHelper
 		result += " SET ";
 		result += this.buildUpdateFields();
 		result += this.buildConditionFieldsString();
-		
-		System.out.println(result);
+
 		return result;
 	}
 	

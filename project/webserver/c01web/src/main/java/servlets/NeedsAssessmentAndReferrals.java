@@ -44,10 +44,6 @@ public class NeedsAssessmentAndReferrals extends FormServlet {
 		//set table to be used here
 		super.setTableName(Field.TABLE_NEEDS_ASSESSMENT_AND_REFERRALS);
 		
-		// TODO
-		//////////////////////////////////////////////////////////////////////////////////////////////////////////
-		//////////////////////////////        NEW FIELDS GO HERE                                         /////////
-		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		this.addField(Field.UPDATE_RECORD_ID);
 		this.addField(Field.UNIQUE_IDENTIFIER);
 		this.addField(Field.UNIQUE_IDENTIFIER_VALUE);
@@ -139,8 +135,7 @@ public class NeedsAssessmentAndReferrals extends FormServlet {
 		this.addField(Field.SETTLEMENT_PLAN_COMPLETED_AND_SHARED_WITH_CLIENT);
 		this.addField(Field.END_DATE_OF_ASSESSMENT_YYYY_MM_DD);
 		this.addField(Field.REASON_FOR_UPDATE);
-		
-		//this does all the work
+
 		super.doPost(request, response);
 	}
 }

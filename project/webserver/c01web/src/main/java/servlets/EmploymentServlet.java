@@ -42,10 +42,6 @@ public class EmploymentServlet extends FormServlet {
 		//set table to be used here
 		super.setTableName(Field.TABLE_EMPLOYMENT);
 		
-		// TODO
-		//////////////////////////////////////////////////////////////////////////////////////////////////////////
-		//////////////////////////////        NEW FIELDS GO HERE                                         /////////
-		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		this.addField(Field.UPDATE_RECORD_ID);
 		this.addField(Field.UNIQUE_IDENTIFIER);
 		this.addField(Field.UNIQUE_IDENTIFIER_VALUE);
@@ -107,8 +103,7 @@ public class EmploymentServlet extends FormServlet {
 		this.addField(Field.TIME_SPENT_WITH_CLIENT_ADDRESSING_CLIENTS_EMPLOYMENT_NEEDS_HOURS);
 		this.addField(Field.TIME_SPENT_WITH_CLIENT_ADDRESSING_CLIENTS_EMPLOYMENT_NEEDS_MINUTES);
 		this.addField(Field.REASON_FOR_UPDATE);
-		
-		//this does all the work
+
 		super.doPost(request, response);
 	}
 

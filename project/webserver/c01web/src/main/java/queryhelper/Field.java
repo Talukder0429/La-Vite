@@ -10,12 +10,7 @@ public final class Field
 	private static final Map<String, String> FIELD_TYPES = Collections.unmodifiableMap(
 		    new HashMap<String, String>() {
 			{
-				// TODO
-				//////////////////////////////////////////////////////////////////////////////////////////////////////////
-				//////////////////////////////        NEW FIELDS GO HERE                                         /////////
-				//////////////////////////////////////////////////////////////////////////////////////////////////////////
-				//Regular string fields you fill on your own go here
-				
+
 				//was missing from aggregate form
 				put(TELEPHONE_NUMBER, FIELDTYPE_STRING);
 				put(WAS_A_CERTIFICATE_ISSUED_TO_THE_CLIENT, FIELDTYPE_BOOLEAN);
@@ -377,10 +372,6 @@ public final class Field
 	public static final String TABLE_LANGUAGE_TRAINING_COURSE_SETUP = "language_training_course_setup";
 	public static final String TABLE_LANGUAGE_TRAINING_CLIENT_EXIT = "language_training_client_exit";
 	
-	// TODO
-	//////////////////////////////////////////////////////////////////////////////////////////////////////////
-	//////////////////////////////        NEW FIELDS GO HERE                                         /////////
-	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//these field names are used for fields that have names that are too long but must remain unique
 	private static final String LONGFIELD_1 = "longfield_1";
 	private static final String LONGFIELD_2 = "longfield_2";

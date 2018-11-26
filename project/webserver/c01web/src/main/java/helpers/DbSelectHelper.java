@@ -86,8 +86,7 @@ public class DbSelectHelper
 		result += this.tableName;
 		result += this.buildConditionFieldsString();
 		result += ";";
-		
-		System.out.println(result);
+
 		return result;
 	}
 	

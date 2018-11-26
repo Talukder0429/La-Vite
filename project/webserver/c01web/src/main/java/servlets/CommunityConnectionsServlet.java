@@ -43,11 +43,7 @@ public class CommunityConnectionsServlet extends FormServlet {
 		
 		//set table to be used here
 		super.setTableName(Field.TABLE_COMMUNITY_CONNECTIONS);
-		
-		// TODO
-		//////////////////////////////////////////////////////////////////////////////////////////////////////////
-		//////////////////////////////        NEW FIELDS GO HERE                                         /////////
-		//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		this.addField(Field.UPDATE_RECORD_ID);
 		this.addField(Field.UNIQUE_IDENTIFIER);
 		this.addField(Field.UNIQUE_IDENTIFIER_VALUE);
@@ -116,7 +112,7 @@ public class CommunityConnectionsServlet extends FormServlet {
 		this.addField(Field.TOTAL_LENGTH_OF_SERVICE_MINUTES);
 		this.addField(Field.REASON_FOR_UPDATE);
 		
-		//this does all the work
+
 		super.doPost(request, response);
 	}
 }

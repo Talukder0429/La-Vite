@@ -16,6 +16,7 @@
 		<br />
 		<br />
 		<br />
-		<a href="reports.jsp">Reports</a> <br />
+		<a href="clientprofilereport.jsp">Client Profile Reports</a> <br />
+		<a href="needsassessmentandreferralsreport.jsp">Needs Assessment And Referrals Reports</a> <br />
 	</body>
 </html>

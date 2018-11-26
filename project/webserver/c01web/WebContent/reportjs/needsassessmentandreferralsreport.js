@@ -13,26 +13,11 @@ function generatePageElements()
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////		  NEW FIELDS GO HERE                                         /////////
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
-	//addFieldElement(DATE_OF_BIRTH_YYYY_MM_DD);
-	addFieldElement(PHONE_NUMBER);
-	addFieldElement(DOES_THE_CLIENT_HAVE_AN_EMAIL_ADDRESS);
-	addFieldElement(EMAIL_ADDRESS);
-	addFieldElement(STREET_NUMBER);
-	addFieldElement(STREET_NAME);
-	addFieldElement(STREET_TYPE);
-	addFieldElement(STREET_DIRECTION);
-	addFieldElement(UNIT_SUITE_APT);
-	addFieldElement(CITY);
-	addFieldElement(PROVINCE);
-	addFieldElement(POSTAL_CODE);
-	//addFieldElement(OFFICIAL_LANGUAGE_OF_PREFERENCE);
-	addFieldElement(CONSENT_FOR_FUTURE_RESEARCH_CONSULTATION);
-	
-	//addFieldElement(DATE_OF_BIRTH_YYYY_MM_DD);
+	addFieldElement(DATE_OF_BIRTH_YYYY_MM_DD);
 	addFieldElement(POSTAL_CODE_WHERE_THE_SERVICE_WAS_RECEIVED);
 	addFieldElement(START_DATE_OF_ASSESSMENT_YYYY_MM_DD);
 	addFieldElement(LANGUAGE_OF_SERVICE);
-	//addFieldElement(OFFICIAL_LANGUAGE_OF_PREFERENCE);
+	addFieldElement(OFFICIAL_LANGUAGE_OF_PREFERENCE);
 	addFieldElement(TYPE_OF_INSTITUTION_ORGANIZATION_WHERE_CLIENT_RECEIVED_SERVICES);
 	addFieldElement(REFERRED_BY);
 	addFieldElement(INCREASE_KNOWLEDGE_OF_LIFE_IN_CANADA);

@@ -15,5 +15,10 @@
 		<a href="import.jsp">Import a CSV</a> <br />
 		<br />
 		In Testing Mode: <input type="checkbox" id="doTest" name="doTest" onclick="changeState();">
+		<br />
+		<br />
+		<br />
+		<a href="clientprofilereport.jsp">Client Profile Reports</a> <br />
+		<a href="needsassessmentandreferralsreport.jsp">Needs Assessment And Referrals Reports</a> <br />
 	</body>
 </html>

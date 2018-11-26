@@ -2,13 +2,11 @@ package queryhelper;
 
 public class QueryParameter
 {
-	private String name;
-	private String value;
+	protected String name;
 	
-	public QueryParameter(String name, String value)
+	public QueryParameter(String name) //not sure if this is smart
 	{
 		this.name = name;
-		this.value = value;
 	}
 	
 	
@@ -16,11 +14,6 @@ public class QueryParameter
 	public String getName()
 	{
 		return this.name;
-	}
-	
-	public String getValue()
-	{
-		return this.value;
 	}
 	
 	
@@ -34,5 +27,11 @@ public class QueryParameter
 	public boolean isBoolean()
 	{
 		return (Field.isType(this.name, Field.FIELDTYPE_BOOLEAN));
+	}
+	
+	@Override
+	public String toString()
+	{
+		return this.getName();
 	}
 }

@@ -86,12 +86,17 @@ function getBooleanFieldValue(field)
 	var buttons = getElement(field);
 	var button0 = buttons[0];
 	var button1 = buttons[1];
+	var buttonUnknown = buttons[2];
 	
+	if (buttonUnknown.checked)
+	{
+		return "";
+	}
 	if (button0.checked)
 	{
 		return "No";
 	}
-	else
+	if (button1.checked)
 	{
 		return "Yes";
 	}
@@ -101,7 +106,7 @@ function getSelectFieldValue(field)
 {
 	var select = getElement(field);
 	var option = select.options[select.selectedIndex];
-	return option.innerHTML;
+	return option.value;
 }
 
 function getElement(field)

@@ -9,7 +9,7 @@ import helpers.HttpServletRequestHelper;
 
 public class QueryBuilder
 {
-	private List<QueryParameter> paramsList;
+	private List<QueryParameterValue> paramsList;
 	
 	private String tableName;
 	
@@ -19,7 +19,7 @@ public class QueryBuilder
 	
 	public QueryBuilder(String tableName)
 	{
-		this.paramsList = new ArrayList<QueryParameter>();
+		this.paramsList = new ArrayList<QueryParameterValue>();
 		
 		this.tableName = tableName;
 	}
@@ -39,7 +39,7 @@ public class QueryBuilder
 	
 	public void addParam(String name, String value)
 	{
-		QueryParameter qp = new QueryParameter(name, value);
+		QueryParameterValue qp = new QueryParameterValue(name, value);
 		this.paramsList.add(qp);
 	}
 	
@@ -51,6 +51,7 @@ public class QueryBuilder
 		result += " VALUES";
 		result += this.generateQuestionMarks();
 		
+		System.out.println(result);
 		return result;
 	}
 	
@@ -58,7 +59,7 @@ public class QueryBuilder
 	{
 		for (int a = 0; a < this.paramsList.size(); a++)
 		{
-			QueryParameter qp = this.paramsList.get(a);
+			QueryParameterValue qp = this.paramsList.get(a);
 			ps.setString(a + 1, qp.getValue());
 		}
 	}
@@ -69,12 +70,12 @@ public class QueryBuilder
 		
 		for (int a = 0; a < this.paramsList.size(); a++)
 		{
-			QueryParameter qp = this.paramsList.get(a);
+			QueryParameterValue qp = this.paramsList.get(a);
 			String add = qp.getName();
 			
 			if (a != this.paramsList.size() - 1) //not last field
 			{
-				add += ", ";
+				add += ",";
 			}
 			
 			result += add;

@@ -44,6 +44,34 @@ function setRandomValueString(field)
 {
 	var textbox = getElement(field);
 	setFieldValue(field, getRandomString(10));
+	
+	if (getName(field).includes("YYYY-MM-DD")) //if it is a date field
+	{
+		var date = "";
+		//each of these lines adds an integer from 0-9 to the string
+		date += (getRandomInteger(2) + 1); //1-2
+		date += getRandomInteger(10); //0-9
+		date += getRandomInteger(10);
+		date += getRandomInteger(10);
+		
+		date += "-";
+		var m0 = getRandomInteger(2);
+		date += m0;
+		if (m0 == 0)
+		{
+			date += getRandomInteger(9) + 1; //1-9
+		}
+		else
+		{
+			date += getRandomInteger(2) + 1;
+		}
+		
+		date += "-";
+		date += getRandomInteger(3); //0-2
+		date += getRandomInteger(9) + 1;
+		
+		setFieldValue(field, date);
+	}
 }
 
 function setRandomValueBoolean(field)

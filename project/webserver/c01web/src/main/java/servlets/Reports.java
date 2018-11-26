@@ -205,24 +205,32 @@ public class Reports extends HttpServlet {
 				rows = needs.getRows();
 			}
 			
-			if (rows.size() == 0)
+			if (!isClient && !isNeeds)
 			{
 				response.setStatus(HttpServletResponse.SC_CONFLICT);
-				response.getOutputStream().println("an unknown error occured");
+				response.getOutputStream().println("no fields selected");
 			}
 			else
 			{
-				Row r = rows.get(0);
-				String countStr = r.getValue(countString);
-				if (countStr == null || countStr == "")
+				if (rows.size() == 0)
 				{
 					response.setStatus(HttpServletResponse.SC_CONFLICT);
 					response.getOutputStream().println("an unknown error occured");
 				}
 				else
 				{
-					response.setStatus(HttpServletResponse.SC_OK);
-					response.getOutputStream().println(String.format("Results: %s", countStr));
+					Row r = rows.get(0);
+					String countStr = r.getValue(countString);
+					if (countStr == null || countStr == "")
+					{
+						response.setStatus(HttpServletResponse.SC_CONFLICT);
+						response.getOutputStream().println("an unknown error occured");
+					}
+					else
+					{
+						response.setStatus(HttpServletResponse.SC_OK);
+						response.getOutputStream().println(String.format("Results: %s", countStr));
+					}
 				}
 			}
 		}
@@ -258,92 +266,92 @@ public class Reports extends HttpServlet {
 		this.clientFields.add(Field.POSTAL_CODE);
 		this.clientFields.add(Field.CONSENT_FOR_FUTURE_RESEARCH_CONSULTATION);
 
-		this.clientFields.add(Field.POSTAL_CODE_WHERE_THE_SERVICE_WAS_RECEIVED);
-		this.clientFields.add(Field.START_DATE_OF_ASSESSMENT_YYYY_MM_DD);
-		this.clientFields.add(Field.LANGUAGE_OF_SERVICE);
-		this.clientFields.add(Field.TYPE_OF_INSTITUTION_ORGANIZATION_WHERE_CLIENT_RECEIVED_SERVICES);
-		this.clientFields.add(Field.REFERRED_BY);
-		this.clientFields.add(Field.INCREASE_KNOWLEDGE_OF_LIFE_IN_CANADA);
-		this.clientFields.add(Field.INCREASE_KNOWLEDGE_OF_LIFE_IN_CANADA_REFERRALS);
-		this.clientFields.add(Field.INCREASE_KNOWLEDGE_OF_COMMUNITY_AND_GOVERNMENT_SERVICES);
-		this.clientFields.add(Field.INCREASE_KNOWLEDGE_OF_COMMUNITY_AND_GOVERNMENT_SERVICES_REFERRALS);
-		this.clientFields.add(Field.INCREASE_KNOWLEDGE_OF_WORKING_IN_CANADA);
-		this.clientFields.add(Field.INCREASE_KNOWLEDGE_OF_WORKING_IN_CANADA_REFERRALS);
-		this.clientFields.add(Field.INCREASE_KNOWLEDGE_OF_EDUCATION_IN_CANADA);
-		this.clientFields.add(Field.INCREASE_KNOWLEDGE_OF_EDUCATION_IN_CANADA_REFERRALS);
-		this.clientFields.add(Field.INCREASE_THE_FOLLOWING_SOCIAL_NETWORKS);
-		this.clientFields.add(Field.INCREASE_THE_FOLLOWING_SOCIAL_NETWORKS_REFERRALS);
-		this.clientFields.add(Field.INCREASE_THE_FOLLOWING_PROFESSIONAL_NETWORKS);
-		this.clientFields.add(Field.INCREASE_THE_FOLLOWING_PROFESSIONAL_NETWORKS_REFERRALS);
-		this.clientFields.add(Field.INCREASE_THE_FOLLOWING_ACCESS_TO_LOCAL_COMMUNITY_SERVICES);
-		this.clientFields.add(Field.INCREASE_THE_FOLLOWING_ACCESS_TO_LOCAL_COMMUNITY_SERVICES_REFERRALS);
-		this.clientFields.add(Field.INCREASE_THE_FOLLOWING_LEVEL_OF_COMMUNITY_INVOLVEMENT);
-		this.clientFields.add(Field.INCREASE_THE_FOLLOWING_LEVEL_OF_COMMUNITY_INVOLVEMENT_REFERRALS);
-		this.clientFields.add(Field.IMPROVE_LANGUAGE_SKILLS);
-		this.clientFields.add(Field.IMPROVE_LANGUAGE_SKILLS_REFERRALS);
-		this.clientFields.add(Field.IMPROVE_LANGUAGE_SKILLS_TO);
-		this.clientFields.add(Field.IMPROVE_OTHER_SKILLS);
-		this.clientFields.add(Field.IMPROVE_OTHER_SKILLS_REFERRALS);
-		this.clientFields.add(Field.IMPROVE_OTHER_SKILLS_TO);
-		this.clientFields.add(Field.FIND_EMPLOYMENT);
-		this.clientFields.add(Field.FIND_EMPLOYMENT_REFERRALS);
-		this.clientFields.add(Field.FIND_EMPLOYMENT_TIMEFRAME);
-		this.clientFields.add(Field.FIND_EMPLOYMENT_MINIMUM_ONE_YEARS_WORK_EXPERIENCE);
-		this.clientFields.add(Field.FIND_EMPLOYMENT_INTENDS_TO_WORK_IN_AN_OCCUPATION_CORRESPONDING_TO_WHICH_NATIONAL_OCCUPATION_CLASSIFICATION_SKILL_LEVEL);
-		this.clientFields.add(Field.FIND_EMPLOYMENT_INTENDS_TO_OBTAIN_CREDENTIAL_RECOGNITION_OR_OBTAIN_LICENSE_TO_WORK_IN_CANADA);
-		this.clientFields.add(Field.CLIENT_INTENDS_TO_BECOME_A_CANADIAN_CITIZEN);
-		this.clientFields.add(Field.SUPPORT_SERVICES_MAY_BE_REQUIRED);
-		this.clientFields.add(Field.CARE_FOR_NEWCOMER_CHILDREN_ADULT);
-		this.clientFields.add(Field.TRANSPORTATION_ADULT);
-		this.clientFields.add(Field.PROVISIONS_FOR_DISABILITIES_ADULT);
-		this.clientFields.add(Field.TRANSLATION_ADULT);
-		this.clientFields.add(Field.INTERPRETATION_ADULT);
-		this.clientFields.add(Field.CRISIS_COUNSELLING_ADULT);
-		this.clientFields.add(Field.NON_IRCC_PROGRAM_SERVICES_NEEDED);
-		this.clientFields.add(Field.FOOD_CLOTHING_OTHER_MATERIAL_NEEDS);
-		this.clientFields.add(Field.FOOD_CLOTHING_OTHER_MATERIAL_NEEDS_REFERRALS);
-		this.clientFields.add(Field.HOUSING_ACCOMMODATION);
-		this.clientFields.add(Field.HOUSING_ACCOMMODATION_REFERRALS);
-		this.clientFields.add(Field.HEALTH_MENTAL_HEALTH_WELL_BEING);
-		this.clientFields.add(Field.HEALTH_MENTAL_HEALTH_WELL_BEING_REFERRALS);
-		this.clientFields.add(Field.FINANCIAL);
-		this.clientFields.add(Field.FINANCIAL_REFERRALS);
-		this.clientFields.add(Field.FAMILY_SUPPORT);
-		this.clientFields.add(Field.FAMILY_SUPPORT_REFERRALS);
-		this.clientFields.add(Field.LANGUAGE_NON_IRCC);
-		this.clientFields.add(Field.LANGUAGE_NON_IRCC_REFERRALS);
-		this.clientFields.add(Field.EDUCATION_SKILLS_DEVELOPMENT);
-		this.clientFields.add(Field.EDUCATION_SKILLS_DEVELOPMENT_REFERRALS);
-		this.clientFields.add(Field.EMPLOYMENT_RELATED);
-		this.clientFields.add(Field.EMPLOYMENT_RELATED_REFERRALS);
-		this.clientFields.add(Field.LEGAL_INFORMATION_AND_SERVICES);
-		this.clientFields.add(Field.LEGAL_INFORMATION_AND_SERVICES_REFERRALS);
-		this.clientFields.add(Field.COMMUNITY_SERVICES);
-		this.clientFields.add(Field.COMMUNITY_SERVICES_REFERRALS);
-		this.clientFields.add(Field.SUPPORT_SERVICES_RECEIVED);
-		this.clientFields.add(Field.CARE_FOR_NEWCOMER_CHILDREN_CHILD);
-		this.clientFields.add(Field.CHILD_1_AGE);
-		this.clientFields.add(Field.CHILD_1_TYPE_OF_CARE);
-		this.clientFields.add(Field.CHILD_2_AGE);
-		this.clientFields.add(Field.CHILD_2_TYPE_OF_CARE);
-		this.clientFields.add(Field.CHILD_3_AGE);
-		this.clientFields.add(Field.CHILD_3_TYPE_OF_CARE);
-		this.clientFields.add(Field.CHILD_4_AGE);
-		this.clientFields.add(Field.CHILD_4_TYPE_OF_CARE);
-		this.clientFields.add(Field.CHILD_5_AGE);
-		this.clientFields.add(Field.CHILD_5_TYPE_OF_CARE);
-		this.clientFields.add(Field.TRANSPORTATION_CHILD);
-		this.clientFields.add(Field.PROVISIONS_FOR_DISABILITIES_CHILD);
-		this.clientFields.add(Field.TRANSLATION_CHILD);
-		this.clientFields.add(Field.BETWEEN_TRANSLATION);
-		this.clientFields.add(Field.AND_TRANSLATION);
-		this.clientFields.add(Field.INTERPRETATION_CHILD);
-		this.clientFields.add(Field.BETWEEN_INTERPRETATION);
-		this.clientFields.add(Field.AND_INTERPRETATION);
-		this.clientFields.add(Field.CRISIS_COUNSELLING_CHILD);
-		this.clientFields.add(Field.SETTLEMENT_PLAN_COMPLETED_AND_SHARED_WITH_CLIENT);
-		this.clientFields.add(Field.END_DATE_OF_ASSESSMENT_YYYY_MM_DD);
-		this.clientFields.add(Field.REASON_FOR_UPDATE);
+		this.needsFields.add(Field.POSTAL_CODE_WHERE_THE_SERVICE_WAS_RECEIVED);
+		this.needsFields.add(Field.START_DATE_OF_ASSESSMENT_YYYY_MM_DD);
+		this.needsFields.add(Field.LANGUAGE_OF_SERVICE);
+		this.needsFields.add(Field.TYPE_OF_INSTITUTION_ORGANIZATION_WHERE_CLIENT_RECEIVED_SERVICES);
+		this.needsFields.add(Field.REFERRED_BY);
+		this.needsFields.add(Field.INCREASE_KNOWLEDGE_OF_LIFE_IN_CANADA);
+		this.needsFields.add(Field.INCREASE_KNOWLEDGE_OF_LIFE_IN_CANADA_REFERRALS);
+		this.needsFields.add(Field.INCREASE_KNOWLEDGE_OF_COMMUNITY_AND_GOVERNMENT_SERVICES);
+		this.needsFields.add(Field.INCREASE_KNOWLEDGE_OF_COMMUNITY_AND_GOVERNMENT_SERVICES_REFERRALS);
+		this.needsFields.add(Field.INCREASE_KNOWLEDGE_OF_WORKING_IN_CANADA);
+		this.needsFields.add(Field.INCREASE_KNOWLEDGE_OF_WORKING_IN_CANADA_REFERRALS);
+		this.needsFields.add(Field.INCREASE_KNOWLEDGE_OF_EDUCATION_IN_CANADA);
+		this.needsFields.add(Field.INCREASE_KNOWLEDGE_OF_EDUCATION_IN_CANADA_REFERRALS);
+		this.needsFields.add(Field.INCREASE_THE_FOLLOWING_SOCIAL_NETWORKS);
+		this.needsFields.add(Field.INCREASE_THE_FOLLOWING_SOCIAL_NETWORKS_REFERRALS);
+		this.needsFields.add(Field.INCREASE_THE_FOLLOWING_PROFESSIONAL_NETWORKS);
+		this.needsFields.add(Field.INCREASE_THE_FOLLOWING_PROFESSIONAL_NETWORKS_REFERRALS);
+		this.needsFields.add(Field.INCREASE_THE_FOLLOWING_ACCESS_TO_LOCAL_COMMUNITY_SERVICES);
+		this.needsFields.add(Field.INCREASE_THE_FOLLOWING_ACCESS_TO_LOCAL_COMMUNITY_SERVICES_REFERRALS);
+		this.needsFields.add(Field.INCREASE_THE_FOLLOWING_LEVEL_OF_COMMUNITY_INVOLVEMENT);
+		this.needsFields.add(Field.INCREASE_THE_FOLLOWING_LEVEL_OF_COMMUNITY_INVOLVEMENT_REFERRALS);
+		this.needsFields.add(Field.IMPROVE_LANGUAGE_SKILLS);
+		this.needsFields.add(Field.IMPROVE_LANGUAGE_SKILLS_REFERRALS);
+		this.needsFields.add(Field.IMPROVE_LANGUAGE_SKILLS_TO);
+		this.needsFields.add(Field.IMPROVE_OTHER_SKILLS);
+		this.needsFields.add(Field.IMPROVE_OTHER_SKILLS_REFERRALS);
+		this.needsFields.add(Field.IMPROVE_OTHER_SKILLS_TO);
+		this.needsFields.add(Field.FIND_EMPLOYMENT);
+		this.needsFields.add(Field.FIND_EMPLOYMENT_REFERRALS);
+		this.needsFields.add(Field.FIND_EMPLOYMENT_TIMEFRAME);
+		this.needsFields.add(Field.FIND_EMPLOYMENT_MINIMUM_ONE_YEARS_WORK_EXPERIENCE);
+		this.needsFields.add(Field.FIND_EMPLOYMENT_INTENDS_TO_WORK_IN_AN_OCCUPATION_CORRESPONDING_TO_WHICH_NATIONAL_OCCUPATION_CLASSIFICATION_SKILL_LEVEL);
+		this.needsFields.add(Field.FIND_EMPLOYMENT_INTENDS_TO_OBTAIN_CREDENTIAL_RECOGNITION_OR_OBTAIN_LICENSE_TO_WORK_IN_CANADA);
+		this.needsFields.add(Field.CLIENT_INTENDS_TO_BECOME_A_CANADIAN_CITIZEN);
+		this.needsFields.add(Field.SUPPORT_SERVICES_MAY_BE_REQUIRED);
+		this.needsFields.add(Field.CARE_FOR_NEWCOMER_CHILDREN_ADULT);
+		this.needsFields.add(Field.TRANSPORTATION_ADULT);
+		this.needsFields.add(Field.PROVISIONS_FOR_DISABILITIES_ADULT);
+		this.needsFields.add(Field.TRANSLATION_ADULT);
+		this.needsFields.add(Field.INTERPRETATION_ADULT);
+		this.needsFields.add(Field.CRISIS_COUNSELLING_ADULT);
+		this.needsFields.add(Field.NON_IRCC_PROGRAM_SERVICES_NEEDED);
+		this.needsFields.add(Field.FOOD_CLOTHING_OTHER_MATERIAL_NEEDS);
+		this.needsFields.add(Field.FOOD_CLOTHING_OTHER_MATERIAL_NEEDS_REFERRALS);
+		this.needsFields.add(Field.HOUSING_ACCOMMODATION);
+		this.needsFields.add(Field.HOUSING_ACCOMMODATION_REFERRALS);
+		this.needsFields.add(Field.HEALTH_MENTAL_HEALTH_WELL_BEING);
+		this.needsFields.add(Field.HEALTH_MENTAL_HEALTH_WELL_BEING_REFERRALS);
+		this.needsFields.add(Field.FINANCIAL);
+		this.needsFields.add(Field.FINANCIAL_REFERRALS);
+		this.needsFields.add(Field.FAMILY_SUPPORT);
+		this.needsFields.add(Field.FAMILY_SUPPORT_REFERRALS);
+		this.needsFields.add(Field.LANGUAGE_NON_IRCC);
+		this.needsFields.add(Field.LANGUAGE_NON_IRCC_REFERRALS);
+		this.needsFields.add(Field.EDUCATION_SKILLS_DEVELOPMENT);
+		this.needsFields.add(Field.EDUCATION_SKILLS_DEVELOPMENT_REFERRALS);
+		this.needsFields.add(Field.EMPLOYMENT_RELATED);
+		this.needsFields.add(Field.EMPLOYMENT_RELATED_REFERRALS);
+		this.needsFields.add(Field.LEGAL_INFORMATION_AND_SERVICES);
+		this.needsFields.add(Field.LEGAL_INFORMATION_AND_SERVICES_REFERRALS);
+		this.needsFields.add(Field.COMMUNITY_SERVICES);
+		this.needsFields.add(Field.COMMUNITY_SERVICES_REFERRALS);
+		this.needsFields.add(Field.SUPPORT_SERVICES_RECEIVED);
+		this.needsFields.add(Field.CARE_FOR_NEWCOMER_CHILDREN_CHILD);
+		this.needsFields.add(Field.CHILD_1_AGE);
+		this.needsFields.add(Field.CHILD_1_TYPE_OF_CARE);
+		this.needsFields.add(Field.CHILD_2_AGE);
+		this.needsFields.add(Field.CHILD_2_TYPE_OF_CARE);
+		this.needsFields.add(Field.CHILD_3_AGE);
+		this.needsFields.add(Field.CHILD_3_TYPE_OF_CARE);
+		this.needsFields.add(Field.CHILD_4_AGE);
+		this.needsFields.add(Field.CHILD_4_TYPE_OF_CARE);
+		this.needsFields.add(Field.CHILD_5_AGE);
+		this.needsFields.add(Field.CHILD_5_TYPE_OF_CARE);
+		this.needsFields.add(Field.TRANSPORTATION_CHILD);
+		this.needsFields.add(Field.PROVISIONS_FOR_DISABILITIES_CHILD);
+		this.needsFields.add(Field.TRANSLATION_CHILD);
+		this.needsFields.add(Field.BETWEEN_TRANSLATION);
+		this.needsFields.add(Field.AND_TRANSLATION);
+		this.needsFields.add(Field.INTERPRETATION_CHILD);
+		this.needsFields.add(Field.BETWEEN_INTERPRETATION);
+		this.needsFields.add(Field.AND_INTERPRETATION);
+		this.needsFields.add(Field.CRISIS_COUNSELLING_CHILD);
+		this.needsFields.add(Field.SETTLEMENT_PLAN_COMPLETED_AND_SHARED_WITH_CLIENT);
+		this.needsFields.add(Field.END_DATE_OF_ASSESSMENT_YYYY_MM_DD);
+		this.needsFields.add(Field.REASON_FOR_UPDATE);
 	}
 
 }

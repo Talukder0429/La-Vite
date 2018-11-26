@@ -13,7 +13,7 @@ function generatePageElements()
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////		  NEW FIELDS GO HERE                                         /////////
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
-	addFieldElement(DATE_OF_BIRTH_YYYY_MM_DD);
+	//addFieldElement(DATE_OF_BIRTH_YYYY_MM_DD);
 	addFieldElement(PHONE_NUMBER);
 	addFieldElement(DOES_THE_CLIENT_HAVE_AN_EMAIL_ADDRESS);
 	addFieldElement(EMAIL_ADDRESS);
@@ -25,6 +25,6 @@ function generatePageElements()
 	addFieldElement(CITY);
 	addFieldElement(PROVINCE);
 	addFieldElement(POSTAL_CODE);
-	addFieldElement(OFFICIAL_LANGUAGE_OF_PREFERENCE);
+	//addFieldElement(OFFICIAL_LANGUAGE_OF_PREFERENCE);
 	addFieldElement(CONSENT_FOR_FUTURE_RESEARCH_CONSULTATION);
 }

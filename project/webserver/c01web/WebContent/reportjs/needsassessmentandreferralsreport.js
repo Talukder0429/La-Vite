@@ -13,11 +13,11 @@ function generatePageElements()
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////		  NEW FIELDS GO HERE                                         /////////
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
-	addFieldElement(DATE_OF_BIRTH_YYYY_MM_DD);
+	//addFieldElement(DATE_OF_BIRTH_YYYY_MM_DD);
 	addFieldElement(POSTAL_CODE_WHERE_THE_SERVICE_WAS_RECEIVED);
 	addFieldElement(START_DATE_OF_ASSESSMENT_YYYY_MM_DD);
 	addFieldElement(LANGUAGE_OF_SERVICE);
-	addFieldElement(OFFICIAL_LANGUAGE_OF_PREFERENCE);
+	//addFieldElement(OFFICIAL_LANGUAGE_OF_PREFERENCE);
 	addFieldElement(TYPE_OF_INSTITUTION_ORGANIZATION_WHERE_CLIENT_RECEIVED_SERVICES);
 	addFieldElement(REFERRED_BY);
 	addFieldElement(INCREASE_KNOWLEDGE_OF_LIFE_IN_CANADA);

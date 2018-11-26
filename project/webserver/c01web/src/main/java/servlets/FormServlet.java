@@ -67,7 +67,7 @@ public abstract class FormServlet extends HttpServlet
 			Row conflict2 = dbcr.checkUserMonthAlreadyExist(row);
 			if (conflict1 != null) //best to have this throw exception but oh well
 			{
-				this.mergeDbRow(conflict1, row, conn);
+				mergeDbRow(conflict1, row, conn, this.tableName);
 				//response.setStatus(HttpServletResponse.SC_CONFLICT);
 				//response.getOutputStream().println("User already exists in form");
 				response.setStatus(HttpServletResponse.SC_OK);
@@ -76,7 +76,7 @@ public abstract class FormServlet extends HttpServlet
 			}
 			if (conflict2 != null)
 			{
-				this.mergeDbRow(conflict2, row, conn);
+				mergeDbRow(conflict2, row, conn, this.tableName);
 				//response.setStatus(HttpServletResponse.SC_CONFLICT);
 				//response.getOutputStream().println("User already exists for that month");
 				response.setStatus(HttpServletResponse.SC_OK);

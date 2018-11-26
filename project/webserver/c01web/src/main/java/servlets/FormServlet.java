@@ -108,6 +108,7 @@ public abstract class FormServlet extends HttpServlet
 			ps.executeUpdate();
 
 			response.setStatus(HttpServletResponse.SC_OK);
+			response.getOutputStream().println("Successfully inserted row");
 		} catch (SQLException | ParseException e) {
 			e.printStackTrace();
 			response.setStatus(HttpServletResponse.SC_CONFLICT);

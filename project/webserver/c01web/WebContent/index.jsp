@@ -13,5 +13,9 @@
 		<a href="languagetrainingclientexit.jsp">Language Training Client Exit</a> <br />
 		<br />
 		In Testing Mode: <input type="checkbox" id="doTest" name="doTest" onclick="changeState();">
+		<br />
+		<br />
+		<br />
+		<a href="reports.jsp">Reports</a> <br />
 	</body>
 </html>

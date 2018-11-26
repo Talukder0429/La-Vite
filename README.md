@@ -2,7 +2,7 @@
 CSCC01 team 27
 
 ## Links
-[Code review summary video](https://www.youtube.com/watch?v=k8yWV0TAO9E)
+[Code review summary video](https://www.youtube.com/watch?v=k8yWV0TAO9E)  
 [Project Presentation Demo](https://www.youtube.com/watch?v=hYdYSuJaI3E)
 
 ## Instructions for Building Code

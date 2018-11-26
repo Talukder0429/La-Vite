@@ -116,7 +116,7 @@ public abstract class FormServlet extends HttpServlet
 		this.dbHelper.close();
 	}
 	
-	private void mergeDbRow(Row originalRow, Row newRow, Connection conn) throws SQLException
+	public void mergeDbRow(Row originalRow, Row newRow, Connection conn) throws SQLException
 	{
 		//yes this is horrible, but need to prevent dates from being overwritten
 		if (DbConflictResolver.MONTH_TABLES.contains(this.tableName))

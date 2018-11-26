@@ -87,7 +87,7 @@ function setRandomValueBoolean(field)
 function setRandomValueSelect(field)
 {
 	var select = getElement(field);
-	var index = getRandomInteger(select.length);
+	var index = getRandomInteger(select.length - 1) + 1;
 	setFieldValue(field, index);
 }
 

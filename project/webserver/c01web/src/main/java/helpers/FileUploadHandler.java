@@ -1,10 +1,10 @@
 package helpers;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.Iterator;
 import java.util.List;
 
@@ -19,11 +19,14 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import queryhelper.QueryBuilder;
+import queryhelper.Row;
+import servlets.FormServlet;
 
 @WebServlet("/FileUploadHandler")
 public class FileUploadHandler extends HttpServlet {
 
 	private static final long serialVersionUID = 1;
+	private int MERGES = 0;
 
 	// start of col. names
 	private String[] cp = { "unique_identifier", "unique_identifier_value", "date_of_birth_yyyy_mm_dd", "phone_number",
@@ -205,7 +208,6 @@ public class FileUploadHandler extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
 
 		boolean isMultipartContent = ServletFileUpload.isMultipartContent(request);
 		if (!isMultipartContent) {
@@ -233,23 +235,20 @@ public class FileUploadHandler extends HttpServlet {
 
 				String[] allLines = fileItem.getString().split("[\\r\\n]+");
 				for (String row : allLines) {
-					insertData(conn, helper, tableName, row);
+					insertData(response, conn, helper, tableName, row);
 				}
 
+				response.getOutputStream().println(MERGES + " Row(s) were merged with existing row");
 				response.setStatus(HttpServletResponse.SC_OK);
+				MERGES = 0;
 				conn.close();
 			}
-		} catch (SQLException | FileUploadException e) {
+		} catch (SQLException | FileUploadException | ParseException e) {
 			e.printStackTrace();
 			response.setStatus(HttpServletResponse.SC_CONFLICT);
 			if (e instanceof SQLException) {
 				response.getOutputStream().println(e.getMessage());
 			}
-		} finally {
-			out.println("<script type='text/javascript'>");
-			out.println("window.location.href='import.jsp'");
-			out.println("</script>");
-			out.close();
 		}
 	}
 
@@ -262,8 +261,8 @@ public class FileUploadHandler extends HttpServlet {
 		return ret;
 	}
 
-	private void insertData(Connection conn, HttpServletRequestHelper helper, String tableName, String row)
-			throws SQLException {
+	private void insertData(HttpServletResponse response, Connection conn, HttpServletRequestHelper helper,
+			String tableName, String row) throws SQLException, IOException, ParseException {
 
 		String[] colNames;
 		switch (tableName) {
@@ -299,15 +298,32 @@ public class FileUploadHandler extends HttpServlet {
 		if (colNames == null) {
 			return;
 		} else {
-			QueryBuilder qb = new QueryBuilder(tableName);
-			qb.setRequestHelper(helper);
+			DbConflictResolver dbcr = new DbConflictResolver(conn, tableName);
+			Row rowObj = new Row();
 			String[] data = row.split(",\\s*(?=([^\\\"]*\\\"[^\\\"]*\\\")*[^\\\"]*$)");
+			QueryBuilder qb = new QueryBuilder(tableName);
 
 			int i;
 			for (i = 0; i < Math.min(colNames.length, data.length); i++) {
+				rowObj.setField(colNames[i], data[i]);
 				qb.addParam(colNames[i], data[i]);
 			}
 
+			Row conflict1 = dbcr.checkIdentifierAlreadyExist(rowObj);
+			Row conflict2 = dbcr.checkUserMonthAlreadyExist(rowObj);
+			if (conflict1 != null) // best to have this throw exception but oh well
+			{
+				FormServlet.mergeDbRow(conflict1, rowObj, conn, tableName);
+				MERGES++;
+				return; // instead of stopping should instead merge
+			}
+			if (conflict2 != null) {
+				FormServlet.mergeDbRow(conflict2, rowObj, conn, tableName);
+				MERGES++;
+				return; // instead of stopping should instead merge
+			}
+
+			qb.setRequestHelper(helper);
 			String query = qb.generateQueryString();
 			PreparedStatement ps = conn.prepareStatement(query);
 			qb.fillPreparedStatement(ps);

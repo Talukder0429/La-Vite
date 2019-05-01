@@ -1,5 +1,4 @@
-# Team27 - La Vite
-CSCC01 team 27
+#La Vite
 
 ## Links
 [Code review summary video](https://www.youtube.com/watch?v=k8yWV0TAO9E)  
@@ -38,8 +37,8 @@ Includes instructions for testing the features of:
 Team report is located here containing descriptions of the group and members (Deliverable 1).
 
 ## Group Members
-* Vilen Milner
+* Arnob Talukder
 * Michael Rossinski
 * Qi Hang Yang
 * Tianyi Zeng
-* Arnob Talukder
+* Vilen Milner

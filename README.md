@@ -1,4 +1,4 @@
-#La Vite
+# La Vite
 
 ## Links
 [Code review summary video](https://www.youtube.com/watch?v=k8yWV0TAO9E)  
